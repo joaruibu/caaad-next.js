@@ -19,7 +19,7 @@ export default function Home() {
         <div className=' md:col-start-2 md:col-end-3'>
           <h1 className='text-center font-normal tracking-tight text-3xl lg:text-6xl p-6 pb-12'>
             <span className='block'>Descarga 4302 bloques</span>
-            <span> de Autocad  gratis</span>
+            <span> de Autocad  gratis desde el trabajo</span>
           </h1>
           <SearchBar />
         </div>
