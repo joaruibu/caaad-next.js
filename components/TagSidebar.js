@@ -5,7 +5,7 @@ import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
 import { categorias } from '../assets/categorias'
 import { filtros } from '../assets/filtros'
 
-const TagBox = () => {
+const TagSidebar = () => {
 
     return (
         <>
@@ -81,4 +81,4 @@ const TagBox = () => {
     )
 }
 
-export default TagBox
+export default TagSidebar

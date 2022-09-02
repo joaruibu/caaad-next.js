@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import AddSidebar from '../components/AddSidebar'
+import BlockList from '../components/BlockList'
 import Layout from '../components/Layout'
 import SearchBar from '../components/SearchBar'
-import TagBox from '../components/TagBox'
+import TagSidebar from '../components/TagSidebar'
 
 
 export default function Home() {
@@ -25,8 +26,12 @@ export default function Home() {
         </div>
 
         <div className='hidden md:block md:col-start-1 md:col-end-2'>
-          <TagBox ></TagBox>
+          <TagSidebar />
         </div>
+        <div className='hidden md:block md:col-start-2 md:col-end-3'>
+          <BlockList />
+        </div>
+
         <div className='hidden md:block  md:col-start-3'>
           <AddSidebar />
         </div>
