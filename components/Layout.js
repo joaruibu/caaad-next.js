@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import Head from 'next/head'
 import React from 'react'
 import Footer from './Footer'
@@ -9,7 +10,7 @@ const Layout = ({ children, pagina }) => {
             <Head>
                 <title>Caaad-{pagina}</title>
                 <meta name="description" content="Bloques de autocad gratis" />
-                <script src="https://kit.fontawesome.com/52fed5dcd0.js" crossOrigin="anonymous" async />
+                {/* <script src="https://kit.fontawesome.com/52fed5dcd0.js" crossOrigin="anonymous" async /> */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -18,7 +19,7 @@ const Layout = ({ children, pagina }) => {
             {children}
             <Footer />
 
-
+            <Script src="https://kit.fontawesome.com/52fed5dcd0.js" crossOrigin="anonymous" async strategy="lazyOnload" />
         </div>
     )
 }

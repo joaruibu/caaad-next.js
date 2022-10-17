@@ -8,7 +8,9 @@ const Nosotros = () => {
         <Layout
             pagina="Nosotros">
             <h1>Desdes nostros</h1>
-            <Link href="/">A Inicio</Link>
+            <Link href="/" passHref>
+                <a> A Inicio</a>
+            </Link >
         </Layout>
 
     )

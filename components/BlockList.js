@@ -1,41 +1,17 @@
-import React, { useEffect } from 'react'
-import { bloques } from '../assets/bloques';
-import Block from './Block';
+import Block from './BlockItem'
 
-const BlockList = () => {
-
-    useEffect(() => {
-        const consultarAPI = async () => {
-            const url = `http://localhost:3000/api/hello`;
-            const respuesta = await fetch(url);
-            const bloquesa = await respuesta.json();
-
-
-            return bloquesa
-        }
-
-        consultarAPI()
-    }, [])
-
+const BlockList = ({ blocks }) => {
     return (
-        <section className='grid grid-cols-4 gap-12'>
-            {bloquesa.maps}
+        <section className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6'>
+            {blocks.map(block => (
+                <Block
+                    key={block._id}
+                    block={block}
+                />
+            ))}
 
         </section>
     )
 }
-
-// export async function getStaticProps() {
-//     const url = `http://localhost:3000/api/hello`;
-//     const respuesta = await fetch(url);
-//     const bloques = await respuesta.json();
-
-//     console.log(bloques)
-//     return {
-//         props: {
-//             bloques
-//         }
-//     }
-// }
 
 export default BlockList

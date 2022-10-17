@@ -2,7 +2,7 @@ export const categorias = [
     {
         id: 'personas',
         name: 'Personas',
-        options: [
+        tags: [
             { value: 'all-personas', label: 'todas', checked: false },
             { value: 'de-pie', label: 'de pie', checked: false },
             { value: 'sentada', label: 'sentada', checked: true },
@@ -22,12 +22,12 @@ export const categorias = [
     {
         id: 'cocina',
         name: 'Cocina',
-        options: [
+        tags: [
             { value: 'fregadero', label: 'fregadero', checked: false },
             { value: 'horno', label: 'horno', checked: false },
             { value: 'fuegos', label: 'fuegos', checked: true },
             { value: 'extractor', label: 'extractor', checked: false },
-            { value: 'nevera y congelador', label: 'nevera y congelador', checked: false },
+            { value: 'nevera-y-congelador', label: 'nevera y congelador', checked: false },
             { value: 'microondas', label: 'microondas', checked: false },
             { value: 'cafetera', label: 'cafetera', checked: false },
             { value: 'lavadora', label: 'lavadora', checked: false },
@@ -38,7 +38,7 @@ export const categorias = [
     {
         id: 'baño',
         name: 'Baño',
-        options: [
+        tags: [
             { value: 'duchas', label: 'duchas', checked: false },
             { value: 'lavabo', label: 'lavabo', checked: false },
             { value: 'lavadora', label: 'lavadora', checked: false },
@@ -55,8 +55,8 @@ export const categorias = [
     {
         id: 'vegetacion',
         name: 'Vegetación',
-        options: [
-            { value: 'heramientas de jardin', label: 'heramientas de jardin', checked: false },
+        tags: [
+            { value: 'heramientas-de-jardin', label: 'heramientas de jardin', checked: false },
             { value: 'arbustos', label: 'arbustos', checked: false },
             { value: 'argol', label: 'argol', checked: false },
             { value: 'maceta', label: 'maceta', checked: false },

@@ -6,7 +6,7 @@ export const bloques = [
         tags: ['casa', 'gimansio', 'deporte', 'maquina', 'clicismo']
     },
     {
-        nombre: 'Eliptica estática',
+        nombre: 'Eliptica- estática',
         descripcion: 'Alzado',
         img: 'bloque-2',
         tags: ['casa', 'gimansio', 'deporte', 'maquina', 'elíptica']
@@ -32,3 +32,5 @@ export const bloques = [
 
 
 ]
+
+export let blocks = []
