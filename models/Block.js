@@ -36,6 +36,10 @@ const BlockSchema = new mongoose.Schema({
     downloads: {
         type: Number,
         required: false
+    },
+    free: {
+        type: Boolean,
+        required: false
     }
 })
 

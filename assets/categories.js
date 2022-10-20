@@ -1,3 +1,5 @@
+
+
 export const categories = [
     {
         id: 'animales',
@@ -19,7 +21,7 @@ export const categories = [
             { value: 'jean-prouvee', label: 'Jean Prouvé', checked: false },
             { value: 'le-corbusier', label: 'Le Corbusier', checked: false },
             { value: 'mies-van-der-rohe', label: 'Mies van der Rohe', checked: false },
-            { value: 'miguel-milá', label: 'Miguel Milá', checked: false },
+            { value: 'miguel-mila', label: 'Miguel Milá', checked: false },
             { value: 'verner-panton', label: 'Verner Panton', checked: false },
         ]
     },
@@ -28,7 +30,7 @@ export const categories = [
         name: 'Baño',
         tags: [
             { value: 'todos-baños', label: 'Todos', checked: false },
-            { value: 'bañera', label: 'Bañera', checked: false },
+            { value: 'bañera', label: 'Bañera', checked: false, },
             { value: 'bidet', label: 'Bidet', checked: false },
             { value: 'duchas', label: 'Duchas', checked: false },
             { value: 'espejo', label: 'Espejo', checked: false },
@@ -129,7 +131,7 @@ export const categories = [
         id: 'niños',
         name: 'Niños',
         tags: [
-            { value: 'todos-niños', label: 'Todos', checked: false },
+            { value: 'todos-niños', label: 'Todos', checked: false, id: 89988823434 },
             { value: 'camas-montessori', label: 'Camas montessori', checked: false },
             { value: 'juguetes', label: 'Juguetes', checked: false },
             { value: 'mueble-infantil', label: 'Mueble Infantil', checked: false },
@@ -143,7 +145,7 @@ export const categories = [
             { value: 'todos-cocina', label: 'Todos', checked: false },
             { value: 'lavavajillas', label: 'Lavavajillas', checked: false },
             { value: 'frigorifico', label: 'Frigorífico', checked: false },
-            { value: 'fuegos', label: 'Fuegos', checked: true },
+            { value: 'fuegos', label: 'Fuegos', checked: false },
             { value: 'microondas', label: 'Microondas', checked: false },
             { value: 'horno', label: 'Horno', checked: false },
             { value: 'fregadero', label: 'Fregadero', checked: false },

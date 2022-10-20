@@ -36,7 +36,7 @@ const BlockPage = ({ success, error, block }) => {
             </div>
             <div className="mb-4">
               <p className="font-bold block w-full">Description: </p>
-              <p className=" font-normal text-xs text-gray-500">{createDesCription(tags, category)}</p>
+              {/* <p className=" font-normal text-xs text-gray-500">{createDesCription(tags, category)}</p> */}
             </div>
             <div className="mb-4">
               <p className="mb-3 font-bold block w-full">Tags: </p>

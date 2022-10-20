@@ -17,7 +17,8 @@ const FormAddBlock = () => {
         img: '',
         dwg: '',
         date: '',
-        downloads: 0
+        downloads: 0,
+        free: true
     })
     const [checkedTags, setChekedTags] = useState([]);
     const [checkedFilters, setChekedFilters] = useState([])
@@ -35,7 +36,8 @@ const FormAddBlock = () => {
             ...form,
             [e.target.name]: e.target.value,
             date: Date.now(),
-            downloads: 0
+            downloads: 0,
+            free: true
         })
     }
 
@@ -167,10 +169,7 @@ const FormAddBlock = () => {
     const handleSumbit = e => {
         e.preventDefault()
         postData(form)
-
-        setTimeout(() => {
-            location.reload()
-        }, 1000);
+        setForm([])
 
     }
 
