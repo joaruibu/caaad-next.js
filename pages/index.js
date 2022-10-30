@@ -6,10 +6,14 @@ import TagSidebar from '../components/TagSidebar'
 import dbConnect from '../lib/dbConnect'
 import Block from '../models/Block'
 import { ContextProvider } from '../context'
+import CookiesBanner from '../components/CookiesBanner'
+import { useApp } from '../context'
+
 
 
 export default function Home({ blocks, numberBlocks }) {
-  console.log(blocks)
+
+  const { isCookies } = useApp()
   return (
     <ContextProvider>
       <Layout
@@ -37,8 +41,12 @@ export default function Home({ blocks, numberBlocks }) {
           <div className='hidden md:block  md:col-start-3'>
             <AddSidebar />
           </div>
-
+          {!isCookies &&
+            <CookiesBanner></CookiesBanner>
+          }
         </main>
+
+
       </Layout>
     </ContextProvider>
   )
@@ -50,7 +58,6 @@ export async function getServerSideProps() {
     await dbConnect()
 
     const result = await Block.find({})
-
     const blocks = result.map((doc) => {
       const block = doc.toObject()
       block._id = block._id.toString()

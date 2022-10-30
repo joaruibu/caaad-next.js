@@ -7,6 +7,9 @@ import AddSidebar from "../../components/AddSidebar";
 import Image from "next/image";
 import { createDesCription } from "../../helpers";
 import Link from "next/link";
+import BadgeTag from "../../components/BadgeTag";
+
+
 
 const BlockPage = ({ success, error, block }) => {
   const { _id, category, date, description, downloads, dwg, filters, img, tags, title } = block
@@ -42,11 +45,17 @@ const BlockPage = ({ success, error, block }) => {
               <p className="mb-3 font-bold block w-full">Tags: </p>
               <div className="flex flex-wrap gap-2">
 
-                {tags.map(tag => (
-                  <a className=" p-1 rounded-md font-normal cursor-pointer whitespace-nowrap text-xs border border-orange-600 text-orange-600" key={tag.id}>{tag.label}</a>
-                ))}
-                {filters.map(filter => (
-                  <a className=" p-1 rounded-md font-normal cursor-pointer whitespace-nowrap text-xs border border-orange-600 text-orange-600" key={filter.id}>{filter.label}</a>
+                {tags.map((tag, index) => {
+                  return <BadgeTag
+                    key={index}
+                    tag={tag.label}
+                    icon={false}
+                  />
+
+                })
+                }
+                {filters.map((filter, index) => (
+                  <a className=" p-1 rounded-md font-normal cursor-pointer whitespace-nowrap text-xs border border-orange-600 text-orange-600" key={index}>{filter.label}</a>
                 ))}
               </div>
             </div>

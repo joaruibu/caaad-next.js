@@ -44,6 +44,9 @@ input[type="checkbox"]:checked:after {
   content: "+";
   color: var(--caaad-orange);
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

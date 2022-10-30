@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
-
-import { Disclosure } from '@headlessui/react'
-import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
 import { allCategories } from '../assets/categories'
 import { allFilters } from '../assets/filters'
-import { orderCategories } from '../helpers'
-
 
 import ErrorMessage from './ErrorMessage'
 import SuccessMessagge from './SuccessMessage'
@@ -13,7 +8,6 @@ import SuccessMessagge from './SuccessMessage'
 
 
 const FormAddBlock = () => {
-
 
     const [form, setForm] = useState({
         title: '',
@@ -153,6 +147,8 @@ const FormAddBlock = () => {
     }
 
 
+
+
     const postData = async (form) => {
         try {
             const res = await fetch('/api/blocks', {
@@ -163,6 +159,7 @@ const FormAddBlock = () => {
                 body: JSON.stringify(form)
             })
             const data = await res.json()
+
             data.success ? setIsSuccessUpload(true) : setIsErrorUpload(true)
 
         } catch (error) {
@@ -171,10 +168,9 @@ const FormAddBlock = () => {
     }
     const handleSumbit = e => {
         e.preventDefault()
-        console.log(form)
-        return
         postData(form)
         setForm([])
+
     }
 
     return (
@@ -236,61 +232,52 @@ const FormAddBlock = () => {
 
                     </div>
                 </fieldset>
-                {orderCategories(allCategories)
-                    .map((category) => (
-                        <Disclosure key={category.id} className="border-t border-gray-200 px-4 py-6">
-                            {({ open }) => (
-                                <>
-                                    <h3 className="-mx-2 -my-3 flow-root ">
-                                        <Disclosure.Button className="px-2 py-2  w-full flex items-center justify-between text-gray-400">
-                                            <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{category.name}</span>
-                                            <span className="flex items-center text-orange-600  hover:rotate-45 duration-75">
-                                                {open ? (
-                                                    <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
-                                                ) : (
-                                                    <PlusSmIcon className="h-5 w-5" aria-hidden="true" />
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Category</label>
+                <div className="mt-1 mb-6">
+                    <select
+                        className="block w-full p-3 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        type='text'
+                        placeholder='category'
+                        autoComplete='off'
+                        name='category'
+                        value={form.category || ''}
+                        onChange={handleChange}
+                    >
+                        {allCategories.map((category, categoryIdx) => {
+                            return <option key={categoryIdx}>{category.name}</option>
+                        })}
 
-                                                )}
-                                            </span>
-                                        </Disclosure.Button>
-                                    </h3>
-                                    <Disclosure.Panel className="pt-3 pl-2 pb-6">
-                                        <div className="space-y-2">
-                                            {category.tags.map((tag, optionIdx) => (
-                                                <div key={optionIdx} className="flex items-center">
-                                                    <input
-                                                        id={Object.getOwnPropertyNames(category.tags[optionIdx])}
-                                                        type="checkbox"
-                                                        defaultValue={tag.label}
-                                                        checked={checkedTags.some(t => t.value === tag.value)}
-                                                        className="h-3 w-3 border-gray-300 rounded cursor-pointer"
-                                                        onClick={() => {
-                                                            if (!checkedTags.some(t => t.value === tag.value)) {
-                                                                setChekedTags([...checkedTags, { value: tag.value, label: tag.label }])
-                                                            } else {
-                                                                setChekedTags(checkedTags.filter(t => t.value !== tag.value))
-                                                            }
-                                                        }}
-                                                    />
-                                                    <label
-                                                        htmlFor={`filter-${category.id}-${optionIdx}`}
-                                                        className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
-                                                    >
-                                                        {tag.label}
-                                                    </label>
-                                                </div>
-                                            ))}
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend className="text-lg font-medium text-gray-900">{form.category} - Tags</legend>
+                    <div className="mt-4 mb-6 divide-y divide-gray-200 border-t border-b border-gray-200">
+                        {allCategories.map((category) => {
+                            if (category.name === form.category) {
+                                return category.tags.map((tag, tagIdx) => (
+                                    <div key={tagIdx} className="relative flex items-start py-4">
+                                        <div className="min-w-0 flex-1 text-sm">
+                                            <label htmlFor={`tag-${tag.id}`} className="select-none font-medium text-gray-700">
+                                                {tag.label}
+                                            </label>
                                         </div>
-                                    </Disclosure.Panel>
-                                </>
-                            )}
-                        </Disclosure>
-                    ))
-                }
+                                        <div className="ml-3 flex h-5 items-center">
+                                            <input
+                                                onClick={(e) => addOrRemoveCheck(e, tag.value, tag.label)}
+                                                value={tag.value}
+                                                name={`tag-${tag.id}`}
+                                                type="checkbox"
+                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                            />
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        })}
 
-
-
-
+                    </div>
+                </fieldset>
 
                 {isTypeError && <ErrorMessage>Hay un error con tu formato de archivo</ErrorMessage>}
                 <div className='flex justify-between items-center mb-3'>
