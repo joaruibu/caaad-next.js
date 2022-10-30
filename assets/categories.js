@@ -167,9 +167,9 @@ export const allTags = {
     terracetOthers: { value: 'otros-terraza', label: 'Otros' },
 
     transports: { value: 'todos-transporte', label: 'Todos' },
-    car: { value: 'coche', label: 'Coche' },
+    car: { value: 'car', label: 'Coche' },
     bicycle: { value: 'bici', label: 'Bici' },
-    motorcycle: { value: 'moto', label: 'Moto' },
+    moto: { value: 'moto', label: 'Moto' },
     scooter: { value: 'patinete', label: 'Patinete' },
     truck: { value: 'camion', label: 'Camión' },
     bus: { value: 'autobus', label: 'Autobús' },
@@ -383,7 +383,7 @@ export const allCategories = [
         name: 'Transporte',
         tags: [
             allTags.transports, allTags.car, allTags.bicycle,
-            allTags.motorcycle, allTags.scooter, allTags.truck,
+            allTags.moto, allTags.scooter, allTags.truck,
             allTags.bus, allTags.cran, allTags.transportOthers,
         ],
 

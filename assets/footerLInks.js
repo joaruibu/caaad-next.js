@@ -1,3 +1,5 @@
+import { allTags } from "./categories";
+
 export const footerLinks = {
     web: [
         { name: 'Nostros', href: '/nostros' },
@@ -14,7 +16,8 @@ export const footerLinks = {
         { name: 'Descargar bloques de personas en oficina gratis', href: '#' },
     ],
     autos: [
-        { name: 'Descargar bloques de coches gratis', href: '#' },
+
+        { name: 'Descargar bloques de coches gratis', id: allTags.car, href: '#' },
         { name: 'Descargar bloques de motos gratis', href: '#' },
         { name: 'Descargar bloques de autos gratis', href: '#' },
         { name: 'Descargar bloques de camiones gratis', href: '#' },

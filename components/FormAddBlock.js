@@ -6,14 +6,12 @@ import { allCategories } from '../assets/categories'
 import { allFilters } from '../assets/filters'
 import { orderCategories } from '../helpers'
 
-
 import ErrorMessage from './ErrorMessage'
 import SuccessMessagge from './SuccessMessage'
 
 
 
 const FormAddBlock = () => {
-
 
     const [form, setForm] = useState({
         title: '',
@@ -89,10 +87,19 @@ const FormAddBlock = () => {
             }
         }
     }
-
-    const uploadImg = async () => {
+    const obj = {
+        image: {
+            preset: 'acusc17i',
+            type: 'image/png'
+        },
+        raw: {
+            preset: 'tz7ic32j',
+            ext: 'dwg'
+        }
+    }
+    const uploadImg = async (type) => {
         if (file === '') return
-        if (file.type !== 'image/png') {
+        if (('ext' in obj[type] && file.name.split('.')[1] !== 'dwg') || ('type' in obj[type] && file.type !== obj[type].type)) {
             setIsTypeError(true)
             setTimeout(() => {
                 setIsTypeError(false)
@@ -102,55 +109,26 @@ const FormAddBlock = () => {
         setIsTypeError(false)
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("upload_preset", "acusc17i");
+        formData.append("upload_preset", obj[type].preset);
 
-        const res = await fetch("https://api.cloudinary.com/v1_1/dwsa2s0pn/image/upload", {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/dwsa2s0pn/${type}/upload`, {
             method: 'POST',
             body: formData
         })
         const data = await res.json()
 
         if (data.secure_url !== '') {
+            const key = type === "image" ? "img" : "dwg"
             setForm({
                 ...form,
-                img: data.secure_url,
+                [key]: data.secure_url,
             })
-            setIsImgUpload(true)
+            if (type === 'image') setIsImgUpload(true);
+            if (type === 'raw') setIsDwgUpload(true);
+
         }
     }
 
-    const uploadDwg = async () => {
-        if (file === '') return
-        if (file.name.split('.')[1] !== 'dwg') {
-            setIsTypeError(true)
-            file.value = ''
-            setTimeout(() => {
-                setIsTypeError(false)
-            }, 1500);
-            return
-        }
-        setIsTypeError(false)
-
-        const formData = new FormData();
-        formData.append("file", file);
-        formData.append("upload_preset", "tz7ic32j");
-
-
-        const res = await fetch("https://api.cloudinary.com/v1_1/dwsa2s0pn/raw/upload", {
-            method: 'POST',
-            body: formData
-        })
-        const data = await res.json()
-
-        if (data.secure_url !== '') {
-            console.log(data)
-            setForm({
-                ...form,
-                dwg: data.secure_url,
-            })
-            setIsDwgUpload(true)
-        }
-    }
 
 
     const postData = async (form) => {
@@ -295,11 +273,11 @@ const FormAddBlock = () => {
                 {isTypeError && <ErrorMessage>Hay un error con tu formato de archivo</ErrorMessage>}
                 <div className='flex justify-between items-center mb-3'>
                     <input className='flex-1' type="file" placeholder='Subir imagen' onChange={(e) => setFileUpload(e.target.files[0])} />
-                    <a className={`border ${isImgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={uploadImg}>{isImgUpload ? 'Imagen subida ✌️' : 'Subir imagen'}</a>
+                    <a className={`border ${isImgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadImg('image')}>{isImgUpload ? 'Imagen subida ✌️' : 'Subir imagen'}</a>
                 </div>
                 <div className='flex justify-between items-center'>
                     <input className='flex-1' type="file" placeholder='Subir dwg' onChange={(e) => setFileUpload(e.target.files[0])} />
-                    <a className={`border ${isDwgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={uploadDwg}>{isDwgUpload ? 'Dwg subido ✌️' : 'Subir dwg'}</a>
+                    <a className={`border ${isDwgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadImg('raw')}>{isDwgUpload ? 'Dwg subido ✌️' : 'Subir dwg'}</a>
                 </div>
 
 

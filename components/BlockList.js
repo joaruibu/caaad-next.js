@@ -4,7 +4,7 @@ import { useApp } from "../context";
 const BlockList = ({ blocks }) => {
     console.log(444, blocks)
     const { tags, search, filters } = useApp();
-    console.log(333, filters)
+    console.log(333, tags)
 
     return (
         <>
@@ -18,13 +18,17 @@ const BlockList = ({ blocks }) => {
                         return true;
                     })
                     .filter((block) => {
-                        // cada block tiene un array de tags [{value}] <-
-                        let found = tags.length === 0;
-                        block.tags.forEach((tag) => {
-                            if (tags.includes(tag.label) && !found) found = true;
-                        });
-                        return found;
+                        if (tags.length > 0) {
+                            let found = false
+                            block.tags.forEach((tag) => {
+                                if (tags.includes(tag.label)) found = true
+                            })
+                            return found
+                        } else {
+                            return true
+                        }
                     })
+
                     .filter((block) => {
                         let founds = filters.length === 0;
                         block.filters.forEach((filter) => {

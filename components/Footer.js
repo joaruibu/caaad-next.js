@@ -1,9 +1,13 @@
 import Image from "next/image"
 import { footerLinks } from "../assets/footerLInks"
+import { useApp } from "../context";
 /* This example requires Tailwind CSS v2.0+ */
 
 
+
 export default function Footer() {
+
+    const { tags, setTags } = useApp();
     return (
         <footer className="" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
@@ -53,8 +57,8 @@ export default function Footer() {
                                 <h3 className="text-base font-medium text-gray-900">Bloques autos</h3>
                                 <ul role="list" className="mt-4 space-y-1">
                                     {footerLinks.autos.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href} className="text-xs text-gray-500 hover:text-gray-900">
+                                        <li key={item.name} onClick={() => setTags([...tags, item.id.label])} >
+                                            <a className="text-xs text-gray-500 hover:text-gray-900">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -94,6 +98,6 @@ export default function Footer() {
                     <p className="text-base text-gray-400 xl:text-center">&copy; 2022 caaad. All rights reserved.</p>
                 </div>
             </div>
-        </footer>
+        </footer >
     )
 }
