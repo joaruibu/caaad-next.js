@@ -1,4 +1,4 @@
-import urlNotFound from "../404";
+
 import React from "react";
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
@@ -9,15 +9,17 @@ import Image from "next/image";
 import Link from "next/link";
 import BadgeTag from "../../components/BadgeTag";
 import FilterTag from "../../components/BadgeFilter"
+import UrlNotFound from "../404";
 
 
 
 const BlockPage = ({ success, error, block }) => {
+  if (!success) {
+    return <UrlNotFound error={error} />
+  }
+
   const { dwg, filters, img, tags, title } = block
 
-  if (!success) {
-    return <urlNotFound error={error}></urlNotFound>
-  }
   return (
 
     <Layout

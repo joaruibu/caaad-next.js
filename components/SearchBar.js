@@ -6,7 +6,6 @@ import BadgeFilter from './BadgeFilter'
 
 const SearchBar = () => {
     const { tags, filters, setFilters, setTags, query, setQuery, setSearch } = useApp()
-    console.log(2222, tags)
     const router = useRouter();
     return (
         <>

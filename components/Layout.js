@@ -9,10 +9,11 @@ import { useApp } from '../context'
 
 const Layout = ({ children, pagina }) => {
     const { cookiesAccepted } = useApp()
+    const title = `Caaad-${pagina}`
     return (
         <>
             <Head>
-                <title>Caaad-{pagina}</title>
+                <title>{title}</title>
                 <meta name="description" content="Bloques de autocad gratis" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

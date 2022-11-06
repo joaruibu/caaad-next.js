@@ -13,8 +13,8 @@ const Header = () => {
                     <Image
                         className='cursor-pointer'
                         layout='responsive'
-                        width={264} height={137}
-                        src="/img/logo-caaad-autocad.svg"
+                        width={160} height={160}
+                        src="/img/caaad-logo.gif"
                         alt='Logo caad descarga bloques de autocad gratis'
                         priority />
                 </a>

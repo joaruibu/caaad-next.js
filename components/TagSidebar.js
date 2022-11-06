@@ -17,7 +17,7 @@ const TagSidebar = () => {
         <>
             <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>
             <div className="grid grid-cols-2 mb-6">
-                {Object.values(allFilters).map((filter) => (
+                {Object.values(allFilters || {}).map((filter) => (
                     <div key={filter.value} className="flex items-center m-1 mr-3">
                         <input
                             id={`filter-${filter.value}`}

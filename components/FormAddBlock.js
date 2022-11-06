@@ -48,7 +48,7 @@ const FormAddBlock = () => {
 
     const addOrRemoveCheck = (key, category) => {
 
-        if (Object.keys(allFilters).includes(key)) {
+        if (Object.keys(allFilters || {}).includes(key)) {
             const selectedFilters = [...checkedFilters]
 
             if (!checkedFilters.includes(key)) {
@@ -228,19 +228,19 @@ const FormAddBlock = () => {
                 <fieldset>
                     <legend className="text-lg font-medium text-gray-900">Filters</legend>
                     <div className="mt-4 mb-6 divide-y divide-gray-200 border-t border-b border-gray-200 flex flex-wrap">
-                        {Object.values(allFilters).map((filter, index) => {
+                        {Object.values(allFilters || {}).map((filter, index) => {
                             return <div key={index} className="flex flex-wrap mb-6 pr-6">
                                 <div className="min-w-0 text-sm">
-                                    <label htmlFor={Object.keys(allFilters)[index]} className="select-none font-medium text-gray-700">
+                                    <label htmlFor={Object.keys(allFilters || {})[index]} className="select-none font-medium text-gray-700">
                                         {filter.label}
                                     </label>
                                 </div>
                                 <div className="ml-1 flex h-5 items-center">
                                     <input
-                                        onClick={() => addOrRemoveCheck(Object.keys(allFilters)[index])}
+                                        onClick={() => addOrRemoveCheck(Object.keys(allFilters || {})[index])}
                                         value={filter.value}
-                                        name={Object.keys(allFilters)[index]}
-                                        id={Object.keys(allFilters)[index]}
+                                        name={Object.keys(allFilters || {})[index]}
+                                        id={Object.keys(allFilters || {})[index]}
                                         type="checkbox"
                                         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                     />

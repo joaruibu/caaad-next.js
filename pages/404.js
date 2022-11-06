@@ -2,7 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import Layout from '../components/Layout'
 
-const urlNotFound = ({ error }) => {
+const UrlNotFound = ({ error }) => {
+    console.log(error)
     return (
         <Layout pagina='404'>
             <main className='grid grid-cols-[160px_1fr_160px] gap-9'>
@@ -10,7 +11,7 @@ const urlNotFound = ({ error }) => {
                     <h1 className='hidden md:block text-center font-extrabold tracking-tight text-6xl p-6 pb-12'>
                         Uppps... esta página no existe
                     </h1>
-                    <Link href="/">
+                    <Link href="/" passHref>
                         <a>Ver más bloques</a></Link>
                 </div>
             </main>
@@ -18,4 +19,4 @@ const urlNotFound = ({ error }) => {
     )
 }
 
-export default urlNotFound
+export default UrlNotFound
