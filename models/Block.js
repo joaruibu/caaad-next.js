@@ -3,14 +3,15 @@ import mongoose from 'mongoose'
 const BlockSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: false
+        required: false,
+        unique: true
     },
     description: {
         type: String,
         required: false
     },
-    category: {
-        type: String,
+    categories: {
+        type: Array,
         required: true
     },
     tags: {

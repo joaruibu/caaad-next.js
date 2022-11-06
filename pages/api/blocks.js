@@ -8,7 +8,7 @@ import Block from '../../models/Block'
 export default async function handler(req, res) {
   await dbConnect()
 
-  // POST api/block
+  // POST api/blocks
 
   const { method } = req
   switch (method) {

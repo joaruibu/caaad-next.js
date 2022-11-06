@@ -7,41 +7,35 @@ import BadgeTag from './BadgeTag'
 
 const BlockItem = ({ block }) => {
 
-    const { _id, category, date, description, downloads, dwg, filters, img, tags, title } = block
-
+    const { _id, categories, filters, img, tags, title } = block
 
     return (
-
-
-
-        <article key={_id} className="w-ful  border border-orange-600 shadow-none hover:shadow-xl">
-            <Link href={`/blocks/${_id}`} passHref>
-                <Image layout="responsive" width={250} height={165} alt={`Bloque de autocad ${title}`} src={img} priority />
+        <article key={_id} className="w-full  border border-orange-600 shadow-none">
+            <Link href={`/block/${_id}`} passHref>
+                <Image className="cursor-pointer" layout="responsive" width={250} height={165} alt={`Descargar bloque de autocad ${title}`} src={img} priority />
             </Link>
-            <div className="border-t border-orange-600 p-3">
-                {/* <h3 className="mb-3 text-sm font-normal text-gray-600">{title}</h3> */}
-                <div className="flex flex-wrap gap-1">
+            <div className="border-t border-orange-600">
+                <Link href={`/block/${_id}`} passHref>
+                    <h3 className="p-3 cursor-pointer underline text-sm  border-b border-b-orange-600 font-bold text-orange-600">{title}</h3>
+                </Link>
+                <div className="flex flex-wrap gap-1  p-3">
 
                     {filters.map((filter, index) => {
                         return <BadgeFilter
                             key={index}
-                            filter={filter.label}
+                            filter={filter}
                             icon={false}
 
                         />
 
                     })
                     }
-
-                    {tags.map((tag, index) => {
-                        return <BadgeTag
-                            key={index}
-                            tag={tag.label}
-                            icon={false}
-                        />
-
-                    })
+                    {
+                        tags.filter(tag => !categories.includes(tag)).map((tag, index) => {
+                            return <BadgeTag key={index} tag={tag} icon={false} />
+                        })
                     }
+
                 </div>
             </div>
         </article>

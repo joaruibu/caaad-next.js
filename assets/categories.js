@@ -1,211 +1,231 @@
 export const allTags = {
 
-    animals: { value: 'todos-animales', label: 'todos' },
-    cat: { value: 'gato', label: 'Gato' },
-    dog: { value: 'perro', label: 'Perro' },
-    horse: { value: 'caballo', label: 'Caballo' },
-    animalOthers: { value: 'otros-animales', label: 'Otros' },
+    animals: { value: 'animals', label: 'ANIMALES' },
+    cat: { value: 'cat', label: 'Gatos' },
+    dog: { value: 'dog', label: 'Perros' },
+    horse: { value: 'horse', label: 'Caballos' },
+    animalOthers: { value: 'animalOthers', label: 'Otros' },
 
-    authors: { value: 'todos-muebles-de-autor', label: 'todos' },
-    alvarAalto: { value: 'alvar-aalto', label: 'Alvar Aalto' },
-    arneJacobsen: { value: 'arne-jacobsen', label: 'Arne Jacobsen' },
-    carlesRayEames: { value: 'carles-&-ray-eames', label: 'Carles & Ray Eames' },
-    frankGehry: { value: 'frank-gehry', label: 'Frank Gehry' },
-    gerryRietveld: { value: 'gerrit-t-rietveld', label: 'Gerrit T Rietveld' },
-    jeanProuvee: { value: 'jean-prouvee', label: 'Jean Prouvé' },
-    leCorbusier: { value: 'le-corbusier', label: 'Le Corbusier' },
-    miesVanDerRohe: { value: 'mies-van-der-rohe', label: 'Mies van der Rohe' },
-    miguelMila: { value: 'miguel-mila', label: 'Miguel Milá' },
-    vernerPanton: { value: 'verner-panton', label: 'Verner Panton' },
+    authors: { value: 'authors', label: 'MUBLES DE AUTOR' },
+    alvarAalto: { value: 'alvarAalto', label: 'Alvar Aalto' },
+    arneJacobsen: { value: 'arneJacobsen', label: 'Arne Jacobsen' },
+    carlesRayEames: { value: 'carlesRayEames', label: 'Carles & Ray Eames' },
+    frankGehry: { value: 'frankGehry', label: 'Frank Gehry' },
+    gerryRietveld: { value: 'gerryRietveld', label: 'Gerrit T Rietveld' },
+    jeanProuvee: { value: 'jeanProuvee', label: 'Jean Prouvé' },
+    leCorbusier: { value: 'leCorbusier', label: 'Le Corbusier' },
+    miesVanDerRohe: { value: 'miesVanDerRohe', label: 'Mies van der Rohe' },
+    miguelMila: { value: 'miguelMila', label: 'Miguel Milá' },
+    vernerPanton: { value: 'vernerPanton', label: 'Verner Panton' },
 
-    baths: { value: 'todos-baños', label: 'Todos' },
-    bathtub: { value: 'bañera', label: 'Bañera' },
-    bidet: { value: 'bidet', label: 'Bidet' },
-    shower: { value: 'duchas', label: 'Duchas' },
-    mirror: { value: 'espejo', label: 'Espejo' },
-    faucet: { value: 'griferia', label: 'Grifería' },
-    showerHead: { value: 'griferia-ducha', label: 'Grifería ducha' },
-    toilet: { value: 'inodoro-wc', label: 'Inodoro WC' },
-    basin: { value: 'lavabo', label: 'Lavabo' },
-    washingMachine: { value: 'lavadora', label: 'Lavadora' },
-    urinary: { value: 'urinario', label: 'Urinario' },
-    bathOthers: { value: 'otros-baños', label: 'Otros' },
+    bathroom: { value: 'bathroom', label: 'BAÑO' },
+    bathtub: { value: 'bathtub', label: 'Bañeras' },
+    bidet: { value: 'bidet', label: 'Bidets' },
+    shower: { value: 'shower', label: 'Duchas' },
+    mirror: { value: 'mirror', label: 'Espejos' },
+    faucet: { value: 'faucet', label: 'Griferías' },
+    showerHead: { value: 'showerHead', label: 'Griferías ducha' },
+    toilet: { value: 'toilet', label: 'Inodoros WC' },
+    basin: { value: 'basin', label: 'Lavabo' },
+    washingMachine: { value: 'washingMachine', label: 'Lavadoras' },
+    urinary: { value: 'urinario', label: 'Urinarios' },
+    bathOthers: { value: 'bathOthers', label: 'Otros' },
 
-    bedroom: { value: 'todos-dormitorio', label: 'Todos' },
-    bed: { value: 'cama', label: 'Cama' },
-    besideTable: { value: 'mesita-de-noche', label: 'Mesita de noche' },
-    sofaBed: { value: 'sofa-cama', label: 'Sofá cama' },
-    trundleBed: { value: 'cama-nido', label: 'Cama nido' },
-    headBoard: { value: 'cabecero', label: 'Cabecero' },
-    bedroomOthers: { value: 'otros-dormitorio', label: 'Otros' },
+    bedroom: { value: 'bedroom', label: 'DORMITORIO' },
+    bed: { value: 'bed', label: 'Camas' },
+    besideTable: { value: 'besideTable', label: 'Mesitas de noche' },
+    sofaBed: { value: 'sofaBed', label: 'Sofás cama' },
+    trundleBed: { value: 'trundleBed', label: 'Camas nido' },
+    headBoard: { value: 'headBoard', label: 'Cabeceros' },
+    bedroomOthers: { value: 'bedroomOthers', label: 'Otros' },
 
-    construcctions: { value: 'todos-construccion', label: 'Todos' },
-    brick: { value: 'ladrillo', label: 'Ladrillo' },
-    metalProfile: { value: 'perfil-metalico', label: 'Perfíl metálico' },
-    lattice: { value: 'celosia', label: 'Celosía' },
+    construcctions: { value: 'construcctions', label: 'CONSTRUCCIÓN' },
+    brick: { value: 'brick', label: 'Ladrillos' },
+    metalProfile: { value: 'metalProfile', label: 'Perfíles metálico' },
+    lattice: { value: 'lattice', label: 'Celosías' },
 
-    decor: { value: 'todos-decor', label: 'Todos' },
-    vase: { value: 'jarrones', label: 'Jarrones' },
-    cushion: { value: 'cojines', label: 'Cojines' },
-    curtain: { value: 'cortinas', label: 'Cortinas' },
-    book: { value: 'libros', label: 'Libros' },
-    decorOthers: { value: 'otros-decor', label: 'Otros' },
+    decor: { value: 'decor', label: 'DECOR' },
+    vase: { value: 'vase', label: 'Jarrones' },
+    cushion: { value: 'cushion', label: 'Cojines' },
+    curtain: { value: 'curtain', label: 'Cortinas' },
+    book: { value: 'book', label: 'Libros' },
+    decorOthers: { value: 'decorOthers', label: 'Otros' },
 
-    doors: { value: 'todos-puertas', label: 'Todos' },
-    foldingDoor: { value: 'abatible', label: 'Abatible' },
-    slidingDoor: { value: 'corredera', label: 'Corredera' },
-    swingDoor: { value: 'vaiven', label: 'Vaivén' },
-    doorOthers: { value: 'otros-puertas', label: 'Otros' },
+    doors: { value: 'doors', label: 'PUERTAS' },
+    foldingDoor: { value: 'foldingDoor', label: 'Puertas - Abatibles' },
+    slidingDoor: { value: 'slidingDoor', label: 'Puertas - Correderas' },
+    swingDoor: { value: 'swingDoor', label: 'Puertas - Vaivén' },
+    doorOthers: { value: 'doorOthers', label: 'Otros' },
 
-    dressingRoom: { value: 'todos-vestidor', label: 'Todos' },
-    clothes: { value: 'ropa', label: 'Ropa' },
-    wardrobe: { value: 'armarios', label: 'Armarios' },
-    shelving: { value: 'estanteria', label: 'Estanteria' },
-    drawer: { value: 'cajones', label: 'Cajones' },
-    dressingRoomOthers: { value: 'otros-vestidor', label: 'Otros' },
+    dressingRoom: { value: 'dressingRoom', label: 'VESTIDOR' },
+    clothes: { value: 'clothes', label: 'RopaS' },
+    standingMirror: { value: 'standingMirror', label: 'Espejos de pie' },
+    dressingRoomOthers: { value: 'dressingRoomOthers', label: 'Otros' },
 
-    installations: { value: 'todos-instalaciones', label: 'Todos' },
-    heater: { value: 'calentador', label: 'Calentador' },
-    stove: { value: 'estufa', label: 'Estufa' },
-    fireplace: { value: 'chimenea', label: 'Chimenea' },
-    installationOthers: { value: 'otros-instalaciones', label: 'Otros' },
+    storageFurniture: { value: 'storageFurniture', label: 'ALMACENAJE' },
+    cabinets: { value: 'cabinets', label: 'ArmariosS tv' },
+    chestOfDrawers: { value: 'chestOfDrawers', label: 'Cajonera' },
+    commodes: { value: 'commodes', label: 'CómodaS' },
+    shelves: { value: 'shelves', label: 'EstanteriaS' },
+    wardrobe: { value: 'wardrobe', label: 'Armarios' },
+    storageFurnitureOthers: { value: 'storageFurnitureOthers', label: 'Otros' },
 
-    icons: { value: 'todos-iconos', label: 'Todos' },
+    installations: { value: 'installations', label: 'INSTALACIONES' },
+    heater: { value: 'heater', label: 'CalentadorES' },
+    stove: { value: 'stove', label: 'EstufaS' },
+    fireplace: { value: 'fireplace', label: 'ChimeneaS' },
+    installationOthers: { value: 'installationOthers', label: 'Otros' },
 
-    instrument: { value: 'todos-instrumentos', label: 'Todos' },
-    guitar: { value: 'guitarra', label: 'Guitarra' },
-    piano: { value: 'piano', label: 'Piano' },
-    instrumentOthers: { value: 'otros-instrumentos', label: 'Otros' },
+    icons: { value: 'icons', label: 'ICONOS' },
 
-    urbanFurniture: { value: 'todos-mobiliario-urbano', label: 'Todos' },
-    bin: { value: 'papelera', label: 'Papelera' },
-    biceRack: { value: 'aparcabicis', label: 'Aparcabicis' },
-    fountains: { value: 'fuentes', label: 'Fuentes' },
-    symbols: { value: 'señalitica', label: 'Señalítica' },
-    bollards: { value: 'bolardos', label: 'Bolardos' },
-    streetBench: { value: 'banco', label: 'Banco' },
-    urbanFurnitureOthers: { value: 'otros-mobiliario-urbano', label: 'Otros' },
+    instrument: { value: 'instrument', label: 'INSTRUMENTOS' },
+    guitar: { value: 'guitar', label: 'GuitarraS' },
+    piano: { value: 'piano', label: 'PianoS' },
+    instrumentOthers: { value: 'instrumentOthers', label: 'Otros' },
 
-
-    kids: { value: 'todos-niños', label: 'Todos' },
-    montessoriBed: { value: 'camas-montessori', label: 'Camas Montessori' },
-    kidsFurniture: { value: 'mueble-infantil', label: 'Mueble Infantil' },
-    playground: { value: 'parque-infantil', label: 'Parque Infantil' },
-    toy: { value: 'juguetes', label: 'Juguetes' },
-    kidOthers: { value: 'otros-niños', label: 'Otros' },
-
-    kitchen: { value: 'todos-cocina', label: 'Todos' },
-    skin: { value: 'fregadero', label: 'Fregadero' },
-    oven: { value: 'horno', label: 'Horno' },
-    hobs: { value: 'fuegos', label: 'Fuegos' },
-    cookerHoods: { value: 'extractor', label: 'Extractor' },
-    dishwasher: { value: 'lavavajillas', label: 'Lavavajillas' },
-    fridge: { value: 'frigorifico', label: 'Frigorífico' },
-    microwaves: { value: 'microondas', label: 'Microondas' },
-    coffeeMachine: { value: 'cafetera', label: 'Cafereta' },
-    kitchenOthers: { value: 'otros-cocina', label: 'Otros' },
-
-    ilumination: { value: 'todos-iluminacion', label: 'Todos' },
-    wallLight: { value: 'aplique-de-pared', label: 'Aplique de pared' },
-    streetlight: { value: 'farola', label: 'Farola' },
-    cellingLight: { value: 'iluminacion-de-techo', label: 'iluminación de techo' },
-    tableLamp: { value: 'lampara-de-mesa', label: 'Lámpara de mesa' },
-    floorLamp: { value: 'lampara-de-suelo', label: 'Lámpara de suelo' },
-    pendantLight: { value: 'lampara-colgante', label: 'Lámpara colgante' },
-    iluminationOther: { value: 'otros-iluminacion', label: 'Otros' },
-
-    livingRoom: { value: 'todos-salon', label: 'Todos' },
-    sofa: { value: 'sofa', label: 'Sofá' },
-    seat: { value: 'butaca', label: 'Butaca' },
-    bench: { value: 'banco', label: 'Banco' },
-    coffeeTable: { value: 'mesa-de-centro', label: 'Mesa de centro' },
-
-    office: { value: 'todos-oficina', label: 'Todos' },
-    meetingTable: { value: 'mesa-de-reuniones', label: 'Mesa de reuniones' },
-    desk: { value: 'mesa-de-estudio', label: 'Mesa de estudio' },
-    printer: { value: 'impresora', label: 'Impresora' },
-    computer: { value: 'ordenador', label: 'Ordenador' },
-    deskChair: { value: 'silla-de-escritorio', label: 'Silla de escritorio' },
-    officeOthers: { value: 'otros-oficina', label: 'Otros' },
-
-    people: { value: 'todos-personas', label: 'Todas' },
-    children: { value: 'niños', label: 'Niños' },
-    cooking: { value: 'cocinando', label: 'Cocinando' },
-    dancing: { value: 'bailando', label: 'Bailando' },
-    exercising: { value: 'haciendo-deporte', label: 'Haciendo deporte' },
-    jumping: { value: 'saltando', label: 'Saltando' },
-    layingDown: { value: 'tumbada', label: 'Tumbada' },
-    ridingBike: { value: 'montando-en-bici', label: 'Montando en bici' },
-    running: { value: 'corriendo', label: 'Corriendo' },
-    sitting: { value: 'sentada', label: 'Sentada' },
-    standing: { value: 'de-pie', label: 'De pie' },
-    talking: { value: 'hablando', label: 'Hablando' },
-    walking: { value: 'andando', label: 'Andando' },
-    playing: { value: 'jugando', label: 'Jugando' },
-    swimming: { value: 'jugando', label: 'Jugando' },
-    looking: { value: 'mirando', label: 'Mirando' },
-    takingPicture: { value: 'haciendo-fotos', label: 'Haciendo fotos' },
-    working: { value: 'trabajando', label: 'Trabajando' },
-    peopleOthers: { value: 'otros-personas', label: 'Otros' },
-
-    restaurant: { value: 'todos-restaurantes', label: 'Todos' },
-
-    multimedia: { value: 'todos-multimedia', label: 'Todos' },
-    projector: { value: 'proyector', label: 'Proyector' },
-    tv: { value: 'television', label: 'Televisión' },
-    multimediaOthers: { value: 'otros-multimedia', label: 'Otros' },
-
-    sports: { value: 'todos-deportes', label: 'Todos' },
-    gymMachine: { value: 'maquina-gimnasio', label: 'Máquina gimnasio' },
-    track: { value: 'pistas', label: 'Pistas' },
-    sportOthers: { value: 'otros-deportes', label: 'Otros' },
-
-    terrace: { value: 'todos-terraza', label: 'Todos' },
-    swimmingpool: { value: 'piscina', label: 'Piscina' },
-    parasol: { value: 'sombrilla', label: 'Sombrilla' },
-    hammock: { value: 'hamaca', label: 'Hamaca' },
-    terracetOthers: { value: 'otros-terraza', label: 'Otros' },
-
-    transports: { value: 'todos-transporte', label: 'Todos' },
-    car: { value: 'car', label: 'Coche' },
-    bicycle: { value: 'bici', label: 'Bici' },
-    moto: { value: 'moto', label: 'Moto' },
-    scooter: { value: 'patinete', label: 'Patinete' },
-    truck: { value: 'camion', label: 'Camión' },
-    bus: { value: 'autobus', label: 'Autobús' },
-    cran: { value: 'grua', label: 'Grúas' },
-    transportOthers: { value: 'otros-transporte', label: 'Otros' },
+    urbanFurniture: { value: 'urbanFurniture', label: 'MOBILIARIOS URBANO' },
+    bin: { value: 'bin', label: 'PapeleraS' },
+    biceRack: { value: 'biceRack', label: 'Aparcabicis' },
+    fountains: { value: 'fountains', label: 'Fuentes' },
+    symbols: { value: 'symbols', label: 'Señalítica' },
+    bollards: { value: 'bollards', label: 'Bolardos' },
+    streetBench: { value: 'streetBench', label: 'BancoS' },
+    urbanFurnitureOthers: { value: 'urbanFurnitureOthers', label: 'Otros' },
 
 
-    vegetation: { value: 'todos-vegetacion', label: 'Todos' },
-    gardenTools: { value: 'heramientas-de-jardin', label: 'Heramientas de jardín' },
-    bush: { value: 'arbustos', label: 'Arbustos' },
-    tree: { value: 'arbol', label: 'Árbol' },
-    pot: { value: 'maceta', label: 'Maceta' },
-    flowers: { value: 'flores', label: 'Flores' },
-    hangingPots: { value: 'plantas colgantes', label: 'Plantas colgantes' },
-    vines: { value: 'enredaderas', label: 'Enredaderas' },
+    kids: { value: 'kids', label: 'NIÑOS' },
+    montessoriBed: { value: 'montessoriBed', label: 'Camas Montessori' },
+    kidsFurniture: { value: 'kidsFurniture', label: 'MuebleS Infantil' },
+    playground: { value: 'playground', label: 'ParqueS Infantil' },
+    toy: { value: 'toy', label: 'Juguetes' },
+    kidOthers: { value: 'kidOthers', label: 'Otros' },
 
-    windows: { value: 'todos-ventanas', label: 'Todos' },
-    foldingWindow: { value: 'abatible', label: 'Abatible' },
-    slidingWindow: { value: 'corredera', label: 'Corredera' },
-    windowOthers: { value: 'otros-ventanas', label: 'Otros' },
+    kitchen: { value: 'kitchen', label: 'COCINA' },
+    skin: { value: 'skin', label: 'Fregaderos' },
+    oven: { value: 'oven', label: 'HornoS' },
+    hobs: { value: 'hobs', label: 'Fuegos' },
+    cookerHoods: { value: 'cookerHoods', label: 'Extractores' },
+    dishwasher: { value: 'dishwasher', label: 'Lavavajillas' },
+    fridge: { value: 'fridge', label: 'FrigoríficoS' },
+    microwaves: { value: 'microwaves', label: 'Microondas' },
+    coffeeMachine: { value: 'coffeeMachine', label: 'CaferetaS' },
+    kitchenOthers: { value: 'kitchenOthers', label: 'Otros' },
 
+    lighting: { value: 'lighting', label: 'ILUMINACIÖN' },
+    wallLight: { value: 'wallLight', label: 'ApliqueS de pared' },
+    streetlight: { value: 'streetlight', label: 'Farolas' },
+    cellingLight: { value: 'cellingLight', label: 'Iluminación de techo' },
+    tableLamp: { value: 'tableLamp', label: 'Lámparas de mesa' },
+    floorLamp: { value: 'floorLamp', label: 'Lámparas de suelo' },
+    pendantLight: { value: 'pendantLight', label: 'Lámparas colgante' },
+    lightingOther: { value: 'lightingOther', label: 'Otros' },
 
+    livingRoom: { value: 'livingRoom', label: 'SALON' },
+    sofaWithChest: { value: 'sofaWithChest', label: 'Sofás con canapes' },
+    sofa: { value: 'sofa', label: 'Sofás' },
+    groupsLivingRoom: { value: 'groupsLivingRoom', label: 'Conjuntos de salón' },
+    coffeeTable: { value: 'coffeeTable', label: 'Mesas de centro' },
+    seat: { value: 'seat', label: 'Butacas' },
+    bench: { value: 'bench', label: 'Bancos' },
+
+    office: { value: 'office', label: 'OFICINA' },
+    meetingTable: { value: 'meetingTable', label: 'Mesas de reuniones' },
+    desk: { value: 'desk', label: 'Mesas de estudio' },
+    printer: { value: 'printer', label: 'Impresoras' },
+    computer: { value: 'computer', label: 'Ordenadores' },
+    deskChair: { value: 'deskChair', label: 'Sillas de escritorio' },
+    officeOthers: { value: 'officeOthers', label: 'Otros' },
+
+    people: { value: 'people', label: 'PERSONAS' },
+    children: { value: 'children', label: 'Niños' },
+    cooking: { value: 'cooking', label: 'Cocinando' },
+    dancing: { value: 'dancing', label: 'Bailando' },
+    exercising: { value: 'exercising', label: 'Haciendo deporte' },
+    jumping: { value: 'jumping', label: 'Saltando' },
+    layingDown: { value: 'layingDown', label: 'Tumbada' },
+    ridingBike: { value: 'ridingBike', label: 'Montando en bici' },
+    running: { value: 'running', label: 'Corriendo' },
+    sitting: { value: 'sitting', label: 'Sentadas' },
+    standing: { value: 'standing', label: 'De pie' },
+    talking: { value: 'talking', label: 'Hablando' },
+    walking: { value: 'walking', label: 'Caminando' },
+    playing: { value: 'playing', label: 'Jugando' },
+    swimming: { value: 'swimming', label: 'Nadando' },
+    looking: { value: 'looking', label: 'Mirando' },
+    takingPicture: { value: 'takingPicture', label: 'Haciendo fotos' },
+    working: { value: 'working', label: 'Trabajando' },
+    peopleOthers: { value: 'peopleOthers', label: 'Otros' },
+
+    restaurant: { value: 'restaurant', label: 'RESTAURANTE' },
+
+    multimedia: { value: 'restaurant', label: 'MULTIMEDIA' },
+    projector: { value: 'projector', label: 'Proyectores' },
+    tv: { value: 'tv', label: 'Televisiónes' },
+    multimediaOthers: { value: 'multimediaOthers', label: 'Otros' },
+
+    sports: { value: 'sports', label: 'DEPORTES' },
+    gymMachine: { value: 'gymMachine', label: 'Máquinas gimnasio' },
+    track: { value: 'track', label: 'Pistas' },
+    sportOthers: { value: 'sportOthers', label: 'Otros' },
+
+    outdoor: { value: 'outdoor', label: 'EXTERIOR' },
+    swimmingpool: { value: 'swimmingpool', label: 'Piscinas' },
+    parasol: { value: 'parasol', label: 'Sombrillas' },
+    hammock: { value: 'hammock', label: 'Hamacas' },
+    outdoortOthers: { value: 'outdoortOthers', label: 'Otros' },
+
+    vehicle: { value: 'Vehiculos', label: 'VEHÍCULOS' },
+    car: { value: 'car', label: 'Coches' },
+    bicycle: { value: 'bicycle', label: 'Bicis' },
+    moto: { value: 'moto', label: 'Motos' },
+    scooter: { value: 'scooter', label: 'Patinetes' },
+    truck: { value: 'truck', label: 'Camiónes' },
+    bus: { value: 'bus', label: 'Autobús' },
+    cran: { value: 'cran', label: 'Grúas' },
+    transportOthers: { value: 'transportOthers', label: 'Otros' },
+
+    vegetation: { value: 'vegetation', label: 'VEGETACIÓN' },
+    gardenTools: { value: 'gardenTools', label: 'Heramientas de jardín' },
+    bush: { value: 'bush', label: 'Arbustos' },
+    tree: { value: 'tree', label: 'Árboles' },
+    pot: { value: 'pot', label: 'Macetas' },
+    flowers: { value: 'flowers', label: 'Flores' },
+    hangingPots: { value: 'hangingPots', label: 'Plantas colgantes' },
+    vines: { value: 'vines', label: 'Enredaderas' },
+
+    windows: { value: 'windows', label: 'VENTANAS' },
+    foldingWindow: { value: 'foldingWindow', label: 'Ventanas - Abatible' },
+    slidingWindow: { value: 'slidingWindow', label: 'Ventanas - Corredera' },
+    windowOthers: { value: 'windowOthers', label: 'Otros' },
+
+    dinningRoom: { value: 'dinningRoom', label: 'COMEDOR' },
+    cartBar: { value: 'cartBar', label: 'Carritos bebidas' },
+    chair: { value: 'chair', label: 'Sillas' },
+    groupTableAndChair: { value: 'groupTableAndChair', label: 'Conjuntos salón' },
+    stool: { value: 'stool', label: 'Taburetes' },
+    table: { value: 'table', label: 'Mesas' },
+    dinningRoomOthers: { value: 'dinningRoomOthers', label: 'Otros' },
 
 }
 
 export const allCategories = [
+
     {
-        id: 'animales',
-        name: 'Animales',
+        value: 'tematica',
+        label: 'Temática',
+        tags:
+            []
+    },
+    {
+        value: 'animals',
+        label: 'Animales',
         tags:
             [allTags.animals, allTags.cat, allTags.dog,
             allTags.horse, allTags.animalOthers]
     },
     {
-        id: 'muebles-de-autor',
-        name: 'Muebles de Autor',
+        value: 'author-furniture',
+        label: 'Muebles de Autor',
         tags: [
             allTags.authors, allTags.alvarAalto, allTags.arneJacobsen,
             allTags.carlesRayEames, allTags.frankGehry, allTags.gerryRietveld,
@@ -214,10 +234,10 @@ export const allCategories = [
         ]
     },
     {
-        id: 'baño',
-        name: 'Baño',
+        value: 'bathroom',
+        label: 'Baño',
         tags: [
-            allTags.baths, allTags.bathtub, allTags.bidet,
+            allTags.bathroom, allTags.bathtub, allTags.bidet,
             allTags.shower, allTags.mirror, allTags.faucet,
             allTags.showerHead, allTags.toilet, allTags.basin,
             allTags.washingMachine, allTags.urinary, allTags.bathOthers,
@@ -225,120 +245,120 @@ export const allCategories = [
 
     },
     {
-        id: 'dormitorio',
-        name: 'Dormitorio',
+        value: 'bedroom',
+        label: 'Dormitorio',
         tags: [
             allTags.bedroom, allTags.bed, allTags.besideTable,
             allTags.sofaBed, allTags.trundleBed, allTags.headBoard, allTags.headBoard, allTags.bedroomOthers]
     },
     {
-        id: 'construccion',
-        name: 'Construccion',
+        value: 'construction',
+        label: 'Construccion',
         tags: [
             allTags.construcctions, allTags.brick, allTags.metalProfile,
             allTags.lattice
         ],
     },
     {
-        id: 'decor',
-        name: 'Decor',
+        value: 'decor',
+        label: 'Decor',
         tags: [
             allTags.decor, allTags.cushion, allTags.curtain,
             allTags.vase, allTags.book, allTags.decorOthers,
             allTags.pot]
     },
     {
-        id: 'puertas',
-        name: 'Puertas',
+        value: 'dining-room',
+        label: 'Comedor',
+        tags: [
+            allTags.dinningRoom, allTags.cartBar, allTags.chair,
+            allTags.groupTableAndChair, allTags.stool, allTags.table,
+            allTags.dinningRoomOthers]
+    },
+    {
+        value: 'doors',
+        label: 'Puertas',
         tags: [
             allTags.doors, allTags.foldingDoor, allTags.slidingDoor,
             allTags.swingDoor, allTags.doorOthers]
     },
     {
-        id: 'vestidor',
-        name: 'Vestidor',
+        value: 'dressingRoom',
+        label: 'Vestidor',
         tags: [
-            allTags.dressingRoom, allTags.clothes, allTags.wardrobe,
-            allTags.shelving, allTags.drawer, allTags.dressingRoomOthers
+            allTags.dressingRoom, allTags.clothes, allTags.standingMirror,
+            allTags.dressingRoomOthers
         ]
     },
     {
-        id: 'instalaciones',
-        name: 'Instalaciones',
+        value: 'facilities',
+        label: 'Instalaciones',
         tags: [
             allTags.installations, allTags.heater, allTags.stove,
             allTags.fireplace, allTags.stove, allTags.faucet,
             allTags.installationOthers]
     },
     {
-        id: 'iconos',
-        name: 'Iconos',
+        value: 'icons',
+        label: 'Iconos',
         tags: [allTags.icons],
     },
     {
-        id: 'multimedia',
-        name: 'Multimedia',
-        tags: [
-            allTags.multimedia, allTags.projector, allTags.tv,
-            allTags.multimedia],
-    },
-    {
-        id: 'instrumentos',
-        name: 'Instrumentos',
-        tags: [
-            allTags.instrument, allTags.guitar, allTags.piano,
-            allTags.instrumentOthers
-        ]
-    },
-    {
-        id: 'niños',
-        name: 'Niños',
+        value: 'kids',
+        label: 'Niños',
         tags: [
             allTags.kids, allTags.montessoriBed, allTags.kidsFurniture,
             allTags.playground, allTags.toy, allTags.kidOthers
         ],
     },
     {
-        id: 'cocina',
-        name: 'Cocina',
+        value: 'kitchen',
+        label: 'Cocina',
         tags: [
             allTags.kitchen, allTags.skin, allTags.oven,
             allTags.hobs, allTags.cookerHoods, allTags.dishwasher,
             allTags.fridge, allTags.microwaves, allTags.coffeeMachine,
-            allTags.kitchenOthers, allTags.washingMachine, allTags.faucet]
-
-    },
-    {
-        id: 'mobiliario-urbano',
-        name: 'Mobiliario Urbano',
-        tags: [
-            allTags.urbanFurniture, allTags.bin, allTags.biceRack,
-            allTags.fountains, allTags.symbols, allTags.bollards,
-            allTags.streetBench, allTags.urbanFurnitureOthers,
-            allTags.streetlight
+            allTags.kitchenOthers, allTags.washingMachine, allTags.faucet
         ]
 
     },
     {
-        id: 'iluminacion',
-        name: 'Iluminación',
+        value: 'lighting',
+        label: 'Iluminación',
         tags: [
-            allTags.ilumination, allTags.wallLight, allTags.streetlight,
+            allTags.lighting, allTags.wallLight, allTags.streetlight,
             allTags.cellingLight, allTags.tableLamp, allTags.floorLamp,
-            allTags.pendantLight, allTags.iluminationOther]
+            allTags.pendantLight, allTags.lightingOther
+        ]
     },
     {
-        id: 'salon',
-        name: 'Salón',
+        value: 'livingRoom',
+        label: 'Salón',
         tags: [
-            allTags.livingRoom, allTags.sofa, allTags.seat,
-            allTags.bench, allTags.coffeeTable
-        ],
-
+            allTags.livingRoom, allTags.sofaWithChest, allTags.sofa,
+            allTags.groupsLivingRoom, allTags.coffeeTable, allTags.seat,
+            allTags.bench
+        ]
     },
     {
-        id: 'oficina',
-        name: 'Oficina',
+        value: 'multimedia',
+        label: 'Multimedia',
+        tags: [
+            allTags.multimedia, allTags.projector, allTags.tv,
+            allTags.multimediaOthers
+        ]
+    },
+    {
+        value: 'musicalInstruments',
+        label: 'Instrumentos',
+        tags: [
+            allTags.instrument, allTags.guitar, allTags.piano,
+            allTags.instrumentOthers
+        ]
+    },
+    {
+        value: 'office',
+        label: 'Oficina',
         tags: [
             allTags.office, allTags.meetingTable, allTags.desk,
             allTags.printer, allTags.computer, allTags.deskChair,
@@ -346,8 +366,8 @@ export const allCategories = [
         ],
     },
     {
-        id: 'personas',
-        name: 'Personas',
+        value: 'people',
+        label: 'Personas',
         tags: [
             allTags.people, allTags.children, allTags.cooking,
             allTags.dancing, allTags.exercising, allTags.jumping,
@@ -356,41 +376,52 @@ export const allCategories = [
             allTags.walking, allTags.playing, allTags.swimming,
             allTags.looking, allTags.takingPicture, allTags.working,
             allTags.peopleOthers
-        ],
+        ]
     },
     {
-        id: 'restaurantes',
-        name: 'Restaurantes',
-        tags: [allTags.restaurant],
+        value: 'restaurants',
+        label: 'Restaurantes',
+        tags: [
+            allTags.restaurant
+        ]
     },
     {
-        id: 'deportes',
-        name: 'Deportes',
+        value: 'sports',
+        label: 'Deportes',
         tags: [
             allTags.sports, allTags.gymMachine, allTags.track,
-            allTags.sportOthers],
+            allTags.sportOthers
+        ]
     },
     {
-        id: 'terraza',
-        name: 'Terraza',
+        value: 'storageFurniture',
+        label: 'Deportes',
         tags: [
-            allTags.terrace, allTags.swimmingpool, allTags.parasol,
-            allTags.hammock, allTags.terracetOthers,
+            allTags.storageFurniture, allTags.cabinets, allTags.chestOfDrawers,
+            allTags.commodes, allTags.shelves, allTags.wardrobe, allTags.storageFurnitureOthers
+        ]
+    },
+    {
+        value: 'terrace',
+        label: 'Exteriores',
+        tags: [
+            allTags.outdoor, allTags.swimmingpool, allTags.parasol,
+            allTags.hammock, allTags.outdoortOthers,
         ],
     },
     {
-        id: 'transporte',
-        name: 'Transporte',
+        value: 'vehicle',
+        label: 'Vehículos',
         tags: [
-            allTags.transports, allTags.car, allTags.bicycle,
+            allTags.vehicle, allTags.car, allTags.bicycle,
             allTags.moto, allTags.scooter, allTags.truck,
             allTags.bus, allTags.cran, allTags.transportOthers,
         ],
 
     },
     {
-        id: 'vegetacion',
-        name: 'Vegetación',
+        value: 'vegetation',
+        label: 'Vegetación',
         tags: [
             allTags.vegetation, allTags.gardenTools, allTags.bush,
             allTags.tree, allTags.pot, allTags.flowers,
@@ -399,13 +430,23 @@ export const allCategories = [
 
     },
     {
-        id: 'ventanas',
-        name: 'Ventanas',
+        value: 'windows',
+        label: 'Ventanas',
         tags: [
             allTags.windows, allTags.foldingWindow, allTags.slidingWindow,
             allTags.windowOthers,
         ],
 
+    },
+    {
+        value: 'mobiliario-urbano',
+        label: 'Mobiliario Urbano',
+        tags: [
+            allTags.urbanFurniture, allTags.bin, allTags.biceRack,
+            allTags.fountains, allTags.symbols, allTags.bollards,
+            allTags.streetBench, allTags.urbanFurnitureOthers,
+            allTags.streetlight
+        ]
     },
 
 ]

@@ -25,10 +25,10 @@ export const createDesCription = (tags, categoria) => {
 
 export const orderCategories = (categories) => {
     return categories.sort((a, b) => {
-        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+        if (a.label.toLowerCase() < b.label.toLowerCase()) {
             return -1;
         }
-        if (a.name.toLowerCase() > b.name.toLowerCase()) {
+        if (a.label.toLowerCase() > b.label.toLowerCase()) {
             return 1;
         }
         return 0;

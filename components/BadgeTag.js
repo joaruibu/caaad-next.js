@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useApp } from '../context'
+import { allTags } from '../assets/categories'
 
 
 
@@ -15,12 +16,14 @@ const BadgeTag = ({ tag, icon }) => {
 
     return (
         <>
-            <span className={`inline-flex items-center rounded-full bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}>
-                {tag}
+            <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
+                href={!hasIcon ? `tag/${tag}` : undefined}
+            >
+                {allTags[tag].label}
                 {hasIcon &&
                     <button
                         type="button"
-                        className="ml-1 transition-all inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full text-white hover:bg-orange-200 hover:text-orange-500 focus:bg-orange-500 focus:text-white focus:outline-none"
+                        className="ml-1 transition-all inline-flex h-4 w-4 items-center justify-center rounded-full text-white hover:bg-orange-200 hover:text-orange-500 focus:bg-orange-500 focus:text-white focus:outline-none"
                         onClick={() => {
                             setTags(tags.filter((t) => t !== tag));
                         }}
@@ -31,7 +34,7 @@ const BadgeTag = ({ tag, icon }) => {
                         </svg>
                     </button>
                 }
-            </span>
+            </a>
         </>
     )
 }

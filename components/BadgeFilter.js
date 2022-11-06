@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { allFilters } from '../assets/filters'
 import { useApp } from '../context'
 
 
@@ -10,11 +11,12 @@ const BadgeFilter = ({ filter, icon }) => {
         setHasIcon(icon)
     }, [icon])
 
-
     return (
         <>
-            <span className={`inline-flex items-center rounded-full border border-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-orange-600 ${hasIcon ? "text-sm" : "text-xs"}`}>
-                {filter}
+
+            <a className={`inline-flex items-center rounded-full whitespace-nowrap border border-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-orange-600 ${hasIcon ? "text-sm" : "text-xs"}`}
+                href={!hasIcon ? `filter/${filter}` : undefined}>
+                {allFilters[filter].label}
                 {hasIcon &&
                     <button
                         type="button"
@@ -29,7 +31,7 @@ const BadgeFilter = ({ filter, icon }) => {
                         </svg>
                     </button>
                 }
-            </span>
+            </a>
         </>
     )
 }

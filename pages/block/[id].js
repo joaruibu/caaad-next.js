@@ -8,6 +8,7 @@ import Image from "next/image";
 import { createDesCription } from "../../helpers";
 import Link from "next/link";
 import BadgeTag from "../../components/BadgeTag";
+import FilterTag from "../../components/BadgeFilter"
 
 
 
@@ -48,15 +49,22 @@ const BlockPage = ({ success, error, block }) => {
                 {tags.map((tag, index) => {
                   return <BadgeTag
                     key={index}
-                    tag={tag.label}
+                    tag={tag}
                     icon={false}
                   />
 
                 })
                 }
-                {filters.map((filter, index) => (
-                  <a className=" p-1 rounded-md font-normal cursor-pointer whitespace-nowrap text-xs border border-orange-600 text-orange-600" key={index}>{filter.label}</a>
-                ))}
+                {filters.map((filter, index) => {
+                  return <FilterTag
+                    key={index}
+                    filter={filter}
+                    icon={false}
+                  />
+
+                })
+                }
+
               </div>
             </div>
             <Link href={dwg} passHref >
@@ -90,7 +98,7 @@ export async function getServerSideProps({ params }) {
     const block = await Block.findById(params.id).lean()
     block._id = ` ${block._id}`
     if (!block)
-      return { props: { success: false, error: 'Película no encontrada!' } }
+      return { props: { success: false, error: 'Bloque no encontrada!' } }
 
     return {
       props: { success: true, block }

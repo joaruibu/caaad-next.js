@@ -6,6 +6,7 @@ import BadgeFilter from './BadgeFilter'
 
 const SearchBar = () => {
     const { tags, filters, setFilters, setTags, query, setQuery, setSearch } = useApp()
+    console.log(2222, tags)
     const router = useRouter();
     return (
         <>
@@ -29,42 +30,41 @@ const SearchBar = () => {
                 <i type="submit" className="fa-solid fa-magnifying-glass text-orange-600 absolute top-1 right-3 p-3 cursor-pointer"></i>
 
             </form>
-            <div className='flex gap-6'>
-                <div className='inline-flex  w-1/2 flex-col mt-4 overflow-hidden overflow-x-auto'>
-                    <div className=' h-6 mr-6 w-fit inline-flex gap-2 mb-3'>
-                        {router.route === '/' &&
-                            (filters.map((filter, index) => {
-                                return <BadgeFilter
-                                    key={index}
-                                    filter={filter}
-                                    icon={true}
-                                />
-                            }))
-                        }
-                    </div>
-                    {filters.length > 2 && <a
-                        className='cursor-pointer text-xs block w-full text-gray-500 hover:underline'
-                        onClick={() => setFilters([])}
-                    >Delete all filters</a>}
-                </div>
-                <div className='inline-flex w-1/2  flex-col mt-4 '>
-                    <div className='h-6  inline-flex gap-2 mb-3 scrollbar-hide overflow-hidden overflow-x-auto'>
-                        {router.route === '/' &&
-                            (tags.map((tag, index) => {
-                                return <BadgeTag
-                                    key={index}
-                                    tag={tag}
-                                    icon={true}
-                                />
-                            }))
-                        }
-                    </div>
-                    {tags.length > 2 && <a
-                        className='cursor-pointer text-xs block w-full text-gray-500 hover:underline'
-                        onClick={() => setTags([])}
-                    >Delete all Tags</a>}
-                </div>
 
+            {/* <div className='mt-4'>
+                <div className='flex flex-wrap gap-2 mb-1 '>
+                    {router.route === '/' &&
+                        (filters.map((filter, index) => {
+                            return <BadgeFilter
+                                key={index}
+                                filter={filter}
+                                icon={true}
+                            />
+                        }))
+                    }
+                </div>
+                <a
+                    className='cursor-pointer text-xs w-fit text-gray-500 hover:underline'
+                    onClick={() => setFilters([])}
+                >Delete all filters</a>
+            </div> */}
+
+            <div className='mt-4 min-h-[60px]'>
+                <div className='flex flex-wrap gap-2 mb-1 '>
+                    {router.route === '/' &&
+                        (tags.map((tag, index) => {
+                            return <BadgeTag
+                                key={index}
+                                tag={tag}
+                                icon={true}
+                            />
+                        }))
+                    }
+                </div>
+                {tags.length > 0 && <a
+                    className='cursor-pointer text-xs w-fit text-gray-500 hover:underline'
+                    onClick={() => setTags([])}
+                >Delete all Tags</a>}
             </div>
 
 

@@ -10,31 +10,30 @@ export const footerLinks = {
 
     ],
     personas: [
-        { name: 'Descargar bloques de personas gratis', href: '#' },
-        { name: 'Descargar bloques de personas sentadas gratis', href: '#' },
-        { name: 'Descargar bloques de personas caminando gratis', href: '#' },
-        { name: 'Descargar bloques de personas en oficina gratis', href: '#' },
+        { name: 'Descargar bloques de personas gratis', href: '/category/people' },
+        { name: 'Descargar bloques de personas sentadas gratis', href: '/tag/sitting' },
+        { name: 'Descargar bloques de personas caminando gratis', href: '/tag/walking' },
+        { name: 'Descargar bloques de niños gratis', href: '/tag/children' },
     ],
     autos: [
-
-        { name: 'Descargar bloques de coches gratis', id: allTags.car, href: '#' },
-        { name: 'Descargar bloques de motos gratis', href: '#' },
-        { name: 'Descargar bloques de autos gratis', href: '#' },
-        { name: 'Descargar bloques de camiones gratis', href: '#' },
-        { name: 'Descargar bloques de tractores gratis', href: 'www.google.es' },
-
+        { name: 'Descargar bloques de vehiculos gratis', href: '/category/vehicle' },
+        { name: 'Descargar bloques de motos gratis', href: '/tag/moto' },
+        { name: 'Descargar bloques de autos gratis', href: '/tag/car' },
+        { name: 'Descargar bloques de camiones gratis', href: '/tag/truck' },
+        { name: 'Descargar bloques de autobuses gratis', href: '/tag/bus' },
     ],
     baños: [
-        { name: 'Descargar bloques de lavabos gratis', href: '#' },
-        { name: 'Descargar bloques de inodoros gratis', href: '#' },
-        { name: 'Descargar bloques de duchas gratis', href: '#' },
-        { name: 'Descargar bloques de bañeras gratis', href: '#' },
+        { name: 'Descargar bloques de baños gratis', href: '/category/bathroom' },
+        { name: 'Descargar bloques de lavabos gratis', href: '/tag/basin' },
+        { name: 'Descargar bloques de inodoros gratis', href: '/tag/toilte' },
+        { name: 'Descargar bloques de duchas gratis', href: '/tag/shower' },
+        { name: 'Descargar bloques de bañeras gratis', href: '/tag/bathtub' },
     ],
     viviendas: [
-        { name: 'Descargar bloques de sofas gratis', href: '#' },
-        { name: 'Descargar bloques de camas gratis', href: '#' },
-        { name: 'Descargar bloques de sillones gratis', href: '#' },
-        { name: 'Descargar bloques de mesas gratis', href: '#' },
+        { name: 'Descargar bloques de salón gratis', href: '/category/livingRoom' },
+        { name: 'Descargar bloques de sofas gratis', href: '/tag/sofa' },
+        { name: 'Descargar bloques de butacas gratis', href: '/tag/seat' },
+        { name: 'Descargar bloques de mesa de centro gratis', href: '/tag/coffeeTable' },
     ],
     social: [
         {

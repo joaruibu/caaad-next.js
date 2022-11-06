@@ -2,20 +2,19 @@ import React, { useState } from 'react'
 
 import { Disclosure } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
-import { allCategories } from '../assets/categories'
+import { allCategories, allTags } from '../assets/categories'
 import { allFilters } from '../assets/filters'
 import { orderCategories } from '../helpers'
 
 import ErrorMessage from './ErrorMessage'
 import SuccessMessagge from './SuccessMessage'
 
-
-
 const FormAddBlock = () => {
 
     const [form, setForm] = useState({
         title: '',
-        category: '',
+        description: '',
+        categories: [],
         tags: [],
         filters: [],
         img: '',
@@ -24,8 +23,10 @@ const FormAddBlock = () => {
         downloads: 0,
         free: true
     })
+
     const [checkedTags, setChekedTags] = useState([]);
     const [checkedFilters, setChekedFilters] = useState([])
+    const [checkedCategories, setCheckedCategories] = useState([])
     const [file, setFileUpload] = useState('')
 
     const [isImgUpload, setIsImgUpload] = useState(false)
@@ -45,48 +46,61 @@ const FormAddBlock = () => {
         })
     }
 
-    const addOrRemoveCheck = (e, value, label) => {
-        if (allFilters.find(filter => filter.value === value)) {
+    const addOrRemoveCheck = (key, category) => {
 
+        if (Object.keys(allFilters).includes(key)) {
             const selectedFilters = [...checkedFilters]
 
-            if (e.target.checked) {
-                selectedFilters.push({ value, label })
+            if (!checkedFilters.includes(key)) {
+                selectedFilters.push(key)
                 setChekedFilters(selectedFilters)
                 setForm({
                     ...form,
                     filters: selectedFilters,
                 })
             } else {
-                const filterFilters = selectedFilters.filter(filter => filter.value !== value)
+                const filterFilters = selectedFilters.filter((f) => f !== key)
                 setChekedFilters(filterFilters)
                 setForm({
                     ...form,
                     filters: filterFilters,
                 })
             }
-
         } else {
-
             const selectedTags = [...checkedTags]
+            const selectedCategories = [...checkedCategories]
 
-            if (e.target.checked) {
-                selectedTags.push({ value, label })
+            if (!checkedTags.includes(key)) {
+
+                selectedTags.push(key)
+                if (!selectedCategories.includes(category)) {
+                    selectedCategories.push(category)
+                }
+
                 setChekedTags(selectedTags)
+                setCheckedCategories(selectedCategories)
+                console.log(selectedCategories)
                 setForm({
                     ...form,
                     tags: selectedTags,
+                    categories: selectedCategories
                 })
             } else {
-                const filterTags = selectedTags.filter(tag => tag.value !== value)
+                const filterTags = selectedTags.filter(t => t !== key)
+                const filterCategories = selectedCategories.filter(f => f !== category)
+
                 setChekedTags(filterTags)
+                setCheckedCategories(filterCategories)
+
                 setForm({
                     ...form,
                     tags: filterTags,
+                    categories: filterCategories
                 })
             }
         }
     }
+
     const obj = {
         image: {
             preset: 'acusc17i',
@@ -97,7 +111,8 @@ const FormAddBlock = () => {
             ext: 'dwg'
         }
     }
-    const uploadImg = async (type) => {
+
+    const uploadFile = async (type) => {
         if (file === '') return
         if (('ext' in obj[type] && file.name.split('.')[1] !== 'dwg') || ('type' in obj[type] && file.type !== obj[type].type)) {
             setIsTypeError(true)
@@ -130,6 +145,23 @@ const FormAddBlock = () => {
     }
 
 
+    const publishPinterestPost = async () => {
+        console.log('bloquepublicado')
+        let _datos = {
+            "titulo": form.title,
+            "description": form.description,
+            "img": form.img,
+            "url": `www.caaad.pro/bloque/`
+        }
+
+        await fetch('https://hooks.zapier.com/hooks/catch/13798738/bxpsfni/', {
+            method: "POST",
+            body: JSON.stringify(_datos),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+            mode: 'no-cors'
+        })
+
+    }
 
     const postData = async (form) => {
         try {
@@ -141,27 +173,32 @@ const FormAddBlock = () => {
                 body: JSON.stringify(form)
             })
             const data = await res.json()
+
             data.success ? setIsSuccessUpload(true) : setIsErrorUpload(true)
+
 
         } catch (error) {
             console.log(4, error)
         }
     }
-    const handleSumbit = e => {
+    const handleSumbit = (e) => {
         e.preventDefault()
         console.log(form)
-        return
+        publishPinterestPost()
         postData(form)
-        setForm([])
+
+        setTimeout(() => {
+            location.reload()
+        }, 1000);
+
     }
 
     return (
         <>
-
             <h1 className='text-center font-extrabold tracking-tight text-3xl sm:text-6xl p-6 pb-12'>
                 Nuevo Bloque
             </h1>
-            <form onSubmit={handleSumbit}>
+            <form onSubmit={(e) => handleSumbit(e)}>
                 <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
                 <div className="mt-1">
                     <input
@@ -191,19 +228,19 @@ const FormAddBlock = () => {
                 <fieldset>
                     <legend className="text-lg font-medium text-gray-900">Filters</legend>
                     <div className="mt-4 mb-6 divide-y divide-gray-200 border-t border-b border-gray-200 flex flex-wrap">
-
-                        {allFilters.map((filter, filterIdx) => {
-                            return <div key={filterIdx} className="flex flex-wrap mb-6 pr-6">
+                        {Object.values(allFilters).map((filter, index) => {
+                            return <div key={index} className="flex flex-wrap mb-6 pr-6">
                                 <div className="min-w-0 text-sm">
-                                    <label htmlFor={`tag-${filter.id}`} className="select-none font-medium text-gray-700">
+                                    <label htmlFor={Object.keys(allFilters)[index]} className="select-none font-medium text-gray-700">
                                         {filter.label}
                                     </label>
                                 </div>
                                 <div className="ml-1 flex h-5 items-center">
                                     <input
-                                        onClick={(e) => addOrRemoveCheck(e, filter.value, filter.label)}
+                                        onClick={() => addOrRemoveCheck(Object.keys(allFilters)[index])}
                                         value={filter.value}
-                                        name={`tag-${filter.id}`}
+                                        name={Object.keys(allFilters)[index]}
+                                        id={Object.keys(allFilters)[index]}
                                         type="checkbox"
                                         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                     />
@@ -211,17 +248,16 @@ const FormAddBlock = () => {
                             </div>
                         }
                         )}
-
                     </div>
                 </fieldset>
                 {orderCategories(allCategories)
                     .map((category) => (
-                        <Disclosure key={category.id} className="border-t border-gray-200 px-4 py-6">
+                        <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6">
                             {({ open }) => (
                                 <>
                                     <h3 className="-mx-2 -my-3 flow-root ">
                                         <Disclosure.Button className="px-2 py-2  w-full flex items-center justify-between text-gray-400">
-                                            <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{category.name}</span>
+                                            <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{category.label}</span>
                                             <span className="flex items-center text-orange-600  hover:rotate-45 duration-75">
                                                 {open ? (
                                                     <MinusSmIcon className="h-5 w-5" aria-hidden="true" />
@@ -234,24 +270,18 @@ const FormAddBlock = () => {
                                     </h3>
                                     <Disclosure.Panel className="pt-3 pl-2 pb-6">
                                         <div className="space-y-2">
-                                            {category.tags.map((tag, optionIdx) => (
-                                                <div key={optionIdx} className="flex items-center">
+                                            {category.tags.map((tag, index) => (
+                                                <div key={index} className="flex items-center">
                                                     <input
-                                                        id={Object.getOwnPropertyNames(category.tags[optionIdx])}
+                                                        id={tag.value}
                                                         type="checkbox"
+                                                        name={tag.value}
                                                         defaultValue={tag.label}
-                                                        checked={checkedTags.some(t => t.value === tag.value)}
                                                         className="h-3 w-3 border-gray-300 rounded cursor-pointer"
-                                                        onClick={() => {
-                                                            if (!checkedTags.some(t => t.value === tag.value)) {
-                                                                setChekedTags([...checkedTags, { value: tag.value, label: tag.label }])
-                                                            } else {
-                                                                setChekedTags(checkedTags.filter(t => t.value !== tag.value))
-                                                            }
-                                                        }}
+                                                        onClick={() => addOrRemoveCheck(tag.value, category.value)}
                                                     />
                                                     <label
-                                                        htmlFor={`filter-${category.id}-${optionIdx}`}
+                                                        htmlFor={tag.value}
                                                         className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
                                                     >
                                                         {tag.label}
@@ -273,11 +303,11 @@ const FormAddBlock = () => {
                 {isTypeError && <ErrorMessage>Hay un error con tu formato de archivo</ErrorMessage>}
                 <div className='flex justify-between items-center mb-3'>
                     <input className='flex-1' type="file" placeholder='Subir imagen' onChange={(e) => setFileUpload(e.target.files[0])} />
-                    <a className={`border ${isImgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadImg('image')}>{isImgUpload ? 'Imagen subida ✌️' : 'Subir imagen'}</a>
+                    <a className={`border ${isImgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadFile('image')}>{isImgUpload ? 'Imagen subida ✌️' : 'Subir imagen'}</a>
                 </div>
                 <div className='flex justify-between items-center'>
                     <input className='flex-1' type="file" placeholder='Subir dwg' onChange={(e) => setFileUpload(e.target.files[0])} />
-                    <a className={`border ${isDwgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadImg('raw')}>{isDwgUpload ? 'Dwg subido ✌️' : 'Subir dwg'}</a>
+                    <a className={`border ${isDwgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadFile('raw')}>{isDwgUpload ? 'Dwg subido ✌️' : 'Subir dwg'}</a>
                 </div>
 
 
@@ -287,6 +317,8 @@ const FormAddBlock = () => {
 
             </form>
         </>
+
+
     )
 }
 
