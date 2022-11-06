@@ -5,7 +5,7 @@ import Block from "../../models/Block";
 import Layout from "../../components/Layout";
 import AddSidebar from "../../components/AddSidebar";
 import Image from "next/image";
-import { createDesCription } from "../../helpers";
+
 import Link from "next/link";
 import BadgeTag from "../../components/BadgeTag";
 import FilterTag from "../../components/BadgeFilter"
@@ -13,11 +13,8 @@ import FilterTag from "../../components/BadgeFilter"
 
 
 const BlockPage = ({ success, error, block }) => {
-  const { _id, category, date, description, downloads, dwg, filters, img, tags, title } = block
+  const { dwg, filters, img, tags, title } = block
 
-  console.log(1, success)
-  console.log(2, error)
-  console.log(3, block)
   if (!success) {
     return <urlNotFound error={error}></urlNotFound>
   }
@@ -40,7 +37,7 @@ const BlockPage = ({ success, error, block }) => {
             </div>
             <div className="mb-4">
               <p className="font-bold block w-full">Description: </p>
-              {/* <p className=" font-normal text-xs text-gray-500">{createDesCription(tags, category)}</p> */}
+
             </div>
             <div className="mb-4">
               <p className="mb-3 font-bold block w-full">Tags: </p>
@@ -70,11 +67,7 @@ const BlockPage = ({ success, error, block }) => {
             <Link href={dwg} passHref >
               <a className="w-full block text-center cursor-pointer p-3 bg-orange-600 text-white">Descagar bloque </a>
             </Link>
-
-
           </div>
-
-
         </div>
 
         <div className='hidden md:block  md:col-start-3'>
