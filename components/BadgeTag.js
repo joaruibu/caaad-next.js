@@ -19,7 +19,7 @@ const BadgeTag = ({ tag, icon }) => {
             <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
                 href={!hasIcon ? `tag/${tag}` : undefined}
             >
-                {allTags[tag].label}
+                {allTags.fitler(ele => ele.value === tag).label}
                 {hasIcon &&
                     <button
                         type="button"
