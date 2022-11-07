@@ -1,12 +1,3 @@
-// export const allFilters = [
-//     { value: 'alzado', label: 'Alzado', checked: false },
-//     { value: 'planta', label: 'Planta', checked: false },
-//     { value: 'perfil', label: 'Perfil', checked: false },
-//     { value: 'perspectiva', label: 'Perspectiva', checked: false },
-//     { value: 'linea', label: 'Línea', checked: false },
-//     { value: 'relleno', label: 'Relleno', checked: false },
-// ]
-
 
 export const allFilters = {
     elevation: { value: 'elevation', label: 'Alzado' },
@@ -17,3 +8,13 @@ export const allFilters = {
     solid: { value: 'solid', label: 'Relleno' },
 }
 
+// export const seoTags = [
+//     {label:'bloque cad'},
+//     {label:'bloque autocad'},
+//     {label:'bloque 2D'},
+//     {label:'bloque DWG'},
+//     {label:'bloque de autocad'},
+//     {label:'bloque gratuito'},
+//     {label:'descargar bloque cad'},
+//     {label:'dibujo cad'},
+// ]
