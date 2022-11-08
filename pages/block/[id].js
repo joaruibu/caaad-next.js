@@ -31,8 +31,8 @@ const BlockPage = ({ success, error, block }) => {
           <AddSidebar />
         </div>
         <div className='md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12'>
-          <div className="border border-orange-600 rounded-3xl overflow-hidden bg-white grid place">
-            <Image layout="responsive" width={250} height={165} alt={`Bloque de autocad ${title}`} src={img} priority />
+          <div className="relative border border-orange-600 rounded-3xl overflow-hidden">
+            <Image layout="fill" width={250} height={165} alt={`Bloque de autocad ${title}`} src={img} priority />
           </div>
           <div>
             <div className="mb-4">
