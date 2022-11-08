@@ -9,7 +9,7 @@ const SearchBar = () => {
     const router = useRouter();
     return (
         <>
-            <form className='relative'
+            <form className='relative mb-9 sm:mb-0'
                 onSubmit={(e) => { e.preventDefault(); setSearch(query); setTags([]); setFilters([]) }}>
 
                 <input
@@ -48,7 +48,7 @@ const SearchBar = () => {
                 >Delete all filters</a>
             </div> */}
 
-            <div className='mt-4 min-h-[60px]'>
+            <div className='hidden sm:block mt-4 min-h-[60px]'>
                 <div className='flex flex-wrap gap-2 mb-1 '>
                     {router.route === '/' &&
                         (tags.map((tag, index) => {
