@@ -4,9 +4,10 @@ import { Disclosure } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
 
 import { allFilters } from '../assets/filters'
+import { allTags } from '../assets/tags'
+import { allCategories } from '../assets/categories'
 import { orderCategories } from '../helpers'
 import { useApp } from '../context'
-import { allCategories, allTags } from '../assets/categories'
 
 
 

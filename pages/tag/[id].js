@@ -1,11 +1,13 @@
 
 import React from 'react'
-import { allTags } from '../../assets/categories';
+import { allTags } from '../../assets/tags';
+
 import AddSidebar from '../../components/AddSidebar';
 import BlockList from '../../components/BlockList';
 import Layout from '../../components/Layout';
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
+
 
 const TagPage = ({ blocksFilterByTag, params }) => {
     console.log(blocksFilterByTag)

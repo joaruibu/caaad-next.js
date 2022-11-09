@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { allTags } from '../assets/tags'
 import { useApp } from '../context'
-import { allTags } from '../assets/categories'
+
 
 
 

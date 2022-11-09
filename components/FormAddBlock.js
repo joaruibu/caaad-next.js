@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 
 import { Disclosure } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
-import { allCategories, allTags } from '../assets/categories'
+import { allCategories } from '../assets/categories'
 import { allFilters } from '../assets/filters'
+import { allTags } from '../assets/tags'
 import { orderCategories } from '../helpers'
 
 import ErrorMessage from './ErrorMessage'

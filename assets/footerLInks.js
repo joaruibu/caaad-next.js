@@ -1,4 +1,4 @@
-import { allTags } from "./categories";
+
 
 export const footerLinks = {
     web: [
