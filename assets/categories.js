@@ -18,18 +18,18 @@ export const allTags = [
     { value: 'miguelMila', label: 'Miguel Milá' },
     { value: 'vernerPanton', label: 'Verner Panton' },
 
-    // bathroom: { value: 'bathroom', label: 'BAÑO' },
-    // bathtub: { value: 'bathtub', label: 'Bañeras' },
-    // bidet: { value: 'bidet', label: 'Bidets' },
-    // shower: { value: 'shower', label: 'Duchas' },
-    // mirror: { value: 'mirror', label: 'Espejos' },
-    // faucet: { value: 'faucet', label: 'Griferías' },
-    // showerHead: { value: 'showerHead', label: 'Griferías ducha' },
-    // toilet: { value: 'toilet', label: 'Inodoros WC' },
-    // basin: { value: 'basin', label: 'Lavabo' },
-    // washingMachine: { value: 'washingMachine', label: 'Lavadoras' },
-    // urinary: { value: 'urinario', label: 'Urinarios' },
-    // bathOthers: { value: 'bathOthers', label: 'Otros' },
+    { value: 'bathroom', label: 'BAÑO' },
+    { value: 'bathtub', label: 'Bañeras' },
+    { value: 'bidet', label: 'Bidets' },
+    { value: 'shower', label: 'Duchas' },
+    { value: 'mirror', label: 'Espejos' },
+    { value: 'faucet', label: 'Griferías' },
+    { value: 'showerHead', label: 'Griferías ducha' },
+    { value: 'toilet', label: 'Inodoros WC' },
+    { value: 'basin', label: 'Lavabo' },
+    { value: 'washingMachine', label: 'Lavadoras' },
+    { value: 'urinario', label: 'Urinarios' },
+    { value: 'bathOthers', label: 'Otros' },
 
     // bedroom: { value: 'bedroom', label: 'DORMITORIO' },
     // bed: { value: 'bed', label: 'Camas' },
@@ -120,13 +120,13 @@ export const allTags = [
     // pendantLight: { value: 'pendantLight', label: 'Lámparas colgante' },
     // lightingOther: { value: 'lightingOther', label: 'Otros' },
 
-    // livingRoom: { value: 'livingRoom', label: 'SALON' },
-    // sofaWithChest: { value: 'sofaWithChest', label: 'Sofás con canapes' },
-    // sofa: { value: 'sofa', label: 'Sofás' },
-    // groupsLivingRoom: { value: 'groupsLivingRoom', label: 'Conjuntos de salón' },
-    // coffeeTable: { value: 'coffeeTable', label: 'Mesas de centro' },
-    // seat: { value: 'seat', label: 'Butacas' },
-    // bench: { value: 'bench', label: 'Bancos' },
+    { value: 'livingRoom', label: 'SALON' },
+    { value: 'sofaWithChest', label: 'Sofás con canapes' },
+    { value: 'sofa', label: 'Sofás' },
+    { value: 'groupsLivingRoom', label: 'Conjuntos de salón' },
+    { value: 'coffeeTable', label: 'Mesas de centro' },
+    { value: 'seat', label: 'Butacas' },
+    { value: 'bench', label: 'Bancos' },
 
     // office: { value: 'office', label: 'OFICINA' },
     // meetingTable: { value: 'meetingTable', label: 'Mesas de reuniones' },
@@ -204,8 +204,7 @@ export const allTags = [
     // groupTableAndChair: { value: 'groupTableAndChair', label: 'Conjuntos salón' },
     // stool: { value: 'stool', label: 'Taburetes' },
     // table: { value: 'table', label: 'Mesas' },
-    // dinningRoomOthers: { value: 'dinningRoomOthers', label: 'Otros' },
-
+    // dinningRoomOthers: { value: 'dinningRoomOthers', label: 'Otros' }
 ]
 
 export const allCategories = [
@@ -218,26 +217,19 @@ export const allCategories = [
     {
         value: 'animals',
         label: 'Animales',
-        tags:
-            ['animals', 'cat', 'dog', 'horse', 'animalOthers']
+        tags: ['animals', 'cat', 'dog', 'horse', 'animalOthers']
     },
     {
         value: 'author-furniture',
         label: 'Muebles de Autor',
-        tags: ['authors', 'alvarAalto', 'arneJacobsen', 'carlesRayEames', 'frankGehry', 'gerryRietveld', 'jeanProuvee', 'leCorbusier', 'miesVanDerRohe', 'miguelMila', 'vernerPanton'
-        ]
+        tags: ['authors', 'alvarAalto', 'arneJacobsen', 'carlesRayEames', 'frankGehry', 'gerryRietveld', 'jeanProuvee', 'leCorbusier', 'miesVanDerRohe', 'miguelMila', 'vernerPanton']
     },
-    // {
-    //     value: 'bathroom',
-    //     label: 'Baño',
-    //     tags: [
-    //         allTags.bathroom, allTags.bathtub, allTags.bidet,
-    //         allTags.shower, allTags.mirror, allTags.faucet,
-    //         allTags.showerHead, allTags.toilet, allTags.basin,
-    //         allTags.washingMachine, allTags.urinary, allTags.bathOthers,
-    //     ],
+    {
+        value: 'bathroom',
+        label: 'Baño',
+        tags: ["bathroom", "bathtub", "bidet", "shower", "mirror", "faucet", "showerHead", "toilet", "basin", "washingMachine", "urinary", "bathOthers"],
 
-    // },
+    },
     // {
     //     value: 'bedroom',
     //     label: 'Dormitorio',

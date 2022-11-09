@@ -16,7 +16,8 @@ const BadgeFilter = ({ filter, icon }) => {
 
             <a className={`inline-flex items-center rounded-full whitespace-nowrap border border-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-orange-600 ${hasIcon ? "text-sm" : "text-xs"}`}
                 href={!hasIcon ? `/filter/${filter}` : undefined}>
-                {allFilters[filter].label}
+
+                {allFilters.filter(each => each.value === filter)[0].label}
                 {hasIcon &&
                     <button
                         type="button"

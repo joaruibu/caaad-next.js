@@ -13,13 +13,12 @@ const BadgeTag = ({ tag, icon }) => {
 
     }, [icon])
 
-
     return (
         <>
             <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
                 href={!hasIcon ? `/tag/${tag}` : undefined}
             >
-                {allTags.fitler(ele => ele.value === tag).label}
+                {allTags.filter(each => each.value === tag)[0].label}
                 {hasIcon &&
                     <button
                         type="button"

@@ -6,7 +6,7 @@ import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
 import { allFilters } from '../assets/filters'
 import { orderCategories } from '../helpers'
 import { useApp } from '../context'
-import { allCategories } from '../assets/categories'
+import { allCategories, allTags } from '../assets/categories'
 
 
 
@@ -17,7 +17,7 @@ const TagSidebar = () => {
         <>
             <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>
             <div className="grid grid-cols-2 mb-6">
-                {Object.values(allFilters || {}).map((filter) => (
+                {allFilters.map((filter) => (
                     <div key={filter.value} className="flex items-center m-1 mr-3">
                         <input
                             id={`filter-${filter.value}`}
@@ -50,7 +50,6 @@ const TagSidebar = () => {
                 .map((category) => (
                     <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6">
                         {({ open }) => (
-
                             <>
                                 <h3 className="-mx-2 -my-3 flow-root ">
                                     <Disclosure.Button className="px-2 py-2  w-full flex items-center justify-between text-gray-400">
@@ -66,47 +65,47 @@ const TagSidebar = () => {
                                 </h3>
                                 <Disclosure.Panel className="pt-3 pl-2 pb-6">
                                     <div className="space-y-2">
-                                        {category.tags.map((tag, optionIdx) => (
-                                            <div key={optionIdx} className="flex items-center">
+                                        {allTags.
+                                            filter(each => category.tags.includes(each.value))
+                                            .map(((tag, optionIdx) => (
+                                                <div key={optionIdx} className="flex items-center">
+                                                    <input
+                                                        id={`filter-${category.value}-${optionIdx}`}
+                                                        type="checkbox"
+                                                        defaultValue={tag.value}
+                                                        checked={tags.includes(tag.value)}
+                                                        className="h-3 w-3 border-gray-300 rounded cursor-pointer"
+                                                        onChange={() => {
+                                                            setSearch('')
+                                                            setQuery('')
+                                                            if (!tags.includes(tag.value)) {
+                                                                setTags([...tags, tag.value]);
+                                                                //JAVIER - 
+                                                                //1. si hago click en el primer elemento del array de tags de cada categoría quiero añadir a tags
+                                                                //todos los tags.label que contiene esa categoria.
 
-                                                <input
-                                                    id={`filter-${category.value}-${optionIdx}`}
-                                                    type="checkbox"
-                                                    defaultValue={tag.value}
-                                                    checked={tags.includes(tag.value)}
+                                                                //2. Estando selecionado el priemr elemento del array, y clicko en otro tag de ese mismo array, 
+                                                                //se deseleciona el primer elemento del array
 
+                                                                // if (tag.label === category.tags[0].label) {
+                                                                //     category.tags.map(tag => setTags([...tags, tag.label]) )
+                                                                // }
+                                                            } else {
 
-                                                    className="h-3 w-3 border-gray-300 rounded cursor-pointer"
-                                                    onChange={() => {
-                                                        setSearch('')
-                                                        setQuery('')
-                                                        if (!tags.includes(tag.value)) {
-                                                            setTags([...tags, tag.value]);
-                                                            //JAVIER - 
-                                                            //1. si hago click en el primer elemento del array de tags de cada categoría quiero añadir a tags
-                                                            //todos los tags.label que contiene esa categoria.
+                                                                // 3. Si deselecciono el primer elemento del array, se deselecciona todos los tags de esa categria
+                                                                setTags(tags.filter((t) => t !== tag.value));
+                                                            }
+                                                        }}
+                                                    />
+                                                    <label
+                                                        htmlFor={`filter-${category.value}-${optionIdx}`}
+                                                        className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
+                                                    >
+                                                        {tag.label}
+                                                    </label>
+                                                </div>
+                                            )))}
 
-                                                            //2. Estando selecionado el priemr elemento del array, y clicko en otro tag de ese mismo array, 
-                                                            //se deseleciona el primer elemento del array
-
-                                                            // if (tag.label === category.tags[0].label) {
-                                                            //     category.tags.map(tag => setTags([...tags, tag.label]) )
-                                                            // }
-                                                        } else {
-
-                                                            // 3. Si deselecciono el primer elemento del array, se deselecciona todos los tags de esa categria
-                                                            setTags(tags.filter((t) => t !== tag.value));
-                                                        }
-                                                    }}
-                                                />
-                                                <label
-                                                    htmlFor={`filter-${category.value}-${optionIdx}`}
-                                                    className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
-                                                >
-                                                    {tag.label}
-                                                </label>
-                                            </div>
-                                        ))}
                                     </div>
                                 </Disclosure.Panel>
                             </>

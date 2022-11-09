@@ -46,33 +46,37 @@ const FormAddBlock = () => {
         })
     }
 
-    const addOrRemoveCheck = (key, category) => {
+    const addOrRemoveCheck = (value, category) => {
+        //Estamos clikando un filtro
+        if (allFilters.some(filter => filter.value === value)) {
 
-        if (Object.keys(allFilters || {}).includes(key)) {
             const selectedFilters = [...checkedFilters]
 
-            if (!checkedFilters.includes(key)) {
-                selectedFilters.push(key)
+            if (!checkedFilters.includes(value)) {
+                selectedFilters.push(value)
                 setChekedFilters(selectedFilters)
                 setForm({
                     ...form,
                     filters: selectedFilters,
                 })
             } else {
-                const filterFilters = selectedFilters.filter((f) => f !== key)
+                const filterFilters = selectedFilters.filter((each) => each !== value)
                 setChekedFilters(filterFilters)
                 setForm({
                     ...form,
                     filters: filterFilters,
                 })
             }
+
         } else {
+            //Estamos clikando un tag
+
             const selectedTags = [...checkedTags]
             const selectedCategories = [...checkedCategories]
 
-            if (!checkedTags.includes(key)) {
+            if (!checkedTags.includes(value)) {
 
-                selectedTags.push(key)
+                selectedTags.push(value)
                 if (!selectedCategories.includes(category)) {
                     selectedCategories.push(category)
                 }
@@ -86,8 +90,8 @@ const FormAddBlock = () => {
                     categories: selectedCategories
                 })
             } else {
-                const filterTags = selectedTags.filter(t => t !== key)
-                const filterCategories = selectedCategories.filter(f => f !== category)
+                const filterTags = selectedTags.filter(t => t !== value)
+                const filterCategories = selectedCategories.filter(each => each !== category)
 
                 setChekedTags(filterTags)
                 setCheckedCategories(filterCategories)
@@ -184,7 +188,8 @@ const FormAddBlock = () => {
     const handleSumbit = (e) => {
         e.preventDefault()
         console.log(form)
-        publishPinterestPost()
+        return
+        // publishPinterestPost()
         postData(form)
 
         setTimeout(() => {
@@ -225,31 +230,34 @@ const FormAddBlock = () => {
                     />
 
                 </div>
-                <fieldset>
-                    <legend className="text-lg font-medium text-gray-900">Filters</legend>
-                    <div className="mt-4 mb-6 divide-y divide-gray-200 border-t border-b border-gray-200 flex flex-wrap">
-                        {Object.values(allFilters || {}).map((filter, index) => {
-                            return <div key={index} className="flex flex-wrap mb-6 pr-6">
-                                <div className="min-w-0 text-sm">
-                                    <label htmlFor={Object.keys(allFilters || {})[index]} className="select-none font-medium text-gray-700">
-                                        {filter.label}
-                                    </label>
-                                </div>
-                                <div className="ml-1 flex h-5 items-center">
-                                    <input
-                                        onClick={() => addOrRemoveCheck(Object.keys(allFilters || {})[index])}
-                                        value={filter.value}
-                                        name={Object.keys(allFilters || {})[index]}
-                                        id={Object.keys(allFilters || {})[index]}
-                                        type="checkbox"
-                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                    />
-                                </div>
+
+                <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>
+                <div className="mt-4 mb-6 divide-y divide-gray-200 border-t border-b border-gray-200 flex flex-wrap">
+
+                    {allFilters.map((filter, index) => {
+                        return <div key={index} className="flex flex-wrap mb-6 pr-6">
+                            <div className="min-w-0 text-sm">
+                                <label htmlFor={`filter-${filter.value}`} className="select-none font-medium text-gray-700">
+                                    {filter.label}
+                                </label>
                             </div>
-                        }
-                        )}
-                    </div>
-                </fieldset>
+                            <div className="ml-1 flex h-5 items-center">
+                                <input
+                                    onClick={() => addOrRemoveCheck(filter.value)}
+                                    value={filter.value}
+                                    name={`filter-${filter.value}`}
+                                    id={`filter-${filter.value}`}
+                                    type="checkbox"
+                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                />
+                            </div>
+                        </div>
+                    }
+                    )}
+                </div>
+
+                <h2 className='font-bold border-b border-b-black mb-3'>Categories</h2>
+
                 {orderCategories(allCategories)
                     .map((category) => (
                         <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6">
@@ -270,24 +278,27 @@ const FormAddBlock = () => {
                                     </h3>
                                     <Disclosure.Panel className="pt-3 pl-2 pb-6">
                                         <div className="space-y-2">
-                                            {category.tags.map((tag, index) => (
-                                                <div key={index} className="flex items-center">
-                                                    <input
-                                                        id={tag.value}
-                                                        type="checkbox"
-                                                        name={tag.value}
-                                                        defaultValue={tag.label}
-                                                        className="h-3 w-3 border-gray-300 rounded cursor-pointer"
-                                                        onClick={() => addOrRemoveCheck(tag.value, category.value)}
-                                                    />
-                                                    <label
-                                                        htmlFor={tag.value}
-                                                        className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
-                                                    >
-                                                        {tag.label}
-                                                    </label>
-                                                </div>
-                                            ))}
+                                            {allTags.
+                                                filter(each => category.tags.includes(each.value))
+                                                .map(((tag, optionIdx) => (
+                                                    <div key={optionIdx} className="flex items-center">
+                                                        <input
+                                                            id={tag.value}
+                                                            type="checkbox"
+                                                            name={tag.value}
+                                                            defaultValue={tag.label}
+                                                            className="h-3 w-3 border-gray-300 rounded cursor-pointer"
+                                                            onClick={() => addOrRemoveCheck(tag.value, category.value)}
+                                                        />
+
+                                                        <label
+                                                            htmlFor={tag.value}
+                                                            className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
+                                                        >
+                                                            {tag.label}
+                                                        </label>
+                                                    </div>
+                                                )))}
                                         </div>
                                     </Disclosure.Panel>
                                 </>

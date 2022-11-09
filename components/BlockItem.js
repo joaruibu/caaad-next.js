@@ -30,7 +30,11 @@ const BlockItem = React.forwardRef(({ block }, ref) => {
                     }
                     {
                         tags.filter(tag => !categories.includes(tag)).map((tag, index) => {
-                            return <BadgeTag key={index} tag={tag} icon={false} />
+                            return <BadgeTag
+                                key={index}
+                                tag={tag}
+                                icon={false}
+                            />
                         })
                     }
 

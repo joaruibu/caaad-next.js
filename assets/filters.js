@@ -1,12 +1,13 @@
 
-export const allFilters = {
-    elevation: { value: 'elevation', label: 'Alzado' },
-    plan: { value: 'plan', label: 'Planta' },
-    sideView: { value: 'sideView', label: 'Perfil' },
-    perspective: { value: 'perspective', label: 'Perspectiva' },
-    line: { value: 'line', label: 'Línea' },
-    solid: { value: 'solid', label: 'Relleno' },
-}
+export const allFilters = [
+    { value: 'elevation', label: 'Alzado' },
+    { value: 'plan', label: 'Planta' },
+    { value: 'sideView', label: 'Perfil' },
+    { value: 'perspective', label: 'Perspectiva' },
+    { value: 'line', label: 'Línea' },
+    { value: 'solid', label: 'Relleno' },
+]
+
 
 // export const seoTags = [
 //     {label:'bloque cad'},

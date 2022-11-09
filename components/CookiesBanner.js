@@ -22,7 +22,7 @@ const CookiesBanner = () => {
                         <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                             <a
                                 href="#"
-                                className=" text-white hover:bg-indigo-50 underline opacity-90 pr-9"
+                                className=" text-white text-sm hover:underline opacity-50 pr-9"
                                 onClick={() => setCookiesAccepted(true)}
                             >
                                 No, me apetece
