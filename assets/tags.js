@@ -173,7 +173,7 @@ export const allTags = [
     { value: 'hammock', label: 'Hamacas' },
     { value: 'outdoortOthers', label: 'Otros' },
 
-    { value: 'Vehiculos', label: 'VEHÍCULOS' },
+    { value: 'vehicle', label: 'VEHÍCULOS' },
     { value: 'car', label: 'Coches' },
     { value: 'bicycle', label: 'Bicis' },
     { value: 'moto', label: 'Motos' },

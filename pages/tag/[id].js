@@ -10,7 +10,7 @@ import Block from "../../models/Block";
 
 
 const TagPage = ({ blocksFilterByTag, params }) => {
-    console.log(blocksFilterByTag)
+    console.log(2222, params)
     return (
         <Layout
             pagina="Bloques gratis de Autocad">
@@ -18,7 +18,7 @@ const TagPage = ({ blocksFilterByTag, params }) => {
             <main className='grid grid-cols-1 gap-9  md:grid-cols-[160px_1fr_160px] md:gap-9'>
                 <div className='col-start-1 col-end-4 lg:col-start-2 lg:col-end-3'>
                     <h1 className='text-center font-bold tracking-tight text-4xl lg:text-6xl p-6 pb-6 md:pb-12'>
-                        <span className='block'>Descarga bloques de {allTags[params.id].label}</span>
+                        <span className='block'>Descarga bloques de {allTags.find(tag => tag.value === params.id).label}</span>
                         <span> de Autocad  gratis</span>
                     </h1>
                 </div>

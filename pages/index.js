@@ -41,7 +41,8 @@ export default function Home({ blocks, numberBlocks }) {
   )
 
 }
-//esto bueno para el SEO
+
+
 export async function getServerSideProps() {
   try {
     await dbConnect()
@@ -64,26 +65,3 @@ export async function getServerSideProps() {
   }
 }
 
-
-// export async function getStaticProps() {
-//   const urlBlocks = `${process.env.API_URL}/bloques`;
-//   const urlNumberBlocks = `${process.env.API_URL}/bloques/count`;
-
-//   const [resBlocks, resNumberBlocks] = await Promise.all([
-//     fetch(urlBlocks),
-//     fetch(urlNumberBlocks)
-
-//   ]);
-//   const [blocks, numberBlocks] = await Promise.all([
-//     resBlocks.json(),
-//     resNumberBlocks.json()
-
-//   ])
-
-//   return {
-//     props: {
-//       blocks,
-//       numberBlocks
-//     }
-//   }
-// }

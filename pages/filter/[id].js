@@ -16,7 +16,7 @@ const TagPage = ({ blocksFilterByFilter, params }) => {
             <main className='grid grid-cols-1 gap-9  md:grid-cols-[160px_1fr_160px] md:gap-9'>
                 <div className='col-start-1 col-end-4 lg:col-start-2 lg:col-end-3'>
                     <h1 className='text-center font-normal tracking-tight text-4xl lg:text-6xl p-6 pb-6 md:pb-12'>
-                        <span className='block'>Descarga bloques de {allFilters[params.id].label}</span>
+                        <span className='block'>Descarga bloques de {allFilters.find(filter => filter.value === params.id).label}</span>
                         <span> de Autocad  gratis</span>
                     </h1>
                 </div>
