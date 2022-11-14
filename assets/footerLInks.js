@@ -25,7 +25,7 @@ export const footerLinks = {
     baños: [
         { name: 'Descargar bloques de baños gratis', href: '/category/bathroom' },
         { name: 'Descargar bloques de lavabos gratis', href: '/tag/basin' },
-        { name: 'Descargar bloques de inodoros gratis', href: '/tag/toilte' },
+        { name: 'Descargar bloques de inodoros gratis', href: '/tag/toilet' },
         { name: 'Descargar bloques de duchas gratis', href: '/tag/shower' },
         { name: 'Descargar bloques de bañeras gratis', href: '/tag/bathtub' },
     ],
