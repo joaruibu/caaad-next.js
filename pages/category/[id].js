@@ -8,7 +8,7 @@ import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
 
 const CategoryPage = ({ blocksFilterByCategory, params }) => {
-    console.log(12, blocksFilterByCategory)
+    console.log(12, params)
     return (
         <Layout
             pagina="Bloques gratis de Autocad">

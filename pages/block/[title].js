@@ -11,10 +11,13 @@ import BadgeTag from "../../components/BadgeTag";
 import FilterTag from "../../components/BadgeFilter"
 import UrlNotFound from "../404";
 import SimilarBlock from "../../components/SimilarBlock";
+import { useRouter } from "next/router";
 
 
 
 const BlockPage = ({ success, error, block }) => {
+
+  useRouter()
   if (!success) {
     return <UrlNotFound error={error} />
   }
@@ -95,10 +98,12 @@ const BlockPage = ({ success, error, block }) => {
 export default BlockPage;
 
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps(context) {
   try {
     await dbConnect()
-    const block = await Block.findById(params.id).lean()
+    console.log(222222, context.query.title);
+    const block = await Block.findById(context.query.id).lean()
+    console.log(123455, block)
     block._id = ` ${block._id}`
     if (!block)
       return { props: { success: false, error: 'Bloque no encontrada!' } }
