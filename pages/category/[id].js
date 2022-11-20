@@ -44,6 +44,7 @@ export default CategoryPage
 
 
 export async function getServerSideProps({ params }) {
+    console.log(4444, params)
 
     try {
         await dbConnect()

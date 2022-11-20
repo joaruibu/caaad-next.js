@@ -116,7 +116,7 @@ export const allCategories = [
     },
     {
         value: 'storageFurniture',
-        label: 'Deportes',
+        label: 'Almacenaje',
         tags: ["storageFurniture", "cabinets", "chestOfDrawers", "commodes", "shelves", "wardrobe", "storageFurnitureOthers"]
     },
     {

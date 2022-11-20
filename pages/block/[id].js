@@ -34,7 +34,7 @@ const BlockPage = ({ success, error, block }) => {
           <AddSidebar />
         </div>
         <div className='md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12'>
-          <div className="relative border border-orange-600 rounded-3xl overflow-hidden">
+          <div className="relative border border-orange-600 rounded-3xl bg-white overflow-hidden grid content-center">
             <Image layout="responsive" width={250} height={165} alt={`Bloque de autocad ${title}`} src={img} priority />
           </div>
           <div>
@@ -75,7 +75,7 @@ const BlockPage = ({ success, error, block }) => {
               </div>
             </div>
             <Link href={dwg} passHref >
-              <a className="w-full block text-center cursor-pointer p-3 bg-orange-600 text-white">Descagar bloque </a>
+              <a className="w-full block rounded-full text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">Descagar bloque </a>
             </Link>
           </div>
         </div>
@@ -98,18 +98,31 @@ const BlockPage = ({ success, error, block }) => {
 export default BlockPage;
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ params }) {
+  //la Url está compuesta por título - id
+  const splitUrl = params.id.split("-")
+  const id = splitUrl[splitUrl.length - 1]
+
   try {
     await dbConnect()
-    console.log(222222, context.query.title);
-    const block = await Block.findById(context.query.id).lean()
-    console.log(123455, block)
-    block._id = ` ${block._id}`
+
+    const block = await Block.findById(id).lean()
+    block._id = block._id.toString()
+
+
     if (!block)
-      return { props: { success: false, error: 'Bloque no encontrada!' } }
+      return {
+        props: {
+          success: false,
+          error: 'Bloque no encontrada!'
+        }
+      }
 
     return {
-      props: { success: true, block }
+      props: {
+        success: true,
+        block
+      }
     }
 
   } catch (error) {
@@ -120,3 +133,30 @@ export async function getServerSideProps(context) {
     return { props: { success: false, error: 'Error de servidor' } }
   }
 }
+
+
+// Esto funciona
+// export async function getServerSideProps(context) {
+//   console.log(2222, context.query)
+//   try {
+//     await dbConnect()
+//     // Busco por router.query.title para evitar problemas en el caso de reload y acceder directamente a una URL
+//     const block = await Block.findById(context.query.id).lean()
+
+//     block._id = ` ${block._id}`
+//     if (!block)
+//       return { props: { success: false, error: 'Bloque no encontrada!' } }
+
+//     return {
+//       props: { success: true, block }
+//     }
+
+//   } catch (error) {
+//     console.log(error)
+//     if (error.kind === 'ObjectId') {
+//       return { props: { success: false, error: 'Te has invetando la dirección' } }
+//     }
+//     return { props: { success: false, error: 'Error de servidor' } }
+//   }
+// }
+

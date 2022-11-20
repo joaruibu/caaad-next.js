@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { allCategories } from '../../assets/categories';
 import { allTags } from '../../assets/tags';
 
 import AddSidebar from '../../components/AddSidebar';
