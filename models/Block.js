@@ -6,7 +6,16 @@ const BlockSchema = new mongoose.Schema({
         required: false,
         unique: true
     },
+    title_ES: {
+        type: String,
+        required: false,
+        unique: true
+    },
     description: {
+        type: String,
+        required: false
+    },
+    description_ES: {
         type: String,
         required: false
     },

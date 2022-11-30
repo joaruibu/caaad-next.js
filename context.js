@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Context = React.createContext({});
 
 const ContextProvider = ({ children }) => {
+    const { locale } = useRouter()
+
     const [tags, setTags] = useState([])
     const [filters, setFilters] = useState([])
     const [search, setSearch] = useState('')
@@ -15,7 +18,8 @@ const ContextProvider = ({ children }) => {
         filters, setFilters,
         search, setSearch,
         query, setQuery,
-        cookiesAccepted, setCookiesAccepted
+        cookiesAccepted, setCookiesAccepted,
+        locale
     };
     return <Context.Provider value={values}>{children}</Context.Provider>;
 };

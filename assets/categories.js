@@ -3,148 +3,176 @@
 export const allCategories = [
     {
         value: 'tematica',
-        label: 'Temática',
+        label: 'Theme',
+        label_ES: 'Temática',
         tags: []
     },
     {
         value: 'animals',
-        label: 'Animales',
+        label: 'Animals',
+        label_ES: 'Animales',
         tags: ['animals', 'cat', 'dog', 'horse', 'animalOthers']
     },
     {
         value: 'author-furniture',
-        label: 'Muebles de Autor',
+        label: 'Author furniture',
+        label_ES: 'Muebles de Autor',
         tags: ['authors', 'alvarAalto', 'arneJacobsen', 'carlesRayEames', 'frankGehry', 'gerryRietveld', 'jeanProuvee', 'leCorbusier', 'miesVanDerRohe', 'miguelMila', 'vernerPanton']
     },
     {
         value: 'bathroom',
-        label: 'Baño',
+        label: 'Bathroom',
+        label_ES: 'Baño',
         tags: ["bathroom", "bathtub", "bidet", "shower", "mirror", "faucet", "showerHead", "toilet", "basin", "washingMachine", "urinary", "bathOthers"],
 
     },
     {
         value: 'bedroom',
-        label: 'Dormitorio',
+        label: 'Bedroom',
+        label_ES: 'Dormitorio',
         tags: ["bedroom", "bed", "besideTable", "sofaBed", "trundleBed", "headBoard", "headBoard", "bedroomOthers"]
     },
     {
         value: 'construction',
-        label: 'Construccion',
+        label: 'Construction',
+        label_ES: 'Construccion',
         tags: ["construcctions", "brick", "metalProfile", "lattice"],
     },
     {
         value: 'decor',
         label: 'Decor',
+        label_ES: 'Decor',
         tags: ["decor", "cushion", "curtain", "vase", "book", "decorOthers", "pot"]
     },
     {
         value: 'dining-room',
-        label: 'Comedor',
+        label: 'Dinning room',
+        label_ES: 'Comedor',
         tags: ["dinningRoom", "cartBar", "chair", "groupTableAndChair", "stool", "table", "dinningRoomOthers"]
     },
     {
         value: 'doors',
-        label: 'Puertas',
+        label: 'Doors',
+        label_ES: 'Puertas',
         tags: ["doors", "foldingDoor", "slidingDoor", "swingDoor", "doorOthers"]
     },
     {
         value: 'dressingRoom',
-        label: 'Vestidor',
+        label: 'Dressing room',
+        label_ES: 'Vestidor',
         tags: ["dressingRoom", "clothes", "standingMirror", "dressingRoomOthers"]
     },
     {
         value: 'facilities',
-        label: 'Instalaciones',
+        label: 'Facilities',
+        label_ES: 'Instalaciones',
         tags: ["installations", "heater", "stove", "fireplace", "stove", "faucet", "installationOthers"]
     },
     {
         value: 'icons',
-        label: 'Iconos',
+        label: 'Icons',
+        label_ES: 'Iconos',
         tags: ["icons"],
     },
     {
         value: 'kids',
-        label: 'Niños',
+        label: 'Kids',
+        label_ES: 'Niños',
         tags: ["kids", "montessoriBed", "kidsFurniture", "playground", "toy", "kidOthers"],
     },
     {
         value: 'kitchen',
-        label: 'Cocina',
+        label: 'Kitchen',
+        label_ES: 'Cocina',
         tags: ["kitchen", "skin", "oven", "hobs", "cookerHoods", "dishwasher", "fridge", "microwaves", "coffeeMachine", "kitchenOthers", "washingMachine", "faucet"]
 
     },
     {
         value: 'lighting',
-        label: 'Iluminación',
+        label: 'Lighting',
+        label_ES: 'Iluminación',
         tags: ["lighting", "wallLight", "streetlight", "cellingLight", "tableLamp", "floorLamp", "pendantLight", "lightingOther"]
     },
     {
         value: 'livingRoom',
-        label: 'Salón',
+        label: 'Living room',
+        label_ES: 'Salón',
         tags: ["livingRoom", "sofaWithChest", "sofa", "groupsLivingRoom", "coffeeTable", "seat", "bench"]
     },
     {
         value: 'multimedia',
         label: 'Multimedia',
+        label_ES: 'Multimedia',
         tags: ["multimedia", "projector", "tv", "multimediaOthers"]
     },
     {
         value: 'musicalInstruments',
-        label: 'Instrumentos',
+        label: 'Musical ',
+        label_ES: 'Instrumentos',
         tags: ["instrument", "guitar", "piano", "instrumentOthers"]
     },
     {
         value: 'office',
-        label: 'Oficina',
+        label: 'Office',
+        label_ES: 'Oficina',
         tags: ["office", "meetingTable", "desk", "printer", "computer", "deskChair", "officeOthers"],
     },
     {
         value: 'people',
-        label: 'Personas',
+        label: 'People',
+        label_ES: 'Personas',
         tags: ["people", "children", "cooking", "dancing", "exercising", "jumping", "layingDown", "ridingBike", "running", "sitting",
             "standing", "talking", "walking", "playing", "swimming", "looking", "takingPicture", "working", "peopleOthers"]
     },
     {
         value: 'restaurants',
-        label: 'Restaurantes',
+        label: 'Restaurants',
+        label_ES: 'Restaurantes',
         tags: ["restaurant"]
     },
     {
         value: 'sports',
-        label: 'Deportes',
+        label: 'Sports',
+        label_ES: 'Deportes',
         tags: ["sports", "gymMachine", "track", "sportOthers"]
     },
     {
         value: 'storageFurniture',
-        label: 'Almacenaje',
+        label: 'Storage',
+        label_ES: 'Almacenaje',
         tags: ["storageFurniture", "cabinets", "chestOfDrawers", "commodes", "shelves", "wardrobe", "storageFurnitureOthers"]
     },
     {
         value: 'terrace',
-        label: 'Exteriores',
+        label: 'Terrace',
+        label_ES: 'Exteriores',
         tags: ["outdoor", "swimmingpool", "parasol", "hammock", "outdoortOthers"]
     },
     {
-        value: 'vehicle',
-        label: 'Vehículos',
-        tags: ["vehicle", "car", "bicycle", "moto", "scooter", "truck", "bus", "cran", "transportOthers"]
+        value: 'transport',
+        label: 'Transport',
+        label_ES: 'Transporte',
+        tags: ["transport", "car", "bicycle", "moto", "scooter", "truck", "bus", "cran", "transportOthers"]
 
     },
     {
         value: 'vegetation',
-        label: 'Vegetación',
+        label: 'Vegetation',
+        label_ES: 'Vegetación',
         tags: ["vegetation", "gardenTools", "bush", "tree", "pot", "flowers", "hangingPots", "vines"]
 
     },
     {
         value: 'windows',
-        label: 'Ventanas',
+        label: 'Windows',
+        label_ES: 'Ventanas',
         tags: ["windows", "foldingWindow", "slidingWindow", "windowOthers"]
 
     },
     {
         value: 'mobiliario-urbano',
-        label: 'Mobiliario Urbano',
+        label: 'Urban furniture',
+        label_ES: 'Mobiliario Urbano',
         tags: ["urbanFurniture", "bin", "biceRack", "fountains", "symbols", "bollards", "streetBench", "urbanFurnitureOthers", "streetlight"]
     },
 

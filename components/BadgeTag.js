@@ -6,20 +6,27 @@ import { useApp } from '../context'
 
 
 const BadgeTag = ({ tag, icon }) => {
-    const { tags, setTags } = useApp()
+    const { tags, setTags, locale } = useApp()
     const [hasIcon, setHasIcon] = useState(true)
 
     useEffect(() => {
         setHasIcon(icon)
 
     }, [icon])
+    // Todos los bloques tienen el tag de la categoría, que tiene la diferencia que es todo en mayúscula,
+    // comprobamos que si todo el label esta escrito en mayúscula no lo mostramos en el apartado de filtros de la página de bloques
+    // ya que es un tag que solamente lo usamos para filtrar, al actuar como un 'todos los bloques de esta categoría'
+    if (allTags.filter(each => each.value === tag)[0].label === allTags.filter(each => each.value === tag)[0].label.toUpperCase())
+        return
 
     return (
         <>
             <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
                 href={!hasIcon ? `/tag/${tag}` : undefined}
             >
-                {allTags.filter(each => each.value === tag)[0].label}
+
+
+                {allTags.filter(each => each.value === tag)[0][locale === 'es' ? 'label_ES' : 'label']}
                 {hasIcon &&
                     <button
                         type="button"

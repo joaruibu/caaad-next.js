@@ -2,7 +2,7 @@ import React from 'react'
 import { useApp } from '../context'
 
 const CookiesBanner = () => {
-    const { setCookiesAccepted } = useApp()
+    const { setCookiesAccepted, locale } = useApp()
 
     return (
         <div className="fixed inset-x-0 bottom-0 pb-2 sm:pb-5">
@@ -13,11 +13,24 @@ const CookiesBanner = () => {
                             <span className="flex rounded-lg p-2">
                                 🍪
                             </span>
-                            <p className="ml-3  font-normal text-white">
-                                <span className="md:hidden">Cooookies, estamos a dieta, comemos las justas.</span>
-                                <span className="hidden md:inline">Cooookies, estamos a dieta, y solo usamos las justas para saber cuanta gente nos visita :)</span>
+                            {locale === 'es' ?
+                                <p className="ml-3  font-normal text-white">
+                                    <span className="md:hidden">Cooookies, estamos a dieta, comemos las justas.</span>
+                                    <span className="hidden md:inline">Cooookies, estamos a dieta, y solo usamos las justas para saber cuanta gente nos visita :)</span>
+                                </p>
 
-                            </p>
+                                :
+                                <p className="ml-3  font-normal text-white">
+                                    <span className="md:hidden">Cooookies, we are on a diet, we eat little.</span>
+                                    <span className="hidden md:inline">Cooookies,
+                                        We are on a diet, and we only use the fair ones to know how many people visit us :)</span>
+                                </p>
+
+                            }
+
+
+
+
                         </div>
                         <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                             <a
@@ -25,7 +38,8 @@ const CookiesBanner = () => {
                                 className=" text-white text-sm hover:underline opacity-50 pr-9"
                                 onClick={() => setCookiesAccepted(true)}
                             >
-                                No, me apetece
+                                {locale === 'es' ? 'No me apetece' : 'No, thanks'}
+
                             </a>
                         </div>
                         <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2 ">

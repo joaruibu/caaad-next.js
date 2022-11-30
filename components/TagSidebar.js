@@ -13,10 +13,11 @@ import { useApp } from '../context'
 
 const TagSidebar = () => {
 
-    const { tags, setTags, filters, setFilters, setSearch, setQuery } = useApp()
+    const { tags, setTags, filters, setFilters, setSearch, setQuery, locale } = useApp()
+
     return (
         <>
-            <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>
+            <h2 className='font-bold border-b border-b-black mb-3'>{locale === 'es' ? 'Filtros' : 'Filters'}</h2>
             <div className="grid grid-cols-2 mb-6">
                 {allFilters.map((filter) => (
                     <div key={filter.value} className="flex items-center m-1 mr-3">
@@ -39,14 +40,14 @@ const TagSidebar = () => {
                             htmlFor={`filter-${filter.value}`}
                             className="ml-1 min-w-0 flex-1 text-gray-500  hover:text-gray-800 text-xs cursor-pointer"
                         >
-                            {filter.label}
+                            {locale === 'es' ? filter.label_ES : filter.label}
                         </label>
                     </div>
                 ))}
             </div>
 
 
-            <h2 className='font-bold border-b border-b-black mb-3'>Categoría</h2>
+            <h2 className='font-bold border-b border-b-black mb-3'>{locale === 'es' ? 'Categoría' : 'Categories'} </h2>
             {orderCategories(allCategories)
                 .map((category) => (
                     <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6">
@@ -54,7 +55,7 @@ const TagSidebar = () => {
                             <>
                                 <h3 className="-mx-2 -my-3 flow-root ">
                                     <Disclosure.Button className="px-2 py-2  w-full flex items-center justify-between text-gray-400">
-                                        <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{category.label}</span>
+                                        <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{locale === 'es' ? category.label_ES : category.label}</span>
                                         <span className="flex items-center text-orange-600  hover:rotate-45 duration-75">
                                             {open ? (
                                                 <MinusSmIcon className="h-5 w-5" aria-hidden="true" />

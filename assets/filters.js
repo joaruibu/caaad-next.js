@@ -1,11 +1,11 @@
 
 export const allFilters = [
-    { value: 'elevation', label: 'Alzado' },
-    { value: 'plan', label: 'Planta' },
-    { value: 'sideView', label: 'Perfil' },
-    { value: 'perspective', label: 'Perspectiva' },
-    { value: 'line', label: 'Línea' },
-    { value: 'solid', label: 'Relleno' },
+    { value: 'elevation', label: 'Elevation', label_ES: 'Alzado' },
+    { value: 'plan', label: 'Plan', label_ES: 'Planta' },
+    { value: 'sideView', label: 'Side view', label_ES: 'Perfil' },
+    { value: 'perspective', label: 'Perspective', label_ES: 'Perspectiva' },
+    { value: 'line', label: 'Line', label_ES: 'Línea' },
+    { value: 'solid', label: 'Solid', label_ES: 'Relleno' },
 ]
 
 

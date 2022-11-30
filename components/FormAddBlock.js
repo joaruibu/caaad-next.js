@@ -14,7 +14,9 @@ const FormAddBlock = () => {
 
     const [form, setForm] = useState({
         title: '',
+        title_ES: '',
         description: '',
+        description_ES: '',
         categories: [],
         tags: [],
         filters: [],
@@ -151,7 +153,7 @@ const FormAddBlock = () => {
 
 
     const publishPinterestPost = async () => {
-        console.log('bloquepublicado')
+
         let _datos = {
             "titulo": form.title,
             "description": form.description,
@@ -189,7 +191,7 @@ const FormAddBlock = () => {
     const handleSumbit = (e) => {
         e.preventDefault()
         console.log(form)
-        return
+
         // publishPinterestPost()
         postData(form)
 
@@ -205,31 +207,54 @@ const FormAddBlock = () => {
                 Nuevo Bloque
             </h1>
             <form onSubmit={(e) => handleSumbit(e)}>
-                <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">English title</label>
                 <div className="mt-1">
                     <input
                         className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         type='text'
-                        placeholder='Title'
+                        placeholder='English title'
                         autoComplete='off'
                         name='title'
                         value={form.title || ''}
                         onChange={handleChange}
                     />
                 </div>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">Spanish title</label>
+                <div className="mt-1">
+                    <input
+                        className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        type='text'
+                        placeholder='Título en Español'
+                        autoComplete='off'
+                        name='title_ES'
+                        value={form.title_ES || ''}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
+                <label htmlFor="description" className="block text-sm font-medium text-gray-700">English description</label>
                 <div className="mt-1">
                     <textarea
                         className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         type='text'
-                        placeholder='Description'
+                        placeholder='English description'
                         autoComplete='off'
                         name='description'
                         value={form.description || ''}
                         onChange={handleChange}
                     />
-
+                </div>
+                <label htmlFor="description" className="block text-sm font-medium text-gray-700">Spanish description</label>
+                <div className="mt-1">
+                    <textarea
+                        className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        type='text'
+                        placeholder='Descripción en Español'
+                        autoComplete='off'
+                        name='description_ES'
+                        value={form.description_ES || ''}
+                        onChange={handleChange}
+                    />
                 </div>
 
                 <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>

@@ -8,13 +8,14 @@ import CookiesBanner from '../components/CookiesBanner'
 import { useApp } from '../context'
 
 const Layout = ({ children, pagina }) => {
-    const { cookiesAccepted } = useApp()
+    const { cookiesAccepted, locale } = useApp()
     const title = `Caaad-${pagina}`
     return (
         <>
             <Head>
                 <title>{title}</title>
                 <meta name="description" content="Bloques de autocad gratis" />
+                <meta httpEquiv="content-language" content={locale}></meta>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {cookiesAccepted && <>
