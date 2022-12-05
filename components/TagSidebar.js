@@ -103,7 +103,7 @@ const TagSidebar = () => {
                                                         htmlFor={`filter-${category.value}-${optionIdx}`}
                                                         className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
                                                     >
-                                                        {tag.label}
+                                                        {locale === 'es' ? tag.label_ES : tag.label}
                                                     </label>
                                                 </div>
                                             )))}

@@ -66,7 +66,7 @@ const TagPage = ({ blocksFilterByTag, params, numberBlocks }) => {
                 </div>
 
                 <div className='hidden md:block  md:col-start-3'>
-                    <AddSidebar />
+                    {/* <AddSidebar /> */}
                 </div>
 
             </main>

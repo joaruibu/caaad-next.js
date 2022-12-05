@@ -87,7 +87,7 @@ const BlockPage = ({ success, error, block }) => {
         </div>
 
         <div className='hidden md:block  md:col-start-3'>
-          <AddSidebar />
+          {/* <AddSidebar /> */}
         </div>
         <div className='hidden md:block  md:col-start-2'>
           <SimilarBlock />
