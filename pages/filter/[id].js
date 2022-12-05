@@ -73,7 +73,7 @@ export async function getServerSideProps({ params }) {
         return {
             props: {
                 blocksFilterByFilter,
-                numberBlocks: blocksFilterByCategory.length,
+                numberBlocks: blocksFilterByFilter.length,
                 params
             }
         }

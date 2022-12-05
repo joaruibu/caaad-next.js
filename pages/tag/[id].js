@@ -1,6 +1,7 @@
 
 import { useRouter } from 'next/router';
 import React from 'react'
+import { allCategories } from '../../assets/categories';
 import { allTags } from '../../assets/tags';
 
 import AddSidebar from '../../components/AddSidebar';
@@ -12,12 +13,29 @@ import Block from "../../models/Block";
 
 const TagPage = ({ blocksFilterByTag, params, numberBlocks }) => {
     const { locale } = useRouter()
+
+
+    const checkTagAppearsAlone = () => {
+        const tag = allTags.find(tag => tag.value === params.id);
+
+
+        if (tag.noTagAlone === true) {
+            const category = allCategories.find(category => category.tags.includes(params.id))
+
+            return `${locale === 'es' ? `${category.label_ES} ${tag.label_ES}` : ` ${category.label} ${tag.label}`}`
+
+        } else {
+            return `${tag[locale === 'es' ? 'label_ES' : 'label']}`
+        }
+    }
+
+
     return (
-        <Layout
+        < Layout
             pagina={locale === 'es' ?
-                `Descarga  bloques de ${allTags.find(tag => tag.value === params.id).label_ES}de Autocad  gratis`
+                `Descarga  bloques de ${checkTagAppearsAlone()}de Autocad  gratis`
                 :
-                `Download free autocad ${allTags.find(tag => tag.value === params.id).label} blocks`
+                `Download free autocad ${checkTagAppearsAlone()} blocks`
             }>
 
             <main className='grid grid-cols-1 gap-9  md:grid-cols-[160px_1fr_160px] md:gap-9'>
@@ -26,14 +44,13 @@ const TagPage = ({ blocksFilterByTag, params, numberBlocks }) => {
 
                         {locale === 'es' ?
                             <>
-                                <span className='block'>Descargas {numberBlocks} bloques de {allTags.find(tag => tag.value === params.id).label_ES}</span>
+                                <span className='block'>Descarga {numberBlocks} bloques de {checkTagAppearsAlone()}</span>
                                 <span> de Autocad  gratis</span>
-
                             </>
                             :
                             <>
                                 <span className='block'>Download {numberBlocks} free autocad </span>
-                                <span> {allTags.find(tag => tag.value === params.id).label} blocks</span>
+                                <span> {checkTagAppearsAlone()} blocks</span>
                             </>
                         }
 
@@ -54,7 +71,7 @@ const TagPage = ({ blocksFilterByTag, params, numberBlocks }) => {
 
             </main>
 
-        </Layout>
+        </ Layout>
     )
 }
 
@@ -76,7 +93,7 @@ export async function getServerSideProps({ params }) {
         return {
             props: {
                 blocksFilterByTag,
-                numberBlocks: blocksFilterByCategory.length,
+                numberBlocks: blocksFilterByTag.length,
                 params
             }
         }

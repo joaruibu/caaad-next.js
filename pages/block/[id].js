@@ -47,7 +47,7 @@ const BlockPage = ({ success, error, block }) => {
               <p className=" font-normal text-gray-500">{locale === 'es' ? `${description_ES}` : `${description}`}</p>
             </div>
             <div className="mb-4">
-              <p className="font-bold block w-full">{locale === 'es' ? `Categoría:` : `Category:`} </p>
+              <p className="mb-3 font-bold block w-full">{locale === 'es' ? `Categoría:` : `Category:`} </p>
               <div className="flex flex-wrap gap-2">
 
                 {categories.map((category, index) => {
@@ -59,8 +59,8 @@ const BlockPage = ({ success, error, block }) => {
               </div>
             </div>
 
-            <div className="mb-4">
-              <p className="mb-3 font-bold block w-full">Filters: </p>
+            <div className="mb-8">
+              <p className="mb-3 font-bold block w-full">{locale === 'es' ? `Filtros:` : `Filters:`}  </p>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag, index) => {
                   return <BadgeTag
@@ -81,7 +81,7 @@ const BlockPage = ({ success, error, block }) => {
               </div>
             </div>
             <Link href={dwg} passHref >
-              <a className="w-full block rounded-full text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque gratis` : `Download free block`} </a>
+              <a className="w-full block rounded-full text-xl uppercase text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque gratis` : `Download free block`} </a>
             </Link>
           </div>
         </div>

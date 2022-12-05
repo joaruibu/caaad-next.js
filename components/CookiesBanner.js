@@ -23,13 +23,9 @@ const CookiesBanner = () => {
                                 <p className="ml-3  font-normal text-white">
                                     <span className="md:hidden">Cooookies, we are on a diet, we eat little.</span>
                                     <span className="hidden md:inline">Cooookies,
-                                        We are on a diet, and we only use the fair ones to know how many people visit us :)</span>
+                                        we are on a diet, and we only use the fair ones to know how many people visit us :)</span>
                                 </p>
-
                             }
-
-
-
 
                         </div>
                         <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">

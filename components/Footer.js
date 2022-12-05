@@ -47,7 +47,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-4 space-y-1">
                                     {footerLinks.personas.map((item) => (
                                         <li key={item[locale === 'es' ? 'label_ES' : 'label']}>
-                                            <a href={item.href} className="text-xs text-gray-500 hover:text-gray-900">
+                                            <a href={`${locale === 'es' ? `/es/${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
                                             </a>
                                         </li>
@@ -59,7 +59,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-4 space-y-1">
                                     {footerLinks.autos.map((item) => (
                                         <li key={item[locale === 'es' ? 'label_ES' : 'label']} >
-                                            <a href={item.href} className="text-xs text-gray-500 hover:text-gray-900">
+                                            <a href={`${locale === 'es' ? `/es/${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
                                             </a>
                                         </li>
@@ -73,7 +73,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-4 space-y-1">
                                     {footerLinks.baños.map((item) => (
                                         <li key={item[locale === 'es' ? 'label_ES' : 'label']}>
-                                            <a href={item.href} className="text-xs text-gray-500 hover:text-gray-900">
+                                            <a href={`${locale === 'es' ? `/es/${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
                                             </a>
                                         </li>
@@ -85,7 +85,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-4 space-y-1">
                                     {footerLinks.viviendas.map((item) => (
                                         <li key={item[locale === 'es' ? 'label_ES' : 'label']}>
-                                            <a href={item.href} className="text-xs text-gray-500 hover:text-gray-900">
+                                            <a href={`${locale === 'es' ? `/es/${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
                                             </a>
                                         </li>
