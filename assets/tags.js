@@ -17,6 +17,12 @@ export const allTags = [
     { value: 'miguelMila', label: 'Miguel Milá', label_ES: 'Miguel Milá' },
     { value: 'vernerPanton', label: 'Verner Panton', label_ES: 'Verner Panton' },
 
+    { value: 'installations', label: 'INSTALATIONS', label_ES: 'INSTALACIONES' },
+    { value: 'heater', labe: 'Heater', label_ES: 'Calentadores' },
+    { value: 'stove', label: 'Stove', label_ES: 'Estufas' },
+    { value: 'fireplace', label: 'Fireplace', label_ES: 'Chimeneas' },
+    { value: 'installationOthers', label: 'Others', label_ES: 'Otros' },
+
     { value: 'bathroom', label: 'BATHROOM', label_ES: 'BAÑO' },
     { value: 'bathtub', label: 'Bathtubs', label_ES: 'Bañeras' },
     { value: 'bidet', label: 'Bidets', label_ES: 'Bidets' },
@@ -56,12 +62,12 @@ export const allTags = [
     { value: 'swingDoor', label: 'Swing', label_ES: 'Vaivén', noTagAlone: true },
     { value: 'doorOthers', label: 'Others', label_ES: 'Otros' },
 
-    { value: 'dressingRoom', label: 'Dressing room', label_ES: 'VESTIDOR' },
+    { value: 'dressingRoom', label: 'DRESSING ROOM', label_ES: 'VESTIDOR' },
     { value: 'clothes', label: 'Clothes', label_ES: 'Ropas' },
     { value: 'standingMirror', label: 'Standing mirror', label_ES: 'Espejos de pie' },
     { value: 'dressingRoomOthers', label: 'Others', label_ES: 'Otros' },
 
-    { value: 'storageFurniture', label: 'Storage', label_ES: 'ALMACENAJE' },
+    { value: 'storageFurniture', label: 'STORAGE', label_ES: 'ALMACENAJE' },
     { value: 'cabinets', label: 'Cabinets', label_ES: 'Armarios tv' },
     { value: 'chestOfDrawers', label: 'Chest of drawers', label_ES: 'Cajonera' },
     { value: 'commodes', label: 'Commodes', label_ES: 'Cómodas' },
@@ -69,11 +75,6 @@ export const allTags = [
     { value: 'wardrobe', label: 'Wardrobe', label_ES: 'Armarios' },
     { value: 'storageFurnitureOthers', label: 'Others', label_ES: 'Otros' },
 
-    { value: 'installations', label: 'INSTALACIONES' },
-    { value: 'heater', label: 'Calentadores' },
-    { value: 'stove', label: 'Estufas' },
-    { value: 'fireplace', label: 'Chimeneas' },
-    { value: 'installationOthers', label: 'Otros' },
 
     { value: 'icons', label: 'ICONS', label_ES: 'ICONOS' },
 
@@ -110,7 +111,7 @@ export const allTags = [
     { value: 'coffeeMachine', label: 'Coffee machine', label_ES: 'Caferetas' },
     { value: 'kitchenOthers', label: 'Others', label_ES: 'Otros' },
 
-    { value: 'lighting', label: 'LIGHTING', label_ES: 'ILUMINACIÖN' },
+    { value: 'lighting', label: 'LIGHTING', label_ES: 'ILUMINACIÓN' },
     { value: 'wallLight', label: 'WallLight', label_ES: 'Apliques de pared' },
     { value: 'streetlight', label: 'Streetlight', label_ES: 'Farolas' },
     { value: 'cellingLight', label: 'celling light', label_ES: 'Iluminación de techo' },

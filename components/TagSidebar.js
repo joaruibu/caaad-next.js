@@ -65,8 +65,11 @@ const TagSidebar = () => {
                                         </span>
                                     </Disclosure.Button>
                                 </h3>
-                                <Disclosure.Panel className="pt-3 pl-2 pb-6">
+                                <Disclosure.Panel className="pt-1 pl-2 pb-6">
                                     <div className="space-y-2">
+                                        <a
+                                            className='whitespace-nowrap hover:text-gray-600 underline text-gray-500 text-xs'
+                                            href={`${locale === 'es' ? `/es/category/${category.value}` : `/category/${category.value}`}`}>{locale === 'es' ? ` Ver todo ${category.label_ES} ` : ` View all ${category.label}`}</a>
                                         {allTags.
                                             filter(each => category.tags.includes(each.value))
                                             .map(((tag, optionIdx) => (
@@ -82,7 +85,7 @@ const TagSidebar = () => {
                                                             setQuery('')
                                                             if (!tags.includes(tag.value)) {
                                                                 setTags([...tags, tag.value]);
-                                                                //JAVIER - 
+                                                                //TODO
                                                                 //1. si hago click en el primer elemento del array de tags de cada categoría quiero añadir a tags
                                                                 //todos los tags.label que contiene esa categoria.
 
