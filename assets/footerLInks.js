@@ -16,7 +16,7 @@ export const footerLinks = {
         { label: 'Download free kids blocks', label_ES: 'Descargar bloques de niños gratis', href: '/tag/children' },
     ],
     autos: [
-        { label: 'Download free transport blocks', label_ES: 'Descargar bloques de transporte gratis', href: '/category/vehicle' },
+        { label: 'Download free transport blocks', label_ES: 'Descargar bloques de transporte gratis', href: '/category/transport' },
         { label: 'Download free motos blocks', label_ES: 'Descargar bloques de motos gratis', href: '/tag/moto' },
         { label: 'Download free cars blocks', label_ES: 'Descargar bloques de autos gratis', href: '/tag/car' },
         { label: 'Download free trucks blocks', label_ES: 'Descargar bloques de camiones gratis', href: '/tag/truck' },
