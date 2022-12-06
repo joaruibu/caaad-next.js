@@ -14,9 +14,10 @@ const Layout = ({ children, pagina }) => {
         <>
             <Head>
                 <title>{title}</title>
-                <meta name="description" content="Bloques de autocad gratis" />
+                <meta name="description" content={locale === 'es' ? 'Descarga bloques de autocad gratis, descarga los mejores bloques de autocad.' : 'Dowload free autocad blocks, download de best autocad block'} />
                 <meta httpEquiv="content-language" content={locale}></meta>
-                <link rel="icon" href="/favicon.ico" />
+                <meta name='robots' content='index, follow'></meta>
+                <link rel="icon" href="/favicon.png" />
             </Head>
             {cookiesAccepted && <>
                 <Script

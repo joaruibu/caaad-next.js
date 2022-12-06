@@ -22,7 +22,7 @@ const BadgeTag = ({ tag, icon }) => {
     return (
         <>
             <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
-                href={!hasIcon ? `${locale === 'es' ? 'es' : ''}/tag/${tag}` : undefined}
+                href={!hasIcon ? `${locale === 'es' ? `/es/tag/${tag}` : `/tag/${tag}`}` : undefined}
             >
 
 
