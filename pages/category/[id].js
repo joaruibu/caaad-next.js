@@ -58,8 +58,33 @@ const CategoryPage = ({ blocksFilterByCategory, params, numberBlocks }) => {
 export default CategoryPage
 
 
+export async function getStaticPaths() {
 
-export async function getServerSideProps({ params }) {
+    try {
+        const paths = allCategories.map(category => {
+            return {
+                params: { id: category.value },
+                locale: 'en'
+            }
+        });
+        const paths_ES = allCategories.map(category => {
+            return {
+                params: { id: category.value },
+                locale: 'es'
+            }
+        });
+
+        return {
+            paths: [...paths, ...paths_ES],
+            fallback: false
+        }
+
+    } catch (error) {
+
+    }
+}
+
+export async function getStaticProps({ params }) {
     try {
         await dbConnect()
 
@@ -82,3 +107,28 @@ export async function getServerSideProps({ params }) {
         return { props: { success: false, error: 'Error!' } }
     }
 }
+
+//Codigo previos con SSP funciona 
+// export async function getServerSideProps({ params }) {
+//     try {
+//         await dbConnect()
+
+//         const result = await Block.find({ categories: params.id });
+
+//         const blocksFilterByCategory = result.map((doc) => {
+//             const block = doc.toObject()
+//             block._id = block._id.toString()
+//             return block
+//         })
+//         return {
+//             props: {
+//                 blocksFilterByCategory,
+//                 numberBlocks: blocksFilterByCategory.length,
+//                 params
+//             }
+//         }
+//     } catch (error) {
+//         console.log(error)
+//         return { props: { success: false, error: 'Error!' } }
+//     }
+// }
