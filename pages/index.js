@@ -23,7 +23,7 @@ export default function Home({ blocks, numberBlocks }) {
           <h1 className='text-center font-bold  text-4xl lg:text-6xl p-6 pb-6 md:pb-12'>
             {locale === 'es' ? <>
               <span className='block'>{ }Descarga {numberBlocks} bloques</span>
-              <span>  de Autocad gratis</span>
+              <span>  de Autocad gratis-Alpha version</span>
             </>
               :
               <>
