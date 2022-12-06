@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import BadgeCategory from "../../components/BadgeCategorie";
 
 const BlockPage = ({ success, error, block }) => {
+
   const { locale } = useRouter()
 
   useRouter()
@@ -104,18 +105,53 @@ const BlockPage = ({ success, error, block }) => {
 export default BlockPage;
 
 
-export async function getServerSideProps({ params }) {
-  console.log(params)
-  //la Url está compuesta por título - id
-  const splitUrl = params.id.split("-")
-  const id = splitUrl[splitUrl.length - 1]
+export async function getStaticPaths() {
 
   try {
     await dbConnect()
+    const result = await Block.find({})
 
-    const block = await Block.findById(id).lean()
+    // Mapeo todos los objetos del array para 'limpiar' la propiedad _id
+    const blocks = result.map((doc) => {
+      const block = doc.toObject()
+      block._id = block._id.toString()
+      return block
+    })
+
+    const paths = blocks.map(({ _id, title }) => {
+      const splitTitle = title.replaceAll(' ', '-');
+      return {
+        params: { id: `${splitTitle.toLowerCase()}-${_id}` },
+        locale: 'en'
+      }
+    });
+
+    const paths_ES = blocks.map(({ _id, title_ES }) => {
+      const splitTitle = title_ES.replaceAll(' ', '-');
+      return {
+        params: { id: `${splitTitle.toLowerCase()}-${_id}` },
+        locale: 'es'
+      }
+    });
+
+    return {
+      paths: [...paths, ...paths_ES],
+      fallback: false
+    }
+
+  } catch (error) {
+
+  }
+}
+
+export async function getStaticProps({ params: { id } }) {
+  //la Url está compuesta por título - id
+  const newId = id.split('-').pop();
+
+  try {
+    await dbConnect()
+    const block = await Block.findById(newId).lean()
     block._id = block._id.toString()
-
 
     if (!block)
       return {
@@ -140,6 +176,48 @@ export async function getServerSideProps({ params }) {
     return { props: { success: false, error: 'Error de servidor' } }
   }
 }
+
+
+
+
+
+// Codigo previo con GSSP que funciona 
+// export async function getServerSideProps({ params }) {
+//   console.log(params)
+//   //la Url está compuesta por título - id
+//   const splitUrl = params.id.split("-")
+//   const id = splitUrl[splitUrl.length - 1]
+
+//   try {
+//     await dbConnect()
+
+//     const block = await Block.findById(id).lean()
+//     block._id = block._id.toString()
+
+
+//     if (!block)
+//       return {
+//         props: {
+//           success: false,
+//           error: 'Bloque no encontrada!'
+//         }
+//       }
+
+//     return {
+//       props: {
+//         success: true,
+//         block
+//       }
+//     }
+
+//   } catch (error) {
+//     console.log(error)
+//     if (error.kind === 'ObjectId') {
+//       return { props: { success: false, error: 'Te has invetando la dirección' } }
+//     }
+//     return { props: { success: false, error: 'Error de servidor' } }
+//   }
+// }
 
 
 // Esto funciona

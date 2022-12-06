@@ -55,7 +55,7 @@ export default function Home({ blocks, numberBlocks }) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     await dbConnect()
     const result = await Block.find({})
@@ -76,4 +76,5 @@ export async function getServerSideProps() {
     return { props: { success: false, error: 'Error!' } }
   }
 }
+
 

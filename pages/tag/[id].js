@@ -78,8 +78,33 @@ const TagPage = ({ blocksFilterByTag, params, numberBlocks }) => {
 export default TagPage
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
 
+    try {
+        const paths = allTags.map(tag => {
+            return {
+                params: { id: tag.value },
+                locale: 'en'
+            }
+        });
+        const paths_ES = allTags.map(tag => {
+            return {
+                params: { id: tag.value },
+                locale: 'es'
+            }
+        });
+
+        return {
+            paths: [...paths, ...paths_ES],
+            fallback: false
+        }
+
+    } catch (error) {
+
+    }
+}
+
+export async function getStaticProps({ params }) {
     try {
         await dbConnect()
 
@@ -102,3 +127,29 @@ export async function getServerSideProps({ params }) {
         return { props: { success: false, error: 'Error!' } }
     }
 }
+
+//Codigo previos con SSP funciona 
+// export async function getServerSideProps({ params }) {
+
+//     try {
+//         await dbConnect()
+
+//         const result = await Block.find({ tags: params.id });
+
+//         const blocksFilterByTag = result.map((doc) => {
+//             const block = doc.toObject()
+//             block._id = block._id.toString()
+//             return block
+//         })
+//         return {
+//             props: {
+//                 blocksFilterByTag,
+//                 numberBlocks: blocksFilterByTag.length,
+//                 params
+//             }
+//         }
+//     } catch (error) {
+//         console.log(error)
+//         return { props: { success: false, error: 'Error!' } }
+//     }
+// }
