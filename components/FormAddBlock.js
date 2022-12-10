@@ -158,7 +158,7 @@ const FormAddBlock = () => {
             "titulo": form.title,
             "description": form.description,
             "img": form.img,
-            "url": `www.caaad.pro/bloque/`
+            "url": `www.caaad.pro/block/`
         }
 
         await fetch('https://hooks.zapier.com/hooks/catch/13798738/bxpsfni/', {
@@ -181,6 +181,7 @@ const FormAddBlock = () => {
             })
             const data = await res.json()
 
+            // Con data.block._id tengo el parametro para construir la url en el post de zapier title + id
             data.success ? setIsSuccessUpload(true) : setIsErrorUpload(true)
 
 
@@ -192,12 +193,12 @@ const FormAddBlock = () => {
         e.preventDefault()
         console.log(form)
 
-        // publishPinterestPost()
+        publishPinterestPost()
         postData(form)
 
-        setTimeout(() => {
-            location.reload()
-        }, 1000);
+        // setTimeout(() => {
+        //     location.reload()
+        // }, 1000);
 
     }
 

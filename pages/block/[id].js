@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
 import Layout from "../../components/Layout";
@@ -13,17 +13,19 @@ import UrlNotFound from "../404";
 import SimilarBlock from "../../components/SimilarBlock";
 import { useRouter } from "next/router";
 import BadgeCategory from "../../components/BadgeCategorie";
+import { createSimilarTitles } from "../../helpers";
 
-const BlockPage = ({ success, error, block }) => {
+const BlockPage = ({ success, error, block, similarBlocks }) => {
 
+  const { dwg, description, description_ES, categories, filters, img, tags, title, title_ES } = block
   const { locale } = useRouter()
+
+
 
   useRouter()
   if (!success) {
     return <UrlNotFound error={error} />
   }
-
-  const { dwg, description, description_ES, categories, filters, img, tags, title, title_ES } = block
 
   return (
 
@@ -32,7 +34,7 @@ const BlockPage = ({ success, error, block }) => {
 
       <main className='grid grid-cols-1 gap-9 md:grid-cols-[160px_1fr_160px] content-start md:gap-9 min-h-screen'>
         <div className='hidden md:block md:col-start-1'>
-          <AddSidebar />
+          {/* <AddSidebar /> */}
         </div>
         <div className='md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12'>
           <div className="relative border border-orange-600 rounded-3xl bg-white overflow-hidden grid content-center">
@@ -90,8 +92,8 @@ const BlockPage = ({ success, error, block }) => {
         <div className='hidden md:block  md:col-start-3'>
           {/* <AddSidebar /> */}
         </div>
-        <div className='hidden md:block  md:col-start-2'>
-          <SimilarBlock />
+        <div className='block  md:col-start-2 w-full mt-12'>
+          <SimilarBlock similarBlocks={similarBlocks} />
         </div>
 
 
@@ -153,18 +155,28 @@ export async function getStaticProps({ params: { id } }) {
     const block = await Block.findById(newId).lean()
     block._id = block._id.toString()
 
+    // Buscar como hacer la busqueda del titulo similar al actual
+    const similarResults = await Block.find({ $or: [{ title: { '$in': createSimilarTitles(block.title) } }, { tags: block.tags }, { category: block.category }] }).limit(10);
+
+    const similarBlocks = similarResults.map((doc) => {
+      const block = doc.toObject()
+      block._id = block._id.toString()
+      return block
+    })
+
     if (!block)
       return {
         props: {
           success: false,
-          error: 'Bloque no encontrada!'
+          error: 'Bloque no encontrado!'
         }
       }
 
     return {
       props: {
         success: true,
-        block
+        block,
+        similarBlocks
       }
     }
 
