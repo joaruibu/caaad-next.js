@@ -1,5 +1,5 @@
-import Block from "./BlockItem";
 import { useApp } from "../context";
+import BlockItem from "./BlockItem";
 
 const BlockList = ({ blocks }) => {
     console.log(blocks)
@@ -37,7 +37,7 @@ const BlockList = ({ blocks }) => {
                         return founds;
                     })
                     .map((block) => (
-                        <Block key={block._id} block={block} />
+                        <BlockItem key={block._id} block={block} />
                     ))}
             </section>
         </>

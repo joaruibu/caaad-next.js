@@ -35,3 +35,21 @@ export const orderCategories = (categories) => {
     });
 
 }
+export const createSimilarTitles = (title) => {
+    let titleCombinations = [];
+    let titleSplit = title.split(' ');
+
+    title.split(' ').map(() => {
+        let removeLastWord = titleSplit.pop()
+        titleCombinations.push(titleSplit.join(' '))
+    });
+    // Elimino el último elemento ya que es un string vacio 
+    let removeLastElement = titleCombinations.pop()
+
+}
+
+export const urlTitle = (title) => {
+    return title.trim().split(' ').join('-').toLowerCase()
+}
+
+
