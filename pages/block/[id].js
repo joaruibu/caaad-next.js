@@ -158,11 +158,16 @@ export async function getStaticProps({ params: { id } }) {
     // Buscar como hacer la busqueda del titulo similar al actual
     const similarResults = await Block.find({ $or: [{ title: { '$in': createSimilarTitles(block.title) } }, { tags: block.tags }, { category: block.category }] }).limit(10);
 
-    const similarBlocks = similarResults.map((doc) => {
-      const block = doc.toObject()
-      block._id = block._id.toString()
-      return block
-    })
+    const similarBlocks = similarResults
+      .map((ele) => {
+        const block = ele.toObject()
+        block._id = block._id.toString()
+        return block
+      })
+      // Eliminamos el bloque en el que estamos
+      .filter(ele => ele._id !== newId)
+
+
 
     if (!block)
       return {
@@ -188,9 +193,6 @@ export async function getStaticProps({ params: { id } }) {
     return { props: { success: false, error: 'Error de servidor' } }
   }
 }
-
-
-
 
 
 // Codigo previo con GSSP que funciona 

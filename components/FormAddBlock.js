@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Disclosure } from '@headlessui/react'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
 import { allCategories } from '../assets/categories'
 import { allFilters } from '../assets/filters'
 import { allTags } from '../assets/tags'
-import { orderCategories } from '../helpers'
+import { orderCategories, urlTitle } from '../helpers'
 
 import ErrorMessage from './ErrorMessage'
 import SuccessMessagge from './SuccessMessage'
@@ -38,6 +38,7 @@ const FormAddBlock = () => {
 
     const [isSuccessUpload, setIsSuccessUpload] = useState(false)
     const [isErrorUpload, setIsErrorUpload] = useState(false)
+    const [urlId, setUrlId] = useState('')
 
     const handleChange = (e) => {
         setForm({
@@ -73,7 +74,6 @@ const FormAddBlock = () => {
 
         } else {
             //Estamos clikando un tag
-
             const selectedTags = [...checkedTags]
             const selectedCategories = [...checkedCategories]
 
@@ -152,23 +152,6 @@ const FormAddBlock = () => {
     }
 
 
-    const publishPinterestPost = async () => {
-
-        let _datos = {
-            "titulo": form.title,
-            "description": form.description,
-            "img": form.img,
-            "url": `www.caaad.pro/block/`
-        }
-
-        await fetch('https://hooks.zapier.com/hooks/catch/13798738/bxpsfni/', {
-            method: "POST",
-            body: JSON.stringify(_datos),
-            headers: { "Content-type": "application/json; charset=UTF-8" },
-            mode: 'no-cors'
-        })
-
-    }
 
     const postData = async (form) => {
         try {
@@ -180,6 +163,7 @@ const FormAddBlock = () => {
                 body: JSON.stringify(form)
             })
             const data = await res.json()
+            setUrlId(data.block._id)
 
             // Con data.block._id tengo el parametro para construir la url en el post de zapier title + id
             data.success ? setIsSuccessUpload(true) : setIsErrorUpload(true)
@@ -189,12 +173,39 @@ const FormAddBlock = () => {
             console.log(4, error)
         }
     }
+    console.log(44444, urlId)
+
+    const publishPinterestPost = async () => {
+
+        let _datos = {
+            "titulo": form.title,
+            "description": form.description,
+            "img": form.img,
+            "url": `www.caaad.pro/block/${urlTitle(form.title)}-${urlId}`
+        }
+        console.log(12121212, _datos)
+        await fetch('https://hooks.zapier.com/hooks/catch/13798738/bxpsfni/', {
+            method: "POST",
+            body: JSON.stringify(_datos),
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+            mode: 'no-cors'
+        })
+
+    }
+    // Publico el post de pinterest cuanto tengo el valor del id que me viene de la respuesta del postData (esto se debe de poder mejorar con asinc/await)
+    useEffect(() => {
+        if (urlId !== '') {
+            publishPinterestPost()
+        }
+
+    }, [urlId])
+
+
     const handleSumbit = (e) => {
         e.preventDefault()
-        console.log(form)
-
-        publishPinterestPost()
         postData(form)
+
+        console.log(444444, form)
 
         // setTimeout(() => {
         //     location.reload()

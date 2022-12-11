@@ -36,20 +36,16 @@ export const orderCategories = (categories) => {
 
 }
 export const createSimilarTitles = (title) => {
-
     let titleCombinations = [];
     let titleSplit = title.split(' ');
 
     title.split(' ').map(() => {
         let removeLastWord = titleSplit.pop()
         titleCombinations.push(titleSplit.join(' '))
-
     });
-
     // Elimino el último elemento ya que es un string vacio 
     let removeLastElement = titleCombinations.pop()
 
-    return console.log(4343434, titleCombinations)
 }
 
 export const urlTitle = (title) => {

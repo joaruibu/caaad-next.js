@@ -68,7 +68,6 @@ export async function getStaticProps() {
       props: {
         blocks,
         numberBlocks: blocks.length
-
       }
     }
   } catch (error) {
