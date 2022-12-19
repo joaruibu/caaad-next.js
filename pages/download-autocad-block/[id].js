@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
 import Layout from "../../components/Layout";
@@ -13,7 +13,7 @@ import UrlNotFound from "../404";
 import SimilarBlock from "../../components/SimilarBlock";
 import { useRouter } from "next/router";
 import BadgeCategory from "../../components/BadgeCategorie";
-import { createSimilarTitles } from "../../helpers";
+
 
 const BlockPage = ({ success, error, block, similarBlocks }) => {
 
@@ -43,7 +43,7 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
           <div>
             <div className="mb-4">
               <p className="font-bold block w-full">{locale === 'es' ? `Título:` : `Title:`} </p>
-              <h1 className=" font-bold text-xl text-orange-500">{locale === 'es' ? `${title_ES}` : `${title}`}</h1>
+              <h1 className=" font-bold text-xl text-orange-500">{locale === 'es' ? `Descarga bloque de ${title_ES}` : `Download block ${title}`}</h1>
             </div>
             <div className="mb-4">
               <p className="font-bold block w-full">{locale === 'es' ? `Descripción:` : `Description:`} </p>
@@ -156,8 +156,9 @@ export async function getStaticProps({ params: { id } }) {
     block._id = block._id.toString()
 
     // Buscar como hacer la busqueda del titulo similar al actual
-    const similarResults = await Block.find({ $or: [{ title: { '$in': createSimilarTitles(block.title) } }, { tags: block.tags }, { category: block.category }] }).limit(10);
+    const similarResults = await Block.find({ $or: [{ similar: block.similar }, { tags: block.tags }, { category: block.category }] }).limit(10);
 
+    console.log(3434343434, similarResults)
     const similarBlocks = similarResults
       .map((ele) => {
         const block = ele.toObject()

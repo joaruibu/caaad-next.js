@@ -18,7 +18,7 @@ export default function Home({ blocks, numberBlocks }) {
     <Layout
       pagina="Bloques gratis de Autocad">
 
-      <main className='grid grid-cols-1   md:grid-cols-[160px_1fr_160px] md:gap-9'>
+      <main className='grid grid-cols-1 md:grid-cols-[160px_1fr_160px] md:gap-9'>
         <div className='col-start-1 col-end-4 lg:col-start-2 lg:col-end-3'>
           <h1 className='text-center font-bold  text-4xl lg:text-6xl p-6 pb-6 md:pb-12'>
             {locale === 'es' ? <>

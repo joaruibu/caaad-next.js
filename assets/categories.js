@@ -9,7 +9,7 @@ export const allCategories = [
         tags: ['cat', 'dog', 'horse', 'bird', 'animalOthers']
     },
     {
-        value: 'author-furniture',
+        value: 'authorFurniture',
         label: 'Author furniture',
         label_ES: 'Muebles de Autor',
         tags: ['alvarAalto', 'arneJacobsen', 'carlesRayEames', 'frankGehry', 'gerryRietveld', 'hansJWegner', 'jeanProuvee', 'leCorbusier', 'miesVanDerRohe', 'miguelMila', 'vernerPanton']
@@ -31,16 +31,16 @@ export const allCategories = [
         value: 'construction',
         label: 'Construction',
         label_ES: 'Construccion',
-        tags: ["brick", "metalProfile", "lattice", "pillars"],
+        tags: ["brick", "metalProfile", "lattice", "pillar"],
     },
     {
         value: 'decor',
         label: 'Decor',
         label_ES: 'Decor',
-        tags: ["cushion", "curtain", "box", "vase", "book", "frame", "decorOthers", "tray", "pot", "basket"]
+        tags: ["cushion", "curtain", "box", "homeware", "vase", "book", "frame", "decorOthers", "tray", "pot", "basket"]
     },
     {
-        value: 'dining-room',
+        value: 'diningRoom',
         label: 'Dinning room',
         label_ES: 'Comedor',
         tags: ["cartBar", "chair", "eating", "groupsDinningRoom", "stool", "table"]
@@ -55,19 +55,19 @@ export const allCategories = [
         value: 'dressingRoom',
         label: 'Dressing room',
         label_ES: 'Vestidor',
-        tags: ["clothes", "standingMirror", "box", "dressingRoomOthers"]
+        tags: ["clothe", "mirror", "box", "wardrobe", "commode", "dressingRoomOthers"]
     },
     {
         value: 'facilities',
         label: 'Facilities',
         label_ES: 'Instalaciones',
-        tags: ["heater", "stove", "fireplace", "faucet", "showerHead", "urinary", "pipeline", "toilet", "airConditioning", "facilitiesOthers"]
+        tags: ["heater", "stove", "fireplace", "electricitySymbol", "faciltiesSymbol", "faucet", "showerHead", "urinary", "pipeline", "toilet", "airConditioning", "facilitiesOthers"]
     },
     {
         value: 'icons',
         label: 'Icons',
         label_ES: 'Iconos',
-        tags: ["compass", "electricitySymbols", "faciltiesSymbols", "trafficSignals", "toiletSymbols", "drawingSymbols"],
+        tags: ["compass", "electricitySymbol", "faciltiesSymbol", "trafficSignal", "toiletSymbol", "drawingSymbol"],
     },
     {
         value: 'kids',
@@ -104,7 +104,7 @@ export const allCategories = [
         value: 'musicalInstruments',
         label: 'Musical ',
         label_ES: 'Instrumentos',
-        tags: ["guitar", "piano", "drummer", "playingInstruments", "instrumentOthers"]
+        tags: ["guitar", "piano", "drummer", "playingInstruments", "theater", "instrumentOthers"]
     },
     {
         value: 'office',
@@ -123,7 +123,7 @@ export const allCategories = [
         value: 'theme',
         label: 'Themes',
         label_ES: 'Tématica',
-        tags: ["restaurant", "christmas", "starWars", "school", "theaters"]
+        tags: ["restaurant", "christmas", "starWars", "school", "theater"]
     },
     {
         value: 'sports',
@@ -135,13 +135,13 @@ export const allCategories = [
         value: 'storageFurniture',
         label: 'Storage',
         label_ES: 'Almacenaje',
-        tags: ["cabinets", "chestOfDrawers", "bedsideTable", "commodes", "shelves", "wardrobe", "storageFurnitureOthers"]
+        tags: ["cabinet", "chestOfDrawers", "handle", "bedsideTable", "commode", "shelve", "wardrobe", "storageFurnitureOthers"]
     },
     {
         value: 'outdoor',
         label: 'Outdoor',
         label_ES: 'Exteriores',
-        tags: ["swimmingpool", "parasol", "hammock", "peopleSwimming", "playground", "fountains"]
+        tags: ["swimmingpool", "parasol", "hammock", "peopleSwimming", "playground", "fountain"]
     },
     {
         value: 'transport',
@@ -165,10 +165,10 @@ export const allCategories = [
 
     },
     {
-        value: 'mobiliario-urbano',
+        value: 'urbanFurniture',
         label: 'Urban furniture',
         label_ES: 'Mobiliario Urbano',
-        tags: ["bin", "bikeRack", "fountains", "trafficSignals", "bollards", "streetBench", "urbanFurnitureOthers", "streetlight"]
+        tags: ["bin", "bikeRack", "fountain", "trafficSignal", "bollard", "streetBench", "urbanFurnitureOthers", "streetlight"]
     },
 
 ]

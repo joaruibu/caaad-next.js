@@ -3,53 +3,57 @@ import mongoose from 'mongoose'
 const BlockSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: false,
-        unique: true
+        // required: false,
+        // unique: true
     },
     title_ES: {
         type: String,
-        required: false,
-        unique: true
+        // required: false,
+        // unique: true
     },
     description: {
         type: String,
-        required: false
+        // required: false
     },
     description_ES: {
         type: String,
-        required: false
+        // required: false
+    },
+    similar: {
+        type: String,
+        // required: false
     },
     categories: {
         type: Array,
-        required: true
+        // required: true
     },
     tags: {
         type: Array,
-        required: true
+        // required: true
     },
     filters: {
         type: Array,
-        required: true
+        // required: true
     },
     img: {
         type: String,
-        required: true
+        // required: true
     },
     dwg: {
         type: String,
-        required: true
+        // required: true
     },
     date: {
         type: Number,
-        required: true
+        // required: true
     },
     downloads: {
         type: Number,
-        required: false
+        // required: false
     },
     free: {
         type: Boolean,
-        required: false
+        // required: false
     }
 })
 

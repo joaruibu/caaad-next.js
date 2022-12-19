@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 
 const UrlNotFound = ({ error }) => {
-    console.log(error)
+
     return (
         <Layout pagina='404'>
             <main className='grid grid-cols-[160px_1fr_160px] gap-9'>
