@@ -15,26 +15,26 @@ const CookiesBanner = () => {
                             </span>
                             {locale === 'es' ?
                                 <p className="ml-3  font-normal text-white">
-                                    <span className="md:hidden">Cooookies, estamos a dieta, comemos las justas.</span>
-                                    <span className="hidden md:inline">Cooookies, estamos a dieta, y solo usamos las justas para saber cuanta gente nos visita :)</span>
+                                    <span className="md:hidden">¡Cooookies! Estamos a dieta, comemos las justas.</span>
+                                    <span className="hidden md:inline">¡Cooookies! Estamos a dieta, y solo usamos las justas para saber cuánta gente nos visita :)</span>
                                 </p>
 
                                 :
                                 <p className="ml-3  font-normal text-white">
-                                    <span className="md:hidden">Cooookies, we are on a diet, we eat little.</span>
-                                    <span className="hidden md:inline">Cooookies,
-                                        we are on a diet, and we only use the fair ones to know how many people visit us :)</span>
+                                    <span className="md:hidden">Cooookies! We are on a diet, we eat little.</span>
+                                    <span className="hidden md:inline">Cooookies!
+                                        We are on a diet, and we only use the fair ones to know how many people visit us :)</span>
                                 </p>
                             }
 
                         </div>
                         <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                             <a
-                                href="#"
+                                href={`${locale === 'es' ? `/es/cookies` : `/cookies`}`}
                                 className=" text-white text-sm hover:underline opacity-50 pr-9"
                                 onClick={() => setCookiesAccepted(true)}
                             >
-                                {locale === 'es' ? 'No me apetece' : 'No, thanks'}
+                                {locale === 'es' ? 'Más info' : 'More, info'}
 
                             </a>
                         </div>

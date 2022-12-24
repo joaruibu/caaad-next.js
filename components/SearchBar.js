@@ -27,10 +27,13 @@ const SearchBar = () => {
                     onChange={(e) => setQuery(e.target.value)}>
 
                 </input>
-                <input
-                    type="submit" className="hidden"></input>
 
-                <i type="submit" className="fa-solid fa-magnifying-glass text-orange-600 absolute top-1 right-3 p-3 cursor-pointer"></i>
+                <i type="submit" className="fa-solid fa-magnifying-glass text-orange-600 absolute top-1 right-3 p-3 cursor-pointer" onClick={(e) => {
+                    e.preventDefault();
+                    setSearch(query);
+                    setTags([]);
+                    setFilters([])
+                }}> </i>
 
             </form>
 

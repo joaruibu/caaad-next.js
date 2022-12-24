@@ -9,10 +9,9 @@ const Contact = () => {
     return (
 
         <Layout pagina={locale === 'es' ? 'Privacidad' : 'Privacy'} >
-
-            <main className='grid grid-cols-[160px_1fr_160px] gap-9'>
-                <div className='col-start-2 col-end-3'>
-                    <h1 className='hidden md:block text-center font-extrabold tracking-tight text-6xl p-6 pb-12'>
+            <main className='grid grid-cols-1 md:grid-cols-[160px_1fr_160px] gap-9'>
+                <div className='col-start-1 md:col-start-2 md:col-end-3'>
+                    <h1 className='block text-center font-extrabold tracking-tight text-4xl lg:text-6xl p-6 pb-12'>
                         {locale === 'es' ? 'Privacidad' : 'Privacy'}
                     </h1>
                     {locale === 'es' ? <>

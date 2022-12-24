@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
 import Layout from "../../components/Layout";
@@ -13,7 +13,7 @@ import UrlNotFound from "../404";
 import SimilarBlock from "../../components/SimilarBlock";
 import { useRouter } from "next/router";
 import BadgeCategory from "../../components/BadgeCategorie";
-import { createSimilarTitles } from "../../helpers";
+
 
 const BlockPage = ({ success, error, block, similarBlocks }) => {
 
@@ -30,7 +30,7 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
   return (
 
     <Layout
-      pagina={locale === 'es' ? `Descargar bloque ${title_ES}` : `Download ${title} block`}>
+      pagina={locale === 'es' ? `Descargar bloque de autocad ${title_ES}` : `Download ${title} cad block`}>
 
       <main className='grid grid-cols-1 gap-9 md:grid-cols-[160px_1fr_160px] content-start md:gap-9 min-h-screen'>
         <div className='hidden md:block md:col-start-1'>
@@ -38,12 +38,12 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
         </div>
         <div className='md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12'>
           <div className="relative border border-orange-600 rounded-3xl bg-white overflow-hidden grid content-center">
-            <Image layout="responsive" width={250} height={165} alt={locale === 'es' ? `Descargar bloque ${title_ES}` : `Download ${title} block`} src={img} priority />
+            <Image layout="responsive" width={250} height={165} alt={locale === 'es' ? `Descargar bloque autoCAD ${title_ES}` : `Download ${title}  cad block`} src={img} priority />
           </div>
           <div>
             <div className="mb-4">
               <p className="font-bold block w-full">{locale === 'es' ? `Título:` : `Title:`} </p>
-              <h1 className=" font-bold text-xl text-orange-500">{locale === 'es' ? `${title_ES}` : `${title}`}</h1>
+              <h1 className=" font-bold text-xl text-orange-500">{locale === 'es' ? `Descargar bloque autoCAD ${title_ES}` : `Download cad block ${title}`}.</h1>
             </div>
             <div className="mb-4">
               <p className="font-bold block w-full">{locale === 'es' ? `Descripción:` : `Description:`} </p>
@@ -84,7 +84,7 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
               </div>
             </div>
             <Link href={dwg} passHref >
-              <a className="w-full block rounded-full text-xl uppercase text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque gratis` : `Download free block`} </a>
+              <a className="w-full block rounded-full text-lg uppercase text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque de autoCAD gratis` : `Download free CAD block`} </a>
             </Link>
           </div>
         </div>
@@ -156,8 +156,9 @@ export async function getStaticProps({ params: { id } }) {
     block._id = block._id.toString()
 
     // Buscar como hacer la busqueda del titulo similar al actual
-    const similarResults = await Block.find({ $or: [{ title: { '$in': createSimilarTitles(block.title) } }, { tags: block.tags }, { category: block.category }] }).limit(10);
+    const similarResults = await Block.find({ $or: [{ similar: block.similar }, { tags: block.tags }, { category: block.category }] }).limit(10);
 
+    console.log(3434343434, similarResults)
     const similarBlocks = similarResults
       .map((ele) => {
         const block = ele.toObject()
@@ -166,6 +167,7 @@ export async function getStaticProps({ params: { id } }) {
       })
       // Eliminamos el bloque en el que estamos
       .filter(ele => ele._id !== newId)
+
 
 
 

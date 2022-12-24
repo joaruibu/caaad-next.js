@@ -17,6 +17,7 @@ const FormAddBlock = () => {
         title_ES: '',
         description: '',
         description_ES: '',
+        similar: '',
         categories: [],
         tags: [],
         filters: [],
@@ -63,6 +64,7 @@ const FormAddBlock = () => {
                     ...form,
                     filters: selectedFilters,
                 })
+
             } else {
                 const filterFilters = selectedFilters.filter((each) => each !== value)
                 setChekedFilters(filterFilters)
@@ -78,15 +80,17 @@ const FormAddBlock = () => {
             const selectedCategories = [...checkedCategories]
 
             if (!checkedTags.includes(value)) {
-
                 selectedTags.push(value)
                 if (!selectedCategories.includes(category)) {
-                    selectedCategories.push(category)
+                    // Filtro las  categorias que tengan ese tag en cat.tags, lo mapeo e inserto el valor
+                    allCategories
+                        .filter(cat => cat.tags.includes(value))
+                        .map(cat => selectedCategories.push(cat.value))
                 }
 
                 setChekedTags(selectedTags)
                 setCheckedCategories(selectedCategories)
-                console.log(selectedCategories)
+
                 setForm({
                     ...form,
                     tags: selectedTags,
@@ -95,6 +99,7 @@ const FormAddBlock = () => {
             } else {
                 const filterTags = selectedTags.filter(t => t !== value)
                 const filterCategories = selectedCategories.filter(each => each !== category)
+                alert('Esto va a dar error, vuelve a subir el bloque. :)')
 
                 setChekedTags(filterTags)
                 setCheckedCategories(filterCategories)
@@ -105,6 +110,7 @@ const FormAddBlock = () => {
                     categories: filterCategories
                 })
             }
+
         }
     }
 
@@ -181,9 +187,9 @@ const FormAddBlock = () => {
             "titulo": form.title,
             "description": form.description,
             "img": form.img,
-            "url": `www.caaad.pro/block/${urlTitle(form.title)}-${urlId}`
+            "url": `www.caaad.pro/download-autocad-block/${urlTitle(form.title)}-${urlId}`
         }
-        console.log(12121212, _datos)
+
         await fetch('https://hooks.zapier.com/hooks/catch/13798738/bxpsfni/', {
             method: "POST",
             body: JSON.stringify(_datos),
@@ -192,7 +198,7 @@ const FormAddBlock = () => {
         })
 
     }
-    // Publico el post de pinterest cuanto tengo el valor del id que me viene de la respuesta del postData (esto se debe de poder mejorar con asinc/await)
+    //Publico el post de pinterest cuanto tengo el valor del id que me viene de la respuesta del postData (esto se debe de poder mejorar con async/await)
     useEffect(() => {
         if (urlId !== '') {
             publishPinterestPost()
@@ -203,9 +209,9 @@ const FormAddBlock = () => {
 
     const handleSumbit = (e) => {
         e.preventDefault()
+        console.log(444444, form)
         postData(form)
 
-        console.log(444444, form)
 
         // setTimeout(() => {
         //     location.reload()
@@ -265,6 +271,19 @@ const FormAddBlock = () => {
                         autoComplete='off'
                         name='description_ES'
                         value={form.description_ES || ''}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <label htmlFor="Similar" className="block text-sm font-medium text-gray-700">Similar:</label>
+                <div className="mt-1">
+                    <input
+                        className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        type='text'
+                        placeholder='Similar'
+                        autoComplete='off'
+                        name='similar'
+                        value={form.similar || ''}
                         onChange={handleChange}
                     />
                 </div>

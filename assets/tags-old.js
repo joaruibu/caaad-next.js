@@ -57,15 +57,15 @@ export const allTags = [
     { value: 'doorOthers', label: 'Otros' },
 
     { value: 'dressingRoom', label: 'VESTIDOR' },
-    { value: 'clothes', label: 'Ropas' },
+    { value: 'clothe', label: 'Ropas' },
     { value: 'standingMirror', label: 'Espejos de pie' },
     { value: 'dressingRoomOthers', label: 'Otros' },
 
     { value: 'storageFurniture', label: 'ALMACENAJE' },
-    { value: 'cabinets', label: 'Armarios tv' },
+    { value: 'cabinet', label: 'Armarios tv' },
     { value: 'chestOfDrawers', label: 'Cajonera' },
-    { value: 'commodes', label: 'Cómodas' },
-    { value: 'shelves', label: 'Estanterias' },
+    { value: 'commode', label: 'Cómodas' },
+    { value: 'shelve', label: 'Estanterias' },
     { value: 'wardrobe', label: 'Armarios' },
     { value: 'storageFurnitureOthers', label: 'Otros' },
 
@@ -85,9 +85,9 @@ export const allTags = [
     { value: 'urbanFurniture', label: 'MOBILIARIOS URBANO' },
     { value: 'bin', label: 'Papeleras' },
     { value: 'biceRack', label: 'Aparcabicis' },
-    { value: 'fountains', label: 'Fuentes' },
+    { value: 'fountain', label: 'Fuentes' },
     { value: 'symbols', label: 'Señalítica' },
-    { value: 'bollards', label: 'Bolardos' },
+    { value: 'bollard', label: 'Bolardos' },
     { value: 'streetBench', label: 'Bancos' },
     { value: 'urbanFurnitureOthers', label: 'Otros' },
 
