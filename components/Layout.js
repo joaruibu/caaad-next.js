@@ -9,7 +9,7 @@ import { useApp } from '../context'
 
 const Layout = ({ children, pagina }) => {
     const { cookiesAccepted, locale } = useApp()
-    const title = `Caaad-${pagina}`
+    const title = `Download cad block-${pagina}`
     return (
         <>
             <Head>

@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /add-new-block/
+
+# Host
+Host: https://caaad.pro
+
+# Sitemaps
+Sitemap: https://caaad.pro/sitemap.xml
