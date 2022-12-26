@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# páginas
+/pages/add-new-block
+
 # dependencies
 /node_modules
 /.pnp

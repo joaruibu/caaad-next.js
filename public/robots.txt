@@ -1,7 +1,7 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /add-new-block/
+Disallow: /pages/add-new-block/
 
 # Host
 Host: https://caaad.pro
