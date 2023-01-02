@@ -4,7 +4,7 @@ export const footerLinks = {
     web: [
         { label: 'About us', label_ES: 'Nosotros', href: '/about-us' },
         { label: 'Contact', label_ES: 'Contacto', href: '/contact' },
-        { label: 'Terms', label_ES: 'Términos', href: '/legTermsal' },
+        { label: 'Terms', label_ES: 'Términos', href: '/terms' },
         { label: 'Privacy', label_ES: 'Privacidad', href: '/privacy' },
         { label: 'Cookies', label_ES: 'Cookies', href: '/cookies' },
 

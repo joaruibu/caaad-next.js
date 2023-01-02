@@ -8,7 +8,7 @@ const AboutUs = () => {
 
     return (
 
-        <Layout pagina={locale === 'es' ? 'Nostros' : 'About us'} >
+        <Layout pagina={locale === 'es' ? 'Nosotros' : 'About us'} >
             <main className='grid grid-cols-1 md:grid-cols-[160px_1fr_160px] gap-9'>
                 <div className='col-start-1 md:col-start-2 md:col-end-3'>
                     <h1 className='block text-center font-extrabold tracking-tight text-4xl lg:text-6xl p-6 pb-12'>
