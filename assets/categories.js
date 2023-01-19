@@ -31,7 +31,7 @@ export const allCategories = [
         value: 'construction',
         label: 'Construction',
         label_ES: 'Construccion',
-        tags: ["brick", "metalProfile", "lattice", "pillar"],
+        tags: ["brick", "metalProfile", "lattice", "pillar", "constructionWorker"],
     },
     {
         value: 'decor',

@@ -32,7 +32,7 @@ export const footerLinks = {
     viviendas: [
         { label: 'Download free living room blocks', label_ES: 'Descargar bloques de salón gratis', href: '/category/livingRoom' },
         { label: 'Download free sofas blocks', label_ES: 'Descargar bloques de sofas gratis', href: '/tag/sofa' },
-        { label: 'Download free seats blocks', label_ES: 'Descargar bloques de butacas gratis', href: '/tag/seat' },
+        { label: 'Download free chairs and seats blocks', label_ES: 'Descargar bloques de sillas y butacas gratis', href: '/tag/chair' },
         { label: 'Download free coffe tableblocks', label_ES: 'Descargar bloques de mesa de centro gratis', href: '/tag/coffeeTable' },
     ],
     social: [

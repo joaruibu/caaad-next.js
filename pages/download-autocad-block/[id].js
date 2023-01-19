@@ -156,9 +156,8 @@ export async function getStaticProps({ params: { id } }) {
     block._id = block._id.toString()
 
     // Buscar como hacer la busqueda del titulo similar al actual
-    const similarResults = await Block.find({ $or: [{ similar: block.similar }, { tags: block.tags }, { category: block.category }] }).limit(10);
+    const similarResults = (await Block.find({ tags: block.tags }).limit(10)).reverse();
 
-    console.log(3434343434, similarResults)
     const similarBlocks = similarResults
       .map((ele) => {
         const block = ele.toObject()

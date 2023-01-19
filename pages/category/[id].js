@@ -38,7 +38,7 @@ const CategoryPage = ({ blocksFilterByCategory, params, numberBlocks }) => {
                 </div>
 
                 <div className='hidden md:block md:col-start-1 md:col-end-2'>
-                    <AddSidebar />
+                    {/* <AddSidebar /> */}
 
                 </div>
                 <div className=' md:col-start-2 md:col-end-3'>

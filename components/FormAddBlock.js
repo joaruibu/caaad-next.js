@@ -179,7 +179,7 @@ const FormAddBlock = () => {
             console.log(4, error)
         }
     }
-    console.log(44444, urlId)
+
 
     const publishPinterestPost = async () => {
 
@@ -253,8 +253,9 @@ const FormAddBlock = () => {
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700">English description</label>
                 <div className="mt-1">
                     <textarea
-                        className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="block w-full h-96 p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         type='text'
+
                         placeholder='English description'
                         autoComplete='off'
                         name='description'
@@ -265,7 +266,7 @@ const FormAddBlock = () => {
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700">Spanish description</label>
                 <div className="mt-1">
                     <textarea
-                        className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="block w-full h-96 p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         type='text'
                         placeholder='Descripción en Español'
                         autoComplete='off'
