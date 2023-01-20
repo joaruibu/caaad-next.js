@@ -167,9 +167,6 @@ export async function getStaticProps({ params: { id } }) {
       // Eliminamos el bloque en el que estamos
       .filter(ele => ele._id !== newId)
 
-
-
-
     if (!block)
       return {
         props: {
