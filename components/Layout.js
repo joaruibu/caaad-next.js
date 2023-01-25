@@ -19,6 +19,20 @@ const Layout = ({ children, pagina }) => {
                 <meta name='robots' content='index, follow'></meta>
                 <link rel="icon" href="/favicon.png" />
             </Head>
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                strategy='afterInteractive' />
+
+            <Script
+                id='GA'
+                strategy='afterInteractive'
+                dangerouslySetInnerHTML={{
+                    __html: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`
+                }} />
 
             <div className='container mx-auto px-3'>
                 <Header />
