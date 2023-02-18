@@ -167,7 +167,7 @@ export const allTags = [
     { value: 'jumping', label: 'Jumping', label_ES: 'Saltando', noTagAlone: true },
     { value: 'layingDown', label: 'Laying down', label_ES: 'Tumbada' },
     { value: 'elder', label: 'Elders', label_ES: 'Personas mayores' },
-    { value: 'ridingBike', label: 'Riding a bike', label_ES: 'Montando en bici', noTagAlone: true },
+    { value: 'onWheels', label: 'On wheels', label_ES: 'Sobre ruedas', noTagAlone: true },
     { value: 'running', label: 'Running', label_ES: 'Corriendo', noTagAlone: true },
     { value: 'sitting', label: 'Sitting', label_ES: 'Sentadas', noTagAlone: true },
     { value: 'painting', label: 'Painting', label_ES: 'Pintando', noTagAlone: true },
@@ -224,6 +224,7 @@ export const allTags = [
     { value: 'tree', label: 'Trees', label_ES: 'Árboles' },
     { value: 'flowerPot', label: 'Flower pots', label_ES: 'Macetas' },
     { value: 'flower', label: 'Flowers', label_ES: 'Flores' },
+    { value: 'vegetables', label: 'Vegetables', label_ES: 'Verduras' },
     { value: 'hangingPlant', label: 'Hanging plants', label_ES: 'Plantas colgantes' },
     { value: 'climbingPlants', label: 'Climbing plants', label_ES: 'Enredaderas' },
 

@@ -120,7 +120,7 @@ export async function getStaticPaths() {
       return block
     })
 
-    const paths = blocks.map(({ _id, title }) => {
+    const paths = blocks.slice(0, 20).map(({ _id, title }) => {
       const splitTitle = title.replaceAll(' ', '-');
       return {
         params: { id: `${splitTitle.toLowerCase()}-${_id}` },
@@ -128,7 +128,7 @@ export async function getStaticPaths() {
       }
     });
 
-    const paths_ES = blocks.map(({ _id, title_ES }) => {
+    const paths_ES = blocks.slice(0, 20).map(({ _id, title_ES }) => {
       const splitTitle = title_ES.replaceAll(' ', '-');
       return {
         params: { id: `${splitTitle.toLowerCase()}-${_id}` },
@@ -138,7 +138,7 @@ export async function getStaticPaths() {
 
     return {
       paths: [...paths, ...paths_ES],
-      fallback: false
+      fallback: 'blocking'
     }
 
   } catch (error) {

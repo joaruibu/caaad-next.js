@@ -116,7 +116,7 @@ export const allCategories = [
         value: 'people',
         label: 'People',
         label_ES: 'Personas',
-        tags: ["children", "cooking", "dancing", "eating", "elder", "painting", "constructionWorker", "healthStaff", "playingInstruments", "exercising", "jumping", "layingDown", "ridingBike", "running", "sitting",
+        tags: ["children", "cooking", "dancing", "eating", "elder", "painting", "constructionWorker", "healthStaff", "playingInstruments", "exercising", "jumping", "layingDown", "onWheels", "running", "sitting",
             "standing", "talking", "walking", "peopleSwimming", "looking", "takingPicture", "working", "peopleOthers"]
     },
     {
@@ -154,7 +154,7 @@ export const allCategories = [
         value: 'vegetation',
         label: 'Vegetation',
         label_ES: 'Vegetación',
-        tags: ["gardenTools", "bush", "tree", "pottedPlan", "flower", "hangingPlant", "flowerPot", "climbingPlants"]
+        tags: ["gardenTools", "bush", "tree", "vegetables", "pottedPlan", "flower", "hangingPlant", "flowerPot", "climbingPlants"]
 
     },
     {

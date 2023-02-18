@@ -6,4 +6,4 @@ Allow: /
 Host: https://caaad.pro
 
 # Sitemaps
-Sitemap: https://caaad.pro/sitemap-0.xml
+Sitemap: https://caaad.pro/sitemap.xml
