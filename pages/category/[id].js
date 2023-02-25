@@ -14,7 +14,7 @@ const CategoryPage = ({ blocksFilterByCategory, params, numberBlocks }) => {
     return (
         <Layout
             pagina={locale === 'es' ?
-                `Descarga  bloques de ${allCategories.find(category => category.value === params.id).label_ES}de Autocad  gratis`
+                `Descarga  bloques de ${allCategories.find(category => category.value === params.id).label_ES} de Autocad  gratis`
                 :
                 `Download free autocad ${allCategories.find(category => category.value === params.id).label} blocks`
             }>

@@ -219,11 +219,12 @@ export const allTags = [
     { value: 'transportOthers', label: 'Others', label_ES: 'Otros' },
 
     { value: 'vegetation', label: 'VEGETATION', label_ES: 'VEGETACIÓN' },
-    { value: 'gardenTools', label: 'Garden tools', label_ES: 'Heramientas de jardín' },
+    { value: 'boulders', label: 'Boulders', label_ES: 'Rocas' },
     { value: 'bush', label: 'Bushes', label_ES: 'Arbustos' },
     { value: 'tree', label: 'Trees', label_ES: 'Árboles' },
     { value: 'flowerPot', label: 'Flower pots', label_ES: 'Macetas' },
-    { value: 'flower', label: 'Flowers', label_ES: 'Flores' },
+    { value: 'cactus', label: 'Cactus', label_ES: 'Cactus' },
+    { value: 'palmTree', label: 'Palm tree', label_ES: 'Palmeras' },
     { value: 'vegetables', label: 'Vegetables', label_ES: 'Verduras' },
     { value: 'hangingPlant', label: 'Hanging plants', label_ES: 'Plantas colgantes' },
     { value: 'climbingPlants', label: 'Climbing plants', label_ES: 'Enredaderas' },
@@ -238,7 +239,6 @@ export const allTags = [
     { value: 'dinningRoom', label: 'DINNING ROOM', label_ES: 'COMEDOR' },
     { value: 'cartBar', label: 'Cart bar', label_ES: 'Carritos bebidas' },
     { value: 'chair', label: 'Chairs and seats', label_ES: 'Sillas' },
-    { value: 'groupsDinningRoom', label: 'Dinning room groups', label_ES: 'Conjuntos comedor' },
     { value: 'stool', label: 'Stooles', label_ES: 'Taburetes' },
     { value: 'table', label: 'Tables', label_ES: 'Mesas' },
     { value: 'dinningRoomOthers', label: 'Others', label_ES: 'Otros' }

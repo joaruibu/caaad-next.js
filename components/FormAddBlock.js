@@ -199,12 +199,13 @@ const FormAddBlock = () => {
 
     }
     //Publico el post de pinterest cuanto tengo el valor del id que me viene de la respuesta del postData (esto se debe de poder mejorar con async/await)
-    useEffect(() => {
-        if (urlId !== '') {
-            publishPinterestPost()
-        }
+    //Descomentar cuando volvamos a activar zapier
+    // useEffect(() => {
+    //     if (urlId !== '') {
+    //         publishPinterestPost()
+    //     }
 
-    }, [urlId])
+    // }, [urlId])
 
 
     const handleSumbit = (e) => {

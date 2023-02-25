@@ -43,7 +43,7 @@ export const allCategories = [
         value: 'diningRoom',
         label: 'Dinning room',
         label_ES: 'Comedor',
-        tags: ["cartBar", "chair", "eating", "groupsDinningRoom", "stool", "table"]
+        tags: ["cartBar", "chair", "eating", "stool", "table"]
     },
     {
         value: 'doors',
@@ -154,7 +154,7 @@ export const allCategories = [
         value: 'vegetation',
         label: 'Vegetation',
         label_ES: 'Vegetación',
-        tags: ["gardenTools", "bush", "tree", "vegetables", "pottedPlan", "flower", "hangingPlant", "flowerPot", "climbingPlants"]
+        tags: ["boulders", "bush", "tree", "vegetables", "palmTree", "cactus", "hangingPlant", "flowerPot", "climbingPlants"]
 
     },
     {
