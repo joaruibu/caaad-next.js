@@ -3,38 +3,84 @@
 export const footerLinks = {
     web: [
         { label: 'About us', label_ES: 'Nosotros', href: '/about-us' },
-        { label: 'Contact', label_ES: 'Contacto', href: '/contact' },
         { label: 'Terms', label_ES: 'Términos', href: '/terms' },
+        { label: 'Pinterest', label_ES: 'Pinterest', href: 'https://www.pinterest.es/caaad_freeautocadblocks/' },
         { label: 'Privacy', label_ES: 'Privacidad', href: '/privacy' },
         { label: 'Cookies', label_ES: 'Cookies', href: '/cookies' },
-
     ],
-    personas: [
+    people: [
         { label: 'Download free people blocks', label_ES: 'Descargar bloques de personas gratis', href: '/category/people' },
-        { label: 'Download free people sitting blocks', label_ES: 'Descargar bloques de personas sentadas gratis', href: '/tag/sitting' },
-        { label: 'Download free people walking blocks', label_ES: 'Descargar bloques de personas caminando gratis', href: '/tag/walking' },
+        { label: 'Download free sitting people blocks', label_ES: 'Descargar bloques de personas sentadas gratis', href: '/tag/sitting' },
+        { label: 'Download free walking people blocks', label_ES: 'Descargar bloques de personas caminando gratis', href: '/tag/walking' },
+        { label: 'Download free running people blocks', label_ES: 'Descargar bloques de personas corriendo gratis', href: '/tag/running' },
+        { label: 'Download free cooking people blocks', label_ES: 'Descargar bloques de personas cocinando gratis', href: '/tag/cooking' },
+        { label: 'Download free elder people blocks', label_ES: 'Descargar bloques de personas mayores gratis', href: '/tag/elder' },
         { label: 'Download free kids blocks', label_ES: 'Descargar bloques de niños gratis', href: '/tag/children' },
     ],
-    autos: [
+    transport: [
         { label: 'Download free transport blocks', label_ES: 'Descargar bloques de transporte gratis', href: '/category/transport' },
-        { label: 'Download free motos blocks', label_ES: 'Descargar bloques de motos gratis', href: '/tag/moto' },
+        { label: 'Download free motorcyrcle blocks', label_ES: 'Descargar bloques de motos gratis', href: '/tag/moto' },
+        { label: 'Download free bikes blocks', label_ES: 'Descargar bloques de bicis gratis', href: '/tag/bicycle' },
         { label: 'Download free cars blocks', label_ES: 'Descargar bloques de autos gratis', href: '/tag/car' },
+        { label: 'Download free electric scooter blocks', label_ES: 'Descargar bloques de patinetes gratis', href: '/tag/scooter' },
         { label: 'Download free trucks blocks', label_ES: 'Descargar bloques de camiones gratis', href: '/tag/truck' },
         { label: 'Download free buses blocks', label_ES: 'Descargar bloques de autobuses gratis', href: '/tag/bus' },
     ],
-    baños: [
+    bathroom: [
         { label: 'Download free bathroom blocks', label_ES: 'Descargar bloques de baños gratis', href: '/category/bathroom' },
         { label: 'Download free sinks blocks', label_ES: 'Descargar bloques de lavabos gratis', href: '/tag/basin' },
         { label: 'Download free wc blocks', label_ES: 'Descargar bloques de inodoros gratis', href: '/tag/toilet' },
+        { label: 'Download free faucet blocks', label_ES: 'Descargar bloques de griferías gratis', href: '/tag/faucet' },
         { label: 'Download free showers blocks', label_ES: 'Descargar bloques de duchas gratis', href: '/tag/shower' },
+        { label: 'Download free washing machines blocks', label_ES: 'Descargar bloques de lavadoras gratis', href: '/tag/washingMachine' },
         { label: 'Download free bathtubs blocks', label_ES: 'Descargar bloques de bañeras gratis', href: '/tag/bathtub' },
     ],
-    viviendas: [
+    livingRoom: [
         { label: 'Download free living room blocks', label_ES: 'Descargar bloques de salón gratis', href: '/category/livingRoom' },
-        { label: 'Download free sofas blocks', label_ES: 'Descargar bloques de sofas gratis', href: '/tag/sofa' },
-        { label: 'Download free chairs and seats blocks', label_ES: 'Descargar bloques de sillas y butacas gratis', href: '/tag/chair' },
-        { label: 'Download free coffe tableblocks', label_ES: 'Descargar bloques de mesa de centro gratis', href: '/tag/coffeeTable' },
+        { label: 'Download free living rooms groups blocks', label_ES: 'Descargar bloques de conjuntos de salon gratis', href: '/tag/groupsLivingRoom' },
+        { label: 'Download free sofas blocks', label_ES: 'Descargar bloques de sofás gratis', href: '/tag/sofa' },
+        { label: 'Download free chairs blocks', label_ES: 'Descargar bloques de sillas gratis', href: '/tag/chair' },
+        { label: 'Download free armchairs blocks', label_ES: 'Descargar bloques de butacas gratis', href: '/tag/armchair' },
+        { label: 'Download free benchs blocks', label_ES: 'Descargar bloques de bancos gratis', href: '/tag/bench' },
+        { label: 'Download free coffe table blocks', label_ES: 'Descargar bloques de mesa de centro gratis', href: '/tag/coffeeTable' },
     ],
+    kitchen: [
+        { label: 'Download free kitchen blocks', label_ES: 'Descargar bloques de cocina gratis', href: '/category/kitchen' },
+        { label: 'Download free skin blocks', label_ES: 'Descargar bloques de fregaderos gratis', href: '/tag/skin' },
+        { label: 'Download free ovens blocks', label_ES: 'Descargar bloques de hornos gratis', href: '/tag/oven' },
+        { label: 'Download free hobs blocks', label_ES: 'Descargar bloques de fuegos gratis', href: '/tag/hobs' },
+        { label: 'Download free vitro blocks', label_ES: 'Descargar bloques de vitro gratis', href: '/tag/vitro' },
+        { label: 'Download free fridge blocks', label_ES: 'Descargar bloques de frigos gratis', href: '/tag/fridge' },
+        { label: 'Download free microwaves locks', label_ES: 'Descargar bloques de Microondas gratis', href: '/tag/microwaves' },
+    ],
+    decor: [
+        { label: 'Download free decor blocks', label_ES: 'Descargar bloques de decoración gratis', href: '/category/decor' },
+        { label: 'Download free vase blocks', label_ES: 'Descargar bloques de jarrones gratis', href: '/tag/vase' },
+        { label: 'Download free boxes blocks', label_ES: 'Descargar bloques de cajas gratis', href: '/tag/box' },
+        { label: 'Download free baskets blocks', label_ES: 'Descargar bloques de cestos gratis', href: '/tag/basket' },
+        { label: 'Download free photo frames blocks', label_ES: 'Descargar bloques de marcos de fotos gratis', href: '/tag/frame' },
+        { label: 'Download free cushions blocks', label_ES: 'Descargar bloques de cojies gratis', href: '/tag/cushion' },
+        { label: 'Download free curtains locks', label_ES: 'Descargar bloques de cortinas gratis', href: '/tag/curtain' },
+    ],
+    authorFurniture: [
+        { label: 'Download free author furniture blocks', label_ES: 'Descargar bloques de muebles de autor gratis', href: '/category/authorFurniture' },
+        { label: 'Download free Alvar Aalto blocks', label_ES: 'Descargar bloques de Alvar Aalto gratis', href: '/tag/alvarAalto' },
+        { label: 'Download free Arne Jacobsen blocks', label_ES: 'Descargar bloques de Arne Jacobsen gratis', href: '/tag/arneJacobsen' },
+        { label: 'Download free Carles & Ray Eames blocks', label_ES: 'Descargar bloques de Carles & Ray Eames gratis', href: '/tag/carlesRayEames' },
+        { label: 'Download free Gerrit T Rietveld blocks', label_ES: 'Descargar bloques de Gerrit T Rietveld gratis', href: '/tag/gerryRietveld' },
+        { label: 'Download free Le Corbusier blocks', label_ES: 'Descargar bloques de Le Corbusier gratis', href: '/tag/leCorbusier' },
+        { label: 'Download free Mies van der Rohe locks', label_ES: 'Descargar bloques de Mies van der Rohe gratis', href: '/tag/miesVanDerRohe' },
+    ],
+    ilumination: [
+        { label: 'Download free lighting blocks', label_ES: 'Descargar bloques de iluminación gratis', href: '/category/lighting' },
+        { label: 'Download free wall light blocks', label_ES: 'Descargar bloques de apliques de pared gratis', href: '/tag/wallLight' },
+        { label: 'Download free Street lights blocks', label_ES: 'Descargar bloques de farolas gratis', href: '/tag/streetLight' },
+        { label: 'Download free celling light blocks', label_ES: 'Descargar bloques de iluminación de techo gratis', href: '/tag/cellingLight' },
+        { label: 'Download free table lamp blocks', label_ES: 'Descargar bloques de lámparas de mesa gratis', href: '/tag/tableLamp' },
+        { label: 'Download free floor lamp blocks', label_ES: 'Descargar bloques de lámparas de suelo gratis', href: '/tag/floorLamp' },
+        { label: 'Download free pendant light locks', label_ES: 'Descargar bloques de lámparas colgantes gratis', href: '/tag/pendantLight' },
+    ],
+
     social: [
         // {
         //     name: 'Facebook',

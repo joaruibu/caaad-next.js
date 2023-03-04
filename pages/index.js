@@ -39,7 +39,6 @@ export default function Home({ blocks, numberBlocks }) {
           <TagSidebar />
         </div>
         <div className=' md:col-start-2 md:col-end-3'>
-
           <BlockList blocks={blocks} />
         </div>
 

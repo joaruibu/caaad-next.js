@@ -36,7 +36,7 @@ export const allTags = [
     { value: 'showerHead', label: 'Showers head', label_ES: 'Griferías ducha' },
     { value: 'toilet', label: 'Toilet', label_ES: 'Inodoros' },
     { value: 'basin', label: 'Basin', label_ES: 'Lavabo' },
-    { value: 'washingMachine', label: 'Wasing machines', label_ES: 'Lavadoras' },
+    { value: 'washingMachine', label: 'Washing machines', label_ES: 'Lavadoras' },
     { value: 'urinary', label: 'Urinals', label_ES: 'Urinarios' },
     { value: 'bathOthers', label: 'Others bathroom elements', label_ES: 'Otros elementos de baño' },
 

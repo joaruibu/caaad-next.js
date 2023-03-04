@@ -20,9 +20,8 @@ const BlockItem = React.forwardRef(({ block, similarBlock }, ref) => {
 
     return (
         <article key={_id} className={`${isSimilarBlock ? ' w-56 flex-none' : ' w-full '} border border-orange-600  rounded-3xl overflow-hidden sm:hover:shadow-[5px_7px_0px_0px_rgb(234,88,12)] transition-all `}>
-
             <Link href={`/download-autocad-block/${urlTitle(locale === 'es' ? title_ES : title)}-${_id}`} ref={ref} passHref>
-                <Image className="cursor-pointer" layout="responsive" width={250} height={165} alt={locale === 'es' ? `Descargar bloque gratis de autocad de ${title_ES}. Bloque de cad hecho por Be Interior Designer para descargar gratuita de bloques.` : `Dowload free ${title} autocad block. Autocad block make by Be Interior Designer for block free download`} src={img} priority />
+                <Image className="cursor-pointer" layout="responsive" width={250} height={165} alt={locale === 'es' ? `Descargar bloque gratis de autocad de ${title_ES}. Bloque de cad hecho por Be Interior Designer para descargar gratuita de bloques.` : `Dowload free ${title} autocad block. Autocad block make by Be Interior Designer for block free download`} src={img} loading="lazy" />
             </Link>
             <div className="border-t border-orange-600">
                 <Link href={`/download-autocad-block/${urlTitle(locale === 'es' ? title_ES : title)}-${_id}`} ref={ref} passHref>
@@ -54,7 +53,6 @@ const BlockItem = React.forwardRef(({ block, similarBlock }, ref) => {
                 </div>
             </div>
         </article>
-
 
     )
 })
