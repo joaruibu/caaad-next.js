@@ -8,7 +8,7 @@ const BadgeCategory = ({ category }) => {
 
     return (
         <>
-            <a className={`inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white text-xs`}
+            <a className={`cursorHover inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white text-xs`}
                 href={locale === 'es' ? `/es/category/${category}` : ` /category/${category} `}
 
             >

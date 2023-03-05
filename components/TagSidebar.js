@@ -20,12 +20,12 @@ const TagSidebar = () => {
             <h2 className='font-bold border-b border-b-black mb-3'>{locale === 'es' ? 'Filtros' : 'Filters'}</h2>
             <div className="grid grid-cols-2 mb-6">
                 {allFilters.map((filter) => (
-                    <div key={filter.value} className="flex items-center m-1 mr-3">
+                    <div key={filter.value} className="flex items-center m-1 mr-3 cursorHover">
                         <input
                             id={`filter-${filter.value}`}
                             defaultValue={filter.value}
                             type="checkbox"
-                            className="h-3 w-3 rounded"
+                            className="h-3 w-3 rounded "
                             checked={filters.includes(filter.value)}
                             onChange={() => {
                                 if (!filters.includes(filter.value)) {
@@ -38,7 +38,7 @@ const TagSidebar = () => {
                         />
                         <label
                             htmlFor={`filter-${filter.value}`}
-                            className="ml-1 min-w-0 flex-1 text-gray-500  hover:text-gray-800 text-xs cursor-pointer"
+                            className="ml-1 min-w-0 flex-1 text-gray-500  hover:text-gray-800 text-xs "
                         >
                             {locale === 'es' ? filter.label_ES : filter.label}
                         </label>
@@ -50,11 +50,11 @@ const TagSidebar = () => {
             <h2 className='font-bold border-b border-b-black mb-3'>{locale === 'es' ? 'Categoría' : 'Categories'} </h2>
             {orderCategories(allCategories)
                 .map((category) => (
-                    <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6">
+                    <Disclosure key={category.value} className="border-t border-gray-200 px-4 py-6 ">
                         {({ open }) => (
                             <>
                                 <h3 className="-mx-2 -my-3 flow-root ">
-                                    <Disclosure.Button className="px-2 py-2  w-full flex items-center justify-between text-gray-400">
+                                    <Disclosure.Button className="cursorHover px-2 py-2  w-full flex items-center justify-between text-gray-400 cursor-none">
                                         <span className="font-normal flex-1 text-left text-gray-400 whitespace-nowrap">{locale === 'es' ? category.label_ES : category.label}</span>
                                         <span className="flex items-center text-orange-600  hover:rotate-45 duration-75">
                                             {open ? (
@@ -68,18 +68,18 @@ const TagSidebar = () => {
                                 <Disclosure.Panel className="pt-1 pl-2 pb-6">
                                     <div className="space-y-2">
                                         <a
-                                            className='whitespace-nowrap hover:text-gray-600 underline text-gray-500 text-xs'
+                                            className=' whitespace-nowrap hover:text-gray-600 underline text-gray-500 text-xs'
                                             href={`${locale === 'es' ? `/es/category/${category.value}` : `/category/${category.value}`}`}>{locale === 'es' ? ` Ver todo ${category.label_ES} ` : ` View all ${category.label}`}</a>
                                         {allTags.
                                             filter(each => category.tags.includes(each.value))
                                             .map(((tag, optionIdx) => (
-                                                <div key={optionIdx} className="flex items-center">
+                                                <div key={optionIdx} className="cursorHover flex items-center ">
                                                     <input
                                                         id={`filter-${category.value}-${optionIdx}`}
                                                         type="checkbox"
                                                         defaultValue={tag.value}
                                                         checked={tags.includes(tag.value)}
-                                                        className="h-3 w-3 border-gray-300 rounded cursor-pointer"
+                                                        className="cursorHover h-3 w-3 border-gray-300 rounded "
                                                         onChange={() => {
                                                             setSearch('')
                                                             setQuery('')
@@ -104,7 +104,7 @@ const TagSidebar = () => {
                                                     />
                                                     <label
                                                         htmlFor={`filter-${category.value}-${optionIdx}`}
-                                                        className="ml-2 min-w-0 flex-1 text-gray-500 text-xs cursor-pointer hover:text-gray-800"
+                                                        className="ml-2 min-w-0 flex-1 text-gray-500 text-xs  hover:text-gray-800"
                                                     >
                                                         {locale === 'es' ? tag.label_ES : tag.label}
                                                     </label>

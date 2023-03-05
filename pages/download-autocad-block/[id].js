@@ -84,7 +84,7 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
               </div>
             </div>
             <Link href={dwg} passHref >
-              <a className="w-full block rounded-full text-lg uppercase text-center cursor-pointer p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque de autoCAD gratis` : `Download free CAD block`} </a>
+              <a className="cursorHover w-full block rounded-full text-lg uppercase text-center p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque de autoCAD gratis` : `Download free CAD block`} </a>
             </Link>
           </div>
         </div>

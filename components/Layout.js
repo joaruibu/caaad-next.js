@@ -9,12 +9,12 @@ import { useApp } from '../context'
 
 const Layout = ({ children, pagina }) => {
     const { cookiesAccepted, locale } = useApp()
-    const title = `Download cad block-${pagina}`
+    const title = `${pagina}`
     return (
         <>
             <Head>
                 <title>{title}</title>
-                <meta name="description" content={locale === 'es' ? 'Descarga bloques de autocad gratis, descarga los mejores bloques de autocad.' : 'Dowload free autocad blocks, download de best autocad block'} />
+                <meta name="description" content={locale === 'es' ? 'Descarga bloques de autocad gratis, descarga los mejores bloques de autocad.' : 'Dowload free autocad blocks, download the best autocad block'} />
                 <meta httpEquiv="content-language" content={locale}></meta>
                 <meta name='robots' content='index, follow'></meta>
                 <link rel="icon" href="/favicon.png" />

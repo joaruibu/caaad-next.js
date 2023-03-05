@@ -11,7 +11,7 @@ const Header = () => {
             <Link href="/" passHref>
                 <a>
                     <Image
-                        className='cursor-pointer'
+                        className='cursorHover'
                         layout='responsive'
                         width={1080} height={700}
                         src="/img/caaad-logotipo-animado.gif"

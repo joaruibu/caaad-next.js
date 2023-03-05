@@ -141,7 +141,7 @@ export const allCategories = [
         value: 'outdoor',
         label: 'Outdoor',
         label_ES: 'Exteriores',
-        tags: ["swimmingpool", "parasol", "hammock", "peopleSwimming", "playground", "fountain"]
+        tags: ["swimmingpool", "parasol", "hammock", "fence", "peopleSwimming", "playground", "fountain"]
     },
     {
         value: 'transport',

@@ -31,7 +31,7 @@ const CookiesBanner = () => {
                         <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                             <a
                                 href={`${locale === 'es' ? `/es/cookies` : `/cookies`}`}
-                                className=" text-white text-sm hover:underline opacity-50 pr-9"
+                                className=" text-white text-sm hover:underline opacity-50 pr-9 cursorHover"
                                 onClick={() => setCookiesAccepted(true)}
                             >
                                 {locale === 'es' ? 'Más info' : 'More, info'}
@@ -42,7 +42,7 @@ const CookiesBanner = () => {
 
                             <a
                                 href="#"
-                                className="flex items-center justify-center rounded-md  bg-white px-6 py-2 text-sm font-medium text-orange-600 shadow-sm hover:bg-indigo-50"
+                                className="flex cursorHover items-center justify-center rounded-md  bg-white px-6 py-2 text-sm font-medium text-orange-600 shadow-sm hover:bg-indigo-50"
                                 onClick={(e) => { e.preventDefault(); setCookiesAccepted(true) }}
                             >
                                 OKEY

@@ -28,7 +28,7 @@ const SearchBar = () => {
 
                 </input>
 
-                <i type="submit" className="fa-solid fa-magnifying-glass text-orange-600 absolute top-1 right-3 p-3 cursor-pointer" onClick={(e) => {
+                <i type="submit" className="fa-solid fa-magnifying-glass text-orange-600 absolute top-1 right-3 p-3 cursorHover" onClick={(e) => {
                     e.preventDefault();
                     setSearch(query);
                     setTags([]);
@@ -50,7 +50,7 @@ const SearchBar = () => {
                     }
                 </div>
                 {tags.length > 0 && <a
-                    className='cursor-pointer text-xs w-fit text-gray-500 hover:underline'
+                    className='cursorHover text-xs w-fit text-gray-500 hover:underline'
                     onClick={() => setTags([])}
                 >{locale === 'es' ? 'Borrar todos los Tags' : ' Delete all Tags'}
                 </a>}
