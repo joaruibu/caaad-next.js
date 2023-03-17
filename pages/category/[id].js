@@ -2,7 +2,6 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import { allCategories } from '../../assets/categories';
-import AddSidebar from '../../components/AddSidebar';
 import BlockList from '../../components/BlockList';
 import Layout from '../../components/Layout';
 import dbConnect from "../../lib/dbConnect";

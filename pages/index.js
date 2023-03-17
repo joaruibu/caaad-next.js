@@ -8,6 +8,7 @@ import Block from '../models/Block'
 import { useApp } from '../context'
 
 
+
 export default function Home({ blocks, numberBlocks }) {
   const { locale } = useApp()
 
@@ -15,6 +16,7 @@ export default function Home({ blocks, numberBlocks }) {
 
     <Layout
       pagina={locale === 'es' ? `Descarga bloques de Autocad gratis` : `Download free autocad blocks`}>
+
 
       <main className='grid grid-cols-1 md:grid-cols-[160px_1fr_160px] md:gap-9'>
         <div className='col-start-1 col-end-4 lg:col-start-2 lg:col-end-3'>
@@ -37,7 +39,8 @@ export default function Home({ blocks, numberBlocks }) {
           <TagSidebar />
         </div>
         <div className=' md:col-start-2 md:col-end-3'>
-          <BlockList blocks={blocks} />
+          {/* <BlockList blocks={blocks} /> */}
+
         </div>
 
         <div className='hidden md:block  md:col-start-3'>
