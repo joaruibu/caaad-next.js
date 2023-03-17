@@ -108,12 +108,13 @@ const SuscriptionBanner = () => {
                                                         <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                                                             <input
                                                                 type="email"
-                                                                className="form-control min-w-0 flex-auto rounded-md border-2 w-full border-orange-600 px-3.5 py-2 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
+                                                                className="form-control outline-none min-w-0 flex-auto rounded-md border-2 w-full border-orange-600 px-3.5 py-2 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                                                                 data-inputmask=""
                                                                 required
                                                                 name="fields[email]"
                                                                 placeholder="Entroduce tu email"
                                                                 autoComplete="email"
+
                                                             />
                                                         </div>
                                                     </div>

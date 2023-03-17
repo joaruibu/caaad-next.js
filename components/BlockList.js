@@ -8,7 +8,6 @@ const BlockList = ({ blocks }) => {
         <>
             <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {blocks
-                    .reverse()
                     .filter(({ description, description_ES, title, title_ES, tags }) => {
                         if (search.length > 0) {
                             const regex = new RegExp(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ""), "ig");

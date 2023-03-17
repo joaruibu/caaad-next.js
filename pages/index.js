@@ -39,7 +39,7 @@ export default function Home({ blocks, numberBlocks }) {
           <TagSidebar />
         </div>
         <div className=' md:col-start-2 md:col-end-3'>
-          {/* <BlockList blocks={blocks} /> */}
+          <BlockList blocks={blocks} />
 
         </div>
 
@@ -58,7 +58,7 @@ export async function getStaticProps() {
   try {
     await dbConnect()
     const result = await Block.find({})
-    const blocks = result.map((doc) => {
+    const blocks = result.reverse().map((doc) => {
       const block = doc.toObject()
       block._id = block._id.toString()
       return block
