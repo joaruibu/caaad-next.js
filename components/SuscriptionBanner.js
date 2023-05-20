@@ -46,7 +46,7 @@ const SuscriptionBanner = () => {
                             />
                             <button
                                 type="submit"
-                                className="flex-none rounded-md bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-none"
+                                className="flex-none rounded-md bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-pointer"
                             >
                                 Enviar
                             </button>
@@ -123,7 +123,7 @@ const SuscriptionBanner = () => {
                                                     <div>
                                                         <button
                                                             type="submit"
-                                                            className='flex-none rounded-md border-2 border-orange-600 bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-none'
+                                                            className='flex-none rounded-md border-2 border-orange-600 bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-pointer'
                                                         >
                                                             Enviar
                                                         </button>
@@ -140,7 +140,7 @@ const SuscriptionBanner = () => {
                                     style={{ display: "none" }}
                                 >
                                     <div
-                                        className="ml-form-successContent whitespace-pre-line text-center flex-none rounded-md border border-orange-600 py-2.5 px-3.5 text-sm font-semibold text-orange-500 shadow-sm  cursor-none"
+                                        className="ml-form-successContent whitespace-pre-line text-center flex-none rounded-md border border-orange-600 py-2.5 px-3.5 text-sm font-semibold text-orange-500 shadow-sm  cursor-pointer"
                                     >
                                         Formulario enviado. <br />
                                         Revisa tu email

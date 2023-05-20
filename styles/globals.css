@@ -14,18 +14,18 @@ body {
   font-family: Helvetica Neue, sans-serif;
   color: rgb(2, 2, 2);
   background: #fcefe8;
-  cursor: no-drop;
+  /* cursor: no-drop; */
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 * {
   box-sizing: border-box;
-  cursor: none;
+  /* cursor: none; */
 }
 
 input[type="checkbox"] {
@@ -43,9 +43,8 @@ input[type="checkbox"] {
   background: var(--caaad-sand);
 }
 
-input[type="email"]{
+input[type="email"] {
   background: var(--caaad-sand);
-
 }
 input[type="checkbox"]:checked:after {
   content: "+";
@@ -65,7 +64,7 @@ input[type="checkbox"]:checked:after {
   }
 }
 
-.cursor {
+/* .cursor {
   pointer-events: none;
   position: absolute;
   top: 50%;
@@ -77,4 +76,4 @@ input[type="checkbox"]:checked:after {
   width: 10px;
   height: 10px;
   background-color: var(--caaad-orange);
-}
+} */

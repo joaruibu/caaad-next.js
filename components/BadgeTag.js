@@ -21,7 +21,7 @@ const BadgeTag = ({ tag, icon }) => {
 
     return (
         <>
-            <a className={`cursorHover inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
+            <a className={`cursorHover  ${hasIcon && 'cursor-default'} inline-flex items-center rounded-full  whitespace-nowrap bg-orange-600 py-0.5 pl-2.5 pr-2.5 font-medium text-white ${hasIcon ? "text-sm" : "text-xs"}`}
                 href={!hasIcon ? `${locale === 'es' ? `/es/tag/${tag}` : `/tag/${tag}`}` : undefined}
             >
 
@@ -30,7 +30,7 @@ const BadgeTag = ({ tag, icon }) => {
                 {hasIcon &&
                     <button
                         type="button"
-                        className="ml-1 cursorHover transition-all inline-flex h-4 w-4 items-center justify-center rounded-full text-white hover:bg-orange-200 hover:text-orange-500 focus:bg-orange-500 focus:text-white focus:outline-none"
+                        className="ml-1 cursorHover cursor-pointer transition-all inline-flex h-4 w-4 items-center justify-center rounded-full text-white hover:bg-orange-200 hover:text-orange-500 focus:bg-orange-500 focus:text-white focus:outline-none"
                         onClick={() => {
                             setTags(tags.filter((t) => t !== tag));
                         }}
@@ -39,6 +39,7 @@ const BadgeTag = ({ tag, icon }) => {
                             <path strokeLinecap="round" strokeWidth="1.5" d="M1 1l6 6m0-6L1 7"
                             />
                         </svg>
+
                     </button>
                 }
             </a>
