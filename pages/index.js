@@ -6,6 +6,7 @@ import TagSidebar from '../components/TagSidebar'
 import dbConnect from '../lib/dbConnect'
 import Block from '../models/Block'
 import { useApp } from '../context'
+import TabPaidBlock from '../components/TabPaidBlock'
 
 
 
@@ -33,6 +34,8 @@ export default function Home({ blocks, numberBlocks }) {
             }
           </h1>
           <SearchBar />
+          <TabPaidBlock />
+
         </div>
 
         <div className='hidden md:block md:col-start-1 md:col-end-2'>

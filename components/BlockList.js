@@ -3,7 +3,7 @@ import BlockItem from "./BlockItem";
 
 const BlockList = ({ blocks }) => {
     console.log(blocks)
-    const { tags, search, filters, locale } = useApp();
+    const { tags, search, filters, locale, showPremiumBlocks } = useApp();
     return (
         <>
             <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -36,6 +36,12 @@ const BlockList = ({ blocks }) => {
                         });
                         return founds;
                     })
+                    .filter((block) => {
+                        if (showPremiumBlocks) return block.free === false
+                        return block
+                    })
+
+
                     .map((block) => (
                         <BlockItem key={block._id} block={block} />
                     ))}

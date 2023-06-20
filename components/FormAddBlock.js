@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { Disclosure } from '@headlessui/react'
-import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/solid'
+import { MinusSmIcon, PhoneIncomingIcon, PlusSmIcon } from '@heroicons/react/solid'
 import { allCategories } from '../assets/categories'
 import { allFilters } from '../assets/filters'
 import { allTags } from '../assets/tags'
@@ -25,21 +25,29 @@ const FormAddBlock = () => {
         dwg: '',
         date: '',
         downloads: 0,
-        free: true
+        free: true,
+        price: 0,
+        urlStripe: '',
+        videos: []
     })
 
     const [checkedTags, setChekedTags] = useState([]);
     const [checkedFilters, setChekedFilters] = useState([])
     const [checkedCategories, setCheckedCategories] = useState([])
     const [file, setFileUpload] = useState('')
+    // const [price, setPrice] = useState(0)
+    const [videos, setVideos] = useState([])
 
     const [isImgUpload, setIsImgUpload] = useState(false)
     const [isDwgUpload, setIsDwgUpload] = useState(false)
     const [isTypeError, setIsTypeError] = useState(false)
+    const [isFree, setIsFree] = useState(true)
+
 
     const [isSuccessUpload, setIsSuccessUpload] = useState(false)
     const [isErrorUpload, setIsErrorUpload] = useState(false)
     const [urlId, setUrlId] = useState('')
+    const [totalImgGallery, setTotalImgGallery] = useState(0)
 
     const handleChange = (e) => {
         setForm({
@@ -47,7 +55,7 @@ const FormAddBlock = () => {
             [e.target.name]: e.target.value,
             date: Date.now(),
             downloads: 0,
-            free: true
+
         })
     }
 
@@ -119,6 +127,10 @@ const FormAddBlock = () => {
             preset: 'acusc17i',
             type: 'image/png'
         },
+        mp4: {
+            preset: 'grll9neo',
+            type: 'video/mp4'
+        },
         raw: {
             preset: 'tz7ic32j',
             ext: 'dwg'
@@ -127,6 +139,7 @@ const FormAddBlock = () => {
 
     const uploadFile = async (type) => {
         if (file === '') return
+        console.log(file)
         if (('ext' in obj[type] && file.name.split('.')[1] !== 'dwg') || ('type' in obj[type] && file.type !== obj[type].type)) {
             setIsTypeError(true)
             setTimeout(() => {
@@ -135,22 +148,42 @@ const FormAddBlock = () => {
             return
         }
         setIsTypeError(false)
+
         const formData = new FormData();
         formData.append("file", file);
         formData.append("upload_preset", obj[type].preset);
 
-        const res = await fetch(`https://api.cloudinary.com/v1_1/dwsa2s0pn/${type}/upload`, {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/dwsa2s0pn/${type === 'mp4' ? 'video' : type}/upload`, {
             method: 'POST',
             body: formData
         })
         const data = await res.json()
 
+        const typeFile = {
+            image: 'img',
+            raw: 'dwg',
+            mp4: 'videos'
+        }
+
         if (data.secure_url !== '') {
-            const key = type === "image" ? "img" : "dwg"
+
+
+            const key = typeFile[type]
+
+            const value = () => {
+                if (type !== 'mp4') {
+                    return data.secure_url
+                } else {
+                    videos.push({ value: data.secure_url, isUpload: true })
+                    return videos
+                }
+            }
+
             setForm({
                 ...form,
-                [key]: data.secure_url,
+                [key]: value(),
             })
+
             if (type === 'image') setIsImgUpload(true);
             if (type === 'raw') setIsDwgUpload(true);
 
@@ -208,11 +241,24 @@ const FormAddBlock = () => {
     // }, [urlId])
 
 
+
+    useEffect(() => {
+
+        setForm({
+            ...form,
+            free: isFree
+
+        })
+
+    }, [isFree]);
+
+
+
     const handleSumbit = (e) => {
         e.preventDefault()
         console.log(444444, form)
-        postData(form)
 
+        postData(form)
 
         // setTimeout(() => {
         //     location.reload()
@@ -256,7 +302,6 @@ const FormAddBlock = () => {
                     <textarea
                         className="block w-full h-96 p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         type='text'
-
                         placeholder='English description'
                         autoComplete='off'
                         name='description'
@@ -277,6 +322,8 @@ const FormAddBlock = () => {
                     />
                 </div>
 
+
+
                 <label htmlFor="Similar" className="block text-sm font-medium text-gray-700">Similar:</label>
                 <div className="mt-1">
                     <input
@@ -288,6 +335,60 @@ const FormAddBlock = () => {
                         value={form.similar || ''}
                         onChange={handleChange}
                     />
+                </div>
+                <h2 className='font-bold border-b border-b-black mb-3'>Bloques premium</h2>
+                {form.free}
+                <div className='mb-6'>
+                    <div className="flex items-center mb-6">
+
+                        <button type="button" onClick={() => setIsFree(!isFree)} className={` ${isFree ? ' bg-gray-200 ' : ' bg-orange-500 '}  relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out `}
+                            role="switch" aria-checked="true" >
+                            <span aria-hidden="true" className={`${isFree ? 'translate-x-0' : 'translate-x-5'} pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out`} ></span>
+                        </button>
+                        <span className="ml-3 text-sm" id="annual-billing-label">
+                            <span className="font-medium text-gray-900">Premium Block</span>
+                        </span>
+                    </div>
+                    {!isFree &&
+                        <>
+                            <label htmlFor="urlStripe" className="block text-sm font-medium text-gray-700">Url Stripe:</label>
+
+                            <input
+                                className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                type='text'
+                                placeholder='Stripe url'
+                                autoComplete='off'
+                                name='urlStripe'
+                                value={form.urlStripe || ''}
+                                onChange={handleChange}
+                            />
+
+                            <label htmlFor="Price" className="block text-sm font-medium text-gray-700">Price:</label>
+                            <input
+                                className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                type='number'
+                                placeholder='Price'
+                                autoComplete='off'
+                                name='price'
+                                value={form.price || ''}
+                                onChange={handleChange}
+                            />
+
+                            {isTypeError && <ErrorMessage>Hay un error con tu formato de archivo</ErrorMessage>}
+                            <label className="block text-sm font-medium text-gray-700">Imágenes bundle:</label>
+
+                            {Array.from(Array(totalImgGallery), (e, i) => {
+                                return <div key={i} className='flex justify-between items-center mb-3'>
+                                    <input className='flex-1' type="file" placeholder='Subir imagen' onChange={(e) => setFileUpload(e.target.files[0])} />
+                                    <a className={`border ${isImgUpload ? 'border-green-500 cursor-not-allowed' : ' border-orange-500 cursor-pointer'} rounded text-gray-600 p-3 `} onClick={() => uploadFile('mp4')}>{videos[i]?.isUpload ? 'Video subido ✌️' : 'Subir mp4'}</a>
+                                </div>
+                            })}
+                            <a className={`border  border-orange-500 cursor-pointer rounded text-gray-900 p-3  w-full block text-center`} onClick={() => setTotalImgGallery(totalImgGallery + 1)}>Añadir video</a>
+
+                        </>
+
+                    }
+
                 </div>
 
                 <h2 className='font-bold border-b border-b-black mb-3'>Filtros</h2>
@@ -365,10 +466,6 @@ const FormAddBlock = () => {
                         </Disclosure>
                     ))
                 }
-
-
-
-
 
                 {isTypeError && <ErrorMessage>Hay un error con tu formato de archivo</ErrorMessage>}
                 <div className='flex justify-between items-center mb-3'>
