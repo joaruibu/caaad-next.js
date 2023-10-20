@@ -26,7 +26,7 @@ const BlockItem = React.forwardRef(({ block, similarBlock }, ref) => {
             </Link>
             <div className="border-t border-orange-600">
                 <Link href={`/download-autocad-block/${urlTitle(locale === 'es' ? title_ES : title)}-${_id}`} ref={ref} passHref>
-                    <h3 className="p-3 cursorHover cursor-pointer underline text-sm  font-bold text-orange-600">{locale === 'es' ? title_ES : title}</h3>
+                    <h3 className="p-3 cursorHover underline text-sm  font-bold text-orange-600">{locale === 'es' ? title_ES : title}</h3>
                 </Link>
                 <div className="flex flex-wrap gap-1 p-3">
                     {

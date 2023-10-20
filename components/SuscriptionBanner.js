@@ -60,7 +60,7 @@ const SuscriptionBanner = () => {
                                                     <div>
                                                         <button
                                                             type="submit"
-                                                            className='flex-none rounded-md border-2 border-orange-600 bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-pointer'
+                                                            className='flex-none rounded-md border-2 border-orange-600 bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-none'
                                                         >
                                                             Enviar
                                                         </button>
@@ -77,7 +77,7 @@ const SuscriptionBanner = () => {
                                     style={{ display: "none" }}
                                 >
                                     <div
-                                        className="ml-form-successContent whitespace-pre-line text-center flex-none rounded-md border border-orange-600 py-2.5 px-3.5 text-sm font-semibold text-orange-500 shadow-sm  cursor-pointer"
+                                        className="ml-form-successContent whitespace-pre-line text-center flex-none rounded-md border border-orange-600 py-2.5 px-3.5 text-sm font-semibold text-orange-500 shadow-sm  cursor-none"
                                     >
                                         Formulario enviado. <br />
                                         Revisa tu email
@@ -87,8 +87,16 @@ const SuscriptionBanner = () => {
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                 </div>
+
+
             </div>
+
         </div>
     )
 }

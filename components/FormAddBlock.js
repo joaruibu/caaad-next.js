@@ -35,7 +35,7 @@ const FormAddBlock = () => {
     const [checkedFilters, setChekedFilters] = useState([])
     const [checkedCategories, setCheckedCategories] = useState([])
     const [file, setFileUpload] = useState('')
-    // const [price, setPrice] = useState(0)
+    const [price, setPrice] = useState(0)
     const [videos, setVideos] = useState([])
 
     const [isImgUpload, setIsImgUpload] = useState(false)
@@ -185,6 +185,9 @@ const FormAddBlock = () => {
             })
 
             if (type === 'image') setIsImgUpload(true);
+            setTimeout(() => {
+                setIsImgUpload(false)
+            }, 500);
             if (type === 'raw') setIsDwgUpload(true);
 
         }
@@ -258,7 +261,7 @@ const FormAddBlock = () => {
         e.preventDefault()
         console.log(444444, form)
 
-        postData(form)
+        // postData(form)
 
         // setTimeout(() => {
         //     location.reload()

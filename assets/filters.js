@@ -6,6 +6,7 @@ export const allFilters = [
     { value: 'perspective', label: 'Perspective', label_ES: 'Perspectiva' },
     { value: 'line', label: 'Line', label_ES: 'Línea' },
     { value: 'solid', label: 'Solid', label_ES: 'Relleno' },
+
 ]
 
 

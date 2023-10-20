@@ -6,7 +6,7 @@ import Header from './Header'
 import CookiesBanner from '../components/CookiesBanner'
 
 import { useApp } from '../context'
-// import SuscriptionBanner from './SuscriptionBanner'
+import SuscriptionBanner from './SuscriptionBanner'
 
 
 const Layout = ({ children, pagina }) => {
@@ -44,7 +44,7 @@ const Layout = ({ children, pagina }) => {
                 {cookiesAccepted === false ? <CookiesBanner /> : ''
 
                 }
-                {/* <SuscriptionBanner /> */}
+                <SuscriptionBanner />
 
                 <Footer />
                 <Script src="https://kit.fontawesome.com/52fed5dcd0.js" crossOrigin="anonymous" async strategy="lazyOnload" />
