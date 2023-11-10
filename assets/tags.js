@@ -67,9 +67,11 @@ export const allTags = [
     { value: 'decorOthers', label: 'Others decor', label_ES: 'Otros elementos de decoración' },
 
     // { value: 'doors', label: 'DOORS', label_ES: 'PUERTAS' },
-    { value: 'foldingDoor', label: 'Folding doors', label_ES: 'Puertas abatibles' },
+    { value: 'foldingDoor', label: 'Folding doors', label_ES: 'Puertas plegables' },
     { value: 'slidingDoor', label: 'Sliding doors', label_ES: 'Puertas correderas' },
     { value: 'swingDoor', label: 'Swing doors', label_ES: 'Puertas de vaivén' },
+    { value: 'hingedDoor', label: 'Hinged doors', label_ES: 'Puertas abatibles' },
+    { value: 'doorHandle', label: 'Door handles', label_ES: 'Manillas' },
     { value: 'doorOthers', label: 'Others', label_ES: 'Otros' },
 
     // { value: 'dressingRoom', label: 'DRESSING ROOM', label_ES: 'VESTIDOR' },

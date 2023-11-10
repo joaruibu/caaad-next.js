@@ -49,7 +49,7 @@ export const allCategories = [
         value: 'doors',
         label: 'Doors',
         label_ES: 'Puertas',
-        tags: ["foldingDoor", "slidingDoor", "swingDoor"]
+        tags: ["foldingDoor", "slidingDoor", "swingDoor", "hingedDoor", "doorHandle"]
     },
     {
         value: 'dressingRoom',
