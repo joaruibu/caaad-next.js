@@ -39,6 +39,9 @@ const BlockSchema = new mongoose.Schema({
         type: String,
         // required: true
     },
+    videos: {
+        type: Array
+    },
     dwg: {
         type: String,
         // required: true
@@ -54,6 +57,13 @@ const BlockSchema = new mongoose.Schema({
     free: {
         type: Boolean,
         // required: false
+    },
+    price: {
+        type: Number
+    },
+    urlStripe: {
+        type: String,
+        // required: true
     }
 })
 
