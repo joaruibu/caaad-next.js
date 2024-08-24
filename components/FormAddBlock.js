@@ -28,6 +28,7 @@ const FormAddBlock = () => {
         free: true,
         price: 0,
         urlStripe: '',
+        codePremiumBlock: '',
         videos: []
     })
 
@@ -259,13 +260,14 @@ const FormAddBlock = () => {
 
     const handleSumbit = (e) => {
         e.preventDefault()
+
         console.log(444444, form)
 
-        // postData(form)
+        postData(form)
 
-        // setTimeout(() => {
-        //     location.reload()
-        // }, 1000);
+        setTimeout(() => {
+            location.reload()
+        }, 1000);
 
     }
 
@@ -355,7 +357,6 @@ const FormAddBlock = () => {
                     {!isFree &&
                         <>
                             <label htmlFor="urlStripe" className="block text-sm font-medium text-gray-700">Url Stripe:</label>
-
                             <input
                                 className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                 type='text'
@@ -363,6 +364,17 @@ const FormAddBlock = () => {
                                 autoComplete='off'
                                 name='urlStripe'
                                 value={form.urlStripe || ''}
+                                onChange={handleChange}
+                            />
+
+                            <label htmlFor="codePremiumBlock" className="block text-sm font-medium text-gray-700">Code Premium block:</label>
+                            <input
+                                className="block w-full p-3 mb-6 bg-inherit rounded-md border border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                type='text'
+                                placeholder='Code Premium block:'
+                                autoComplete='off'
+                                name='codePremiumBlock'
+                                value={form.codePremiumBlock || ''}
                                 onChange={handleChange}
                             />
 

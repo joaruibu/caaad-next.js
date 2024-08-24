@@ -25,6 +25,7 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
   console.log(_id)
 
   // Función de prueba para simular la pagina despues del pago de Stripe
+  //TODO: Tenía archivos duplicados llamados [id]2 que he eliminado donde esta función se llamba desde el /helpers
   const getUrlAfterPayment = () => {
 
     return `/download-premium-autocad-block/${urlTitle(title)}-${_id.split('').reverse().join('')}`

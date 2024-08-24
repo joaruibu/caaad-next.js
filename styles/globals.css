@@ -11,7 +11,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Helvetica Neue, sans-serif;
+  font-family: Roboto Condensed, sans-serif;
   color: rgb(2, 2, 2);
   background: #fcefe8;
   cursor: no-drop;
@@ -43,14 +43,16 @@ input[type="checkbox"] {
   background: var(--caaad-sand);
 }
 
-input[type="email"]{
+input[type="email"] {
   background: var(--caaad-sand);
 
 }
+
 input[type="checkbox"]:checked:after {
   content: "+";
   color: var(--caaad-orange);
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -59,6 +61,7 @@ input[type="checkbox"]:checked:after {
   html {
     color-scheme: dark;
   }
+
   body {
     color: rgb(2, 2, 2);
     background: #fcefe8;

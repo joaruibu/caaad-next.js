@@ -52,4 +52,8 @@ export const urlTitle = (title) => {
     return title.trim().split(' ').join('-').toLowerCase()
 }
 
+// Función de prueba para simular la pagina despues del pago de Stripe
+export const getUrlAfterPayment = (title, _id) => {
 
+    return `/download-premium-autocad-block/${urlTitle(title)}-${_id.split('').reverse().join('')}`
+}

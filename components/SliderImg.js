@@ -7,11 +7,15 @@ import React, { useState } from 'react';
 function SliderImg({ imgs }) {
     const slides = [
         {
-            url: 'https://res.cloudinary.com/dwsa2s0pn/video/upload/v1682344842/premium-autocad-block-mp4/Prueba_dybbmd.mp4'
+            url: 'https://res.cloudinary.com/dwsa2s0pn/video/upload/v1686849054/premium-autocad-block-mp4/Grabacio%CC%81n_de_pantalla_2023-04-27_a_las_18.36.36_tgmhgh.mp4'
         },
         {
-            url: 'https://res.cloudinary.com/dwsa2s0pn/video/upload/v1682344842/premium-autocad-block-mp4/Prueba_dybbmd.mp4'
-        }
+            url: 'https://res.cloudinary.com/dwsa2s0pn/video/upload/v1686849054/premium-autocad-block-mp4/Grabacio%CC%81n_de_pantalla_2023-04-27_a_las_18.36.36_tgmhgh.mp4'
+        },
+        {
+            url: 'https://res.cloudinary.com/dwsa2s0pn/video/upload/v1686849039/premium-autocad-block-mp4/Prueba_mdagfm.mp4'
+        },
+
         // {
         //     url: 'https://res.cloudinary.com/dwsa2s0pn/image/upload/v1671648010/free-autocad-block-image/Verner_Panton_-_Amoebe_seat_-_signature_furniture_-_perspective_-_autocad_block_-_bloque_de_autocad_-_be_interior_designer_ky5wcr.png',
         // },
@@ -44,7 +48,7 @@ function SliderImg({ imgs }) {
 
     return (
 
-        <div className='max-w-[1400px] h-[780px] w-full m-auto grid content-center relative group'>
+        <div className=' w-full m-auto grid content-center relative group'>
             {/* <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full rounded-2xl bg-center bg-cover duration-500'

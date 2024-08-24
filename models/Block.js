@@ -64,6 +64,14 @@ const BlockSchema = new mongoose.Schema({
     urlStripe: {
         type: String,
         // required: true
+    },
+    urlDownloadBlock: {
+        type: String,
+        // required: true
+    },
+    codePremiumBlock: {
+        type: String,
+        // required: true
     }
 })
 

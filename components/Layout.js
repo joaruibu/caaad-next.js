@@ -20,6 +20,11 @@ const Layout = ({ children, pagina }) => {
                 <meta httpEquiv="content-language" content={locale}></meta>
                 <meta name='robots' content='index, follow'></meta>
                 <link rel="icon" href="/favicon.png" />
+                TODO:     Estudiar porque he cambiado la tipo en el rama de bloques de pago
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
             </Head>
             <Script
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
