@@ -27,6 +27,10 @@ const Layout = ({ children, pagina }) => {
         <meta httpEquiv="content-language" content={locale}></meta>
         <meta name="robots" content="index, follow"></meta>
         <link rel="icon" href="/favicon.png" />
+        <meta
+          name="google-adsense-account"
+          content={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}
+        ></meta>
       </Head>
       <GoogleAnalytics />
 
