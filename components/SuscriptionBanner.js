@@ -28,69 +28,6 @@ const SuscriptionBanner = () => {
                         <h2 className="inline text-3xl font-bold text-gray-900 tracking-tight sm:text-4xl sm:block lg:inline xl:block mb-3">Nuestros mejores bloques.</h2>{' '}
                         <p className="inline text-xl font-normal text-gray-700 sm:block lg:inline xl:block">No están a la venta. No están en esta web. Regístrate y te los mandamos gratis.</p>
                     </div>
-                    {/*                     
-                    <form className="w-full max-w-md lg:col-span-5 lg:pt-2" action="https://assets.mailerlite.com/jsonp/25720/forms/81925411081029188/subscribe" data-code="" method="post" target="_blank">
-                        <div className="flex gap-x-4">
-                            <label htmlFor="email-address" className="sr-only">
-                                Email address
-                            </label>
-                            <input
-                                id="email-address"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
-                                required
-                                className="form-control min-w-0 flex-auto rounded-md border border-orange-600 px-3.5 py-2 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
-                                placeholder="Enter your email"
-                                data-inputmask=""
-                            />
-                            <button
-                                type="submit"
-                                className="flex-none rounded-md bg-orange-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 cursorHover cursor-pointer"
-                            >
-                                Enviar
-                            </button>
-                            <button
-                                type="button"
-                                disabled={true}
-                                style={{ display: "none" }}
-                                className="loading"
-                            >
-                                <div
-                                    className="ml-form-embedSubmitLoad"
-                                    style={{ margin: "0 auto" }}
-                                >
-                                    enviando formlario
-                                </div>
-                            </button>
-                        </div>
-                        <p className="mt-4 text-sm leading-6 text-gray-900">
-                            We care about your data. Read our{' '}
-                            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                                privacy&nbsp;policy
-                            </a>
-                            .
-                        </p>
-                        <input type="hidden" name="ml-submit" value="1" />
-
-                    </form>
-                    <div
-                        className="ml-form-successBody row-success"
-                        style={{ display: "none" }}
-                    >
-                        <div
-                            className="ml-form-successContent"
-                            style={{
-                                height: "140px",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "center",
-                                textAlign: "center",
-                            }}
-                        >
-                            Forulario enviado
-                        </div>
-                    </div> */}
                     <div
                         id="mlb2-3869348"
                         className="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-3869348 w-full max-w-md lg:col-span-5 lg:pt-2"
@@ -150,16 +87,8 @@ const SuscriptionBanner = () => {
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
-
-
             </div>
-
         </div>
     )
 }

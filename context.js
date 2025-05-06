@@ -11,6 +11,7 @@ const ContextProvider = ({ children }) => {
     const [search, setSearch] = useState('')
     const [query, setQuery] = useState('')
     const [cookiesAccepted, setCookiesAccepted] = useState(false)
+    const [showPremiumBlocks, setShowPremiumBlocks] = useState(false)
 
     // Exportando variables para ser usadas en otros componentes
     const values = {
@@ -19,6 +20,7 @@ const ContextProvider = ({ children }) => {
         search, setSearch,
         query, setQuery,
         cookiesAccepted, setCookiesAccepted,
+        showPremiumBlocks, setShowPremiumBlocks,
         locale
     };
     return <Context.Provider value={values}>{children}</Context.Provider>;
