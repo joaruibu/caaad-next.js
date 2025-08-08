@@ -3,12 +3,19 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['res.cloudinary.com'],
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/dwsa2s0pn/**",
+      },
+    ],
   },
   i18n: {
-    locales: ['es', 'en'],
-    defaultLocale: 'en',
-  }
-}
+    locales: ["es", "en"],
+    defaultLocale: "en",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,4 +1,3 @@
-
 import React from "react";
 import dbConnect from "../../lib/dbConnect";
 import Block from "../../models/Block";
@@ -8,192 +7,211 @@ import Image from "next/image";
 
 import Link from "next/link";
 import BadgeTag from "../../components/BadgeTag";
-import FilterTag from "../../components/BadgeFilter"
+import FilterTag from "../../components/BadgeFilter";
 import UrlNotFound from "../404";
 import SimilarBlock from "../../components/SimilarBlock";
 import { useRouter } from "next/router";
 import BadgeCategory from "../../components/BadgeCategorie";
 
-
 const BlockPage = ({ success, error, block, similarBlocks }) => {
+  const {
+    dwg,
+    description,
+    description_ES,
+    categories,
+    filters,
+    img,
+    tags,
+    title,
+    title_ES,
+  } = block;
+  const { locale } = useRouter();
 
-  const { dwg, description, description_ES, categories, filters, img, tags, title, title_ES } = block
-  const { locale } = useRouter()
-
-
-
-  useRouter()
+  useRouter();
   if (!success) {
-    return <UrlNotFound error={error} />
+    return <UrlNotFound error={error} />;
   }
 
   return (
-
     <Layout
-      pagina={locale === 'es' ? `Descargar bloque de autocad ${title_ES}` : `Download ${title} cad block`}>
-
-      <main className='grid grid-cols-1 gap-9 md:grid-cols-[160px_1fr_160px] content-start md:gap-9 min-h-screen'>
-        <div className='hidden md:block md:col-start-1'>
+      pagina={
+        locale === "es"
+          ? `Descargar bloque de autocad ${title_ES}`
+          : `Download ${title} cad block`
+      }
+    >
+      <main className="grid grid-cols-1 gap-9 md:grid-cols-[160px_1fr_160px] content-start md:gap-9 min-h-screen">
+        <div className="hidden md:block md:col-start-1">
           {/* <AddSidebar /> */}
         </div>
-        <div className='md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12'>
+        <div className="md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12">
           <div className="relative border border-orange-600 rounded-3xl bg-white overflow-hidden grid content-center">
-            <Image layout="responsive" width={250} height={165} alt={locale === 'es' ? `Descargar bloque autoCAD ${title_ES}` : `Download ${title}  cad block`} src={img} priority />
+            <Image
+              layout="responsive"
+              width={250}
+              height={165}
+              alt={
+                locale === "es"
+                  ? `Descargar bloque autoCAD ${title_ES}`
+                  : `Download ${title}  cad block`
+              }
+              src={img}
+              priority
+              unoptimized={true}
+            />
           </div>
           <div>
             <div className="mb-4">
-              <p className="font-bold block w-full">{locale === 'es' ? `Título:` : `Title:`} </p>
-              <h1 className=" font-bold text-xl text-orange-500">{locale === 'es' ? `Descargar bloque autoCAD ${title_ES}` : `Download cad block ${title}`}.</h1>
+              <p className="font-bold block w-full">
+                {locale === "es" ? `Título:` : `Title:`}{" "}
+              </p>
+              <h1 className=" font-bold text-xl text-orange-500">
+                {locale === "es"
+                  ? `Descargar bloque autoCAD ${title_ES}`
+                  : `Download cad block ${title}`}
+                .
+              </h1>
             </div>
             <div className="mb-4">
-              <p className="font-bold block w-full">{locale === 'es' ? `Descripción:` : `Description:`} </p>
-              <p className=" font-normal text-gray-500">{locale === 'es' ? `${description_ES}` : `${description}`}</p>
+              <p className="font-bold block w-full">
+                {locale === "es" ? `Descripción:` : `Description:`}{" "}
+              </p>
+              <p className=" font-normal text-gray-500">
+                {locale === "es" ? `${description_ES}` : `${description}`}
+              </p>
             </div>
             <div className="mb-4">
-              <p className="mb-3 font-bold block w-full">{locale === 'es' ? `Categoría:` : `Category:`} </p>
+              <p className="mb-3 font-bold block w-full">
+                {locale === "es" ? `Categoría:` : `Category:`}{" "}
+              </p>
               <div className="flex flex-wrap gap-2">
-
                 {categories.map((category, index) => {
-                  return <BadgeCategory
-                    key={index}
-                    category={category} />
+                  return <BadgeCategory key={index} category={category} />;
                 })}
-
               </div>
             </div>
 
             <div className="mb-8">
-              <p className="mb-3 font-bold block w-full">{locale === 'es' ? `Filtros:` : `Filters:`}  </p>
+              <p className="mb-3 font-bold block w-full">
+                {locale === "es" ? `Filtros:` : `Filters:`}{" "}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag, index) => {
-                  return <BadgeTag
-                    key={index}
-                    tag={tag}
-                    icon={false}
-                  />
-                })
-                }
+                  return <BadgeTag key={index} tag={tag} icon={false} />;
+                })}
                 {filters.map((filter, index) => {
-                  return <FilterTag
-                    key={index}
-                    filter={filter}
-                    icon={false}
-                  />
-                })
-                }
+                  return <FilterTag key={index} filter={filter} icon={false} />;
+                })}
               </div>
             </div>
-            <Link href={dwg} passHref >
-              <a className="cursorHover w-full block rounded-full text-lg uppercase text-center p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">{locale === 'es' ? `Descargar bloque de autoCAD gratis` : `Download free CAD block`} </a>
+            <Link href={dwg} passHref>
+              <a className="cursorHover w-full block rounded-full text-lg uppercase text-center p-3 bg-orange-600 hover:bg-orange-700 transition-all text-white">
+                {locale === "es"
+                  ? `Descargar bloque de autoCAD gratis`
+                  : `Download free CAD block`}{" "}
+              </a>
             </Link>
           </div>
         </div>
 
-        <div className='hidden md:block  md:col-start-3'>
+        <div className="hidden md:block  md:col-start-3">
           {/* <AddSidebar /> */}
         </div>
-        <div className='block  md:col-start-2 w-full mt-12'>
+        <div className="block  md:col-start-2 w-full mt-12">
           <SimilarBlock similarBlocks={similarBlocks} />
         </div>
-
-
       </main>
     </Layout>
-  )
+  );
 };
-
-
 
 export default BlockPage;
 
-
 export async function getStaticPaths() {
-
   try {
-    await dbConnect()
-    const result = await Block.find({})
+    await dbConnect();
+    const result = await Block.find({});
 
     // Mapeo todos los objetos del array para 'limpiar' la propiedad _id
     const blocks = result.map((doc) => {
-      const block = doc.toObject()
-      block._id = block._id.toString()
-      return block
-    })
+      const block = doc.toObject();
+      block._id = block._id.toString();
+      return block;
+    });
 
     const paths = blocks.slice(0, 20).map(({ _id, title }) => {
-      const splitTitle = title.replaceAll(' ', '-');
+      const splitTitle = title.replaceAll(" ", "-");
       return {
         params: { id: `${splitTitle.toLowerCase()}-${_id}` },
-        locale: 'en'
-      }
+        locale: "en",
+      };
     });
 
     const paths_ES = blocks.slice(0, 20).map(({ _id, title_ES }) => {
-      const splitTitle = title_ES.replaceAll(' ', '-');
+      const splitTitle = title_ES.replaceAll(" ", "-");
       return {
         params: { id: `${splitTitle.toLowerCase()}-${_id}` },
-        locale: 'es'
-      }
+        locale: "es",
+      };
     });
 
     return {
       paths: [...paths, ...paths_ES],
-      fallback: 'blocking'
-    }
-
-  } catch (error) {
-
-  }
+      fallback: "blocking",
+    };
+  } catch (error) {}
 }
 
 export async function getStaticProps({ params: { id } }) {
   //la Url está compuesta por título - id
-  const newId = id.split('-').pop();
+  const newId = id.split("-").pop();
 
   try {
-    await dbConnect()
-    const block = await Block.findById(newId).lean()
-    block._id = block._id.toString()
+    await dbConnect();
+    const block = await Block.findById(newId).lean();
+    block._id = block._id.toString();
 
     // Buscar como hacer la busqueda del titulo similar al actual
-    const similarResults = (await Block.find({ tags: block.tags }).limit(10)).reverse();
+    const similarResults = (
+      await Block.find({ tags: block.tags }).limit(10)
+    ).reverse();
 
     const similarBlocks = similarResults
       .map((ele) => {
-        const block = ele.toObject()
-        block._id = block._id.toString()
-        return block
+        const block = ele.toObject();
+        block._id = block._id.toString();
+        return block;
       })
       // Eliminamos el bloque en el que estamos
-      .filter(ele => ele._id !== newId)
+      .filter((ele) => ele._id !== newId);
 
     if (!block)
       return {
         props: {
           success: false,
-          error: 'Bloque no encontrado!'
-        }
-      }
+          error: "Bloque no encontrado!",
+        },
+      };
 
     return {
       props: {
         success: true,
         block,
-        similarBlocks
-      }
-    }
-
+        similarBlocks,
+      },
+    };
   } catch (error) {
-    console.log(error)
-    if (error.kind === 'ObjectId') {
-      return { props: { success: false, error: 'Te has invetando la dirección' } }
+    console.log(error);
+    if (error.kind === "ObjectId") {
+      return {
+        props: { success: false, error: "Te has invetando la dirección" },
+      };
     }
-    return { props: { success: false, error: 'Error de servidor' } }
+    return { props: { success: false, error: "Error de servidor" } };
   }
 }
 
-
-// Codigo previo con GSSP que funciona 
+// Codigo previo con GSSP que funciona
 // export async function getServerSideProps({ params }) {
 //   console.log(params)
 //   //la Url está compuesta por título - id
@@ -205,7 +223,6 @@ export async function getStaticProps({ params: { id } }) {
 
 //     const block = await Block.findById(id).lean()
 //     block._id = block._id.toString()
-
 
 //     if (!block)
 //       return {
@@ -231,7 +248,6 @@ export async function getStaticProps({ params: { id } }) {
 //   }
 // }
 
-
 // Esto funciona
 // export async function getServerSideProps(context) {
 //   console.log(2222, context.query)
@@ -256,4 +272,3 @@ export async function getStaticProps({ params: { id } }) {
 //     return { props: { success: false, error: 'Error de servidor' } }
 //   }
 // }
-
