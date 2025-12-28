@@ -28,13 +28,12 @@ const BlockItem = React.forwardRef(({ block, similarBlock }, ref) => {
           locale === "es" ? title_ES : title
         )}-${_id}`}
         ref={ref}
-        passHref
       >
         <Image
           className="cursorHover cursor-pointer"
-          layout="responsive"
           width={250}
           height={165}
+          style={{ width: '100%', height: 'auto' }}
           alt={
             locale === "es"
               ? `Descargar bloque gratis de autocad de ${title_ES}. Bloque de cad hecho por Be Interior Designer para descargar gratuita de bloques.`
@@ -51,7 +50,6 @@ const BlockItem = React.forwardRef(({ block, similarBlock }, ref) => {
             locale === "es" ? title_ES : title
           )}-${_id}`}
           ref={ref}
-          passHref
         >
           <h3 className="p-3 cursorHover cursor-pointer underline text-sm  font-bold text-orange-600">
             {locale === "es" ? title_ES : title}

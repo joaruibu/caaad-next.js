@@ -11,8 +11,8 @@ const UrlNotFound = ({ error }) => {
                     <h1 className='hidden md:block text-center font-extrabold tracking-tight text-6xl p-6 pb-12'>
                         Uppps... esta página no existe{error | JSON}
                     </h1>
-                    <Link href="/" passHref>
-                        <a>Ver más bloques</a></Link>
+                    <Link href="/">
+                        Ver más bloques</Link>
                 </div>
             </main>
         </Layout>

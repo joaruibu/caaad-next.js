@@ -47,9 +47,9 @@ const BlockPage = ({ success, error, block, similarBlocks }) => {
         <div className="md:col-start-2 md:col-end-3 grid grid-rows-none grid-cols-1 xl:grid-cols-2 gap-12">
           <div className="relative border border-orange-600 rounded-3xl bg-white overflow-hidden grid content-center">
             <Image
-              layout="responsive"
               width={250}
               height={165}
+              style={{ width: '100%', height: 'auto' }}
               alt={
                 locale === "es"
                   ? `Descargar bloque autoCAD ${title_ES}`

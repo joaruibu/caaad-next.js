@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { footerLinks } from "../assets/footerLInks"
@@ -25,9 +24,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.people.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -37,9 +36,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.transport.map((item) => (
                                         <li key={item.label} >
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -51,9 +50,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.bathroom.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -63,9 +62,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.livingRoom.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -80,9 +79,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.kitchen.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -92,9 +91,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.decor.map((item) => (
                                         <li key={item.label} >
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -106,9 +105,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.authorFurniture.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -118,9 +117,9 @@ export default function Footer() {
                                 <ul role="list" className="mt-1">
                                     {footerLinks.ilumination.map((item) => (
                                         <li key={item.label}>
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                            <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
                                                 {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -136,9 +135,15 @@ export default function Footer() {
                                 <ul role="list" className="mt-4 grid grid-cols-2">
                                     {footerLinks.web.map((item) => (
                                         <li key={item.label} >
-                                            <a href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
-                                                {item[locale === 'es' ? 'label_ES' : 'label']}
-                                            </a>
+                                            {item.href.startsWith('http') ? (
+                                                <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                                    {item[locale === 'es' ? 'label_ES' : 'label']}
+                                                </a>
+                                            ) : (
+                                                <Link href={`${locale === 'es' ? `/es${item.href}` : `${item.href}`}`} className="text-xs text-gray-500 hover:text-gray-900 cursorHover">
+                                                    {item[locale === 'es' ? 'label_ES' : 'label']}
+                                                </Link>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>

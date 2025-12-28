@@ -8,19 +8,17 @@ const Header = () => {
       <h2 id="header-heading" className="sr-only">
         Header
       </h2>
-      <Link href="/" passHref>
-        <a>
-          <Image
-            className="cursorHover"
-            layout="responsive"
-            width={1080}
-            height={700}
-            src="/img/caaad-logotipo-animado.gif"
-            alt="Logo caad descarga bloques de autocad gratis"
-            priority
-            unoptimized={true}
-          />
-        </a>
+      <Link href="/">
+        <Image
+          className="cursorHover"
+          width={1080}
+          height={700}
+          style={{ width: '100%', height: 'auto' }}
+          src="/img/caaad-logotipo-animado.gif"
+          alt="Logo caad descarga bloques de autocad gratis"
+          priority
+          unoptimized={true}
+        />
       </Link>
     </header>
   );

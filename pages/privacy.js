@@ -70,7 +70,7 @@ const Contact = () => {
 
                     <h2>Contact Us</h2>
 
-                    <p className="pb-6 text-gray-500">If you have any questions or suggestions about our Privacy Policy, do not hesitate to <Link href={`/contact`}><a className='underline'>contact us.</a></Link> </p>
+                    <p className="pb-6 text-gray-500">If you have any questions or suggestions about our Privacy Policy, do not hesitate to <Link href={`/contact`} className='underline'>contact us.</Link> </p>
 
                 </div>
             </main>
