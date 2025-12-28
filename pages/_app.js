@@ -5,6 +5,7 @@ import 'custom-cursor-react/dist/index.css';
 
 import { ContextProvider } from '../context'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }) {
     <ContextProvider >
       < Component {...pageProps} />
       <Analytics />
+      <SpeedInsights />
       {/* <CustomCursor
         targets={['.cursorHover']}
         customClass='custom-cursor'
